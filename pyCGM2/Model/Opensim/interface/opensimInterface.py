@@ -96,9 +96,9 @@ class osimCgmInterface(osimInterface):
 
     def __init__(self, modelversion):
         if modelversion == "CGM2.2":
-            super(osimCgmInterface,self).__init__(pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface\\CGM22\\","pycgm2-gait2392_simbody.osim")
+            super(osimCgmInterface,self).__init__(pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface/CGM22/","pycgm2-gait2392_simbody.osim")
         elif modelversion == "CGM2.3":
-            super(osimCgmInterface,self).__init__(pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface\\CGM23\\","pycgm2-gait2392_simbody.osim")
+            super(osimCgmInterface,self).__init__(pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface/CGM23/","pycgm2-gait2392_simbody.osim")
         else:
             raise Exception(f"[pyCGM2] - no osimCgmInterface for the selected model [{modelversion}]")
 

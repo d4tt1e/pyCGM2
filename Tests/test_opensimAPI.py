@@ -7,13 +7,13 @@ from pyCGM2.Tools import opensimTools
 class Test_osim:
     def test_osimInterface(self): # Charger le modèle
 
-        model = opensim.Model(pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface\\CGM23\\"+"pycgm2-gait2392_simbody.osim")
+        model = opensim.Model(pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface/CGM23/"+"pycgm2-gait2392_simbody.osim")
         l1 = opensimTools.calculateSegmentLength(model,"hip_r","knee_r")
 
         print(f"Longueur du fémur droit : {l1} m")
 
 
-        # model = osim.Model(pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface\\CGM23\\"+"pycgm2-gait2392_simbody.osim")
+        # model = osim.Model(pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface/CGM23/"+"pycgm2-gait2392_simbody.osim")
         # state= model.initSystem()
 
         # # # Accéder aux points du fémur droit

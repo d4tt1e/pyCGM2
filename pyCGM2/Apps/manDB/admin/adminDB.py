@@ -41,22 +41,22 @@ def batchProcessing(path_classification):
 
     for patientDir in files.getDirs(path_classification):
 
-        enfPatient = eclipse.PatientEnfReader(f"{path_classification}{patientDir}\\", f"{patientDir}.Patient.enf")
+        enfPatient = eclipse.PatientEnfReader(f"{path_classification}{patientDir}/", f"{patientDir}.Patient.enf")
         ipp = enfPatient.get("PatientID")
         
 
         if ipp is not None:
             LOGGER.logger.info("------------------------------------------------------------------------------------------------")
 
-            args = Namespace(  subparser="DB" ,  DB="NewPatient",   patient_path=f"{path_classification}{patientDir}\\")
+            args = Namespace(  subparser="DB" ,  DB="NewPatient",   patient_path=f"{path_classification}{patientDir}/")
             manDBcommands.main_newPatient(args)
             LOGGER.logger.info(".................................................................................................")
 
             for sessionDir in files.getDirs(f"{path_classification}{patientDir}", pattern=r"Session [0-9]"):
-                enfSession = eclipse.SessionEnfReader(f"{path_classification}{patientDir}\\{sessionDir}\\", f"{sessionDir}.Session.enf")
+                enfSession = eclipse.SessionEnfReader(f"{path_classification}{patientDir}/{sessionDir}/", f"{sessionDir}.Session.enf")
                 sessionIndex = utils.getNumberFromStr(sessionDir)
 
-                args = Namespace(  subparser="DB" ,  DB="RegisterSession",   data_path=f"{path_classification}{patientDir}\\{sessionDir}\\")
+                args = Namespace(  subparser="DB" ,  DB="RegisterSession",   data_path=f"{path_classification}{patientDir}/{sessionDir}/")
                 manDBcommands.main_registerSession(args)
 
 
@@ -67,7 +67,7 @@ def batchProcessing(path_classification):
 if __name__ == "__main__":
 
 
-    path_classification = "Z:\\Donnees_Nexus\\AQM Enfants\\"
+    path_classification = "Z:/Donnees_Nexus/AQM Enfants/"
     upsert_patientClassification_to_db(path_classification, "AQM Enfants")
     batchProcessing(path_classification)
 

@@ -33,9 +33,9 @@ def flowMek_trialsImporter(path_classification):
 
     for patientDir in files.getDirs(path_classification):
 
-        patientPath = f"{path_classification}{patientDir}\\"
+        patientPath = f"{path_classification}{patientDir}/"
 
-        enfPatient = eclipse.PatientEnfReader(f"{path_classification}{patientDir}\\", f"{patientDir}.Patient.enf")
+        enfPatient = eclipse.PatientEnfReader(f"{path_classification}{patientDir}/", f"{patientDir}.Patient.enf")
         ipp = enfPatient.get("PatientID")
         
 
@@ -44,14 +44,14 @@ def flowMek_trialsImporter(path_classification):
 
             for sessionDir in files.getDirs(f"{path_classification}{patientDir}", pattern=r"Session [0-9]"):
 
-                sessionPath = f"{path_classification}{patientDir}\\{sessionDir}\\"
+                sessionPath = f"{path_classification}{patientDir}/{sessionDir}/"
 
                 # h5files =  files.getFiles(f"{sessionPath}",".h5")
                 # for it in h5files:
                 #     os.remove(sessionPath+it)
 
 
-                enfSession = eclipse.SessionEnfReader(f"{path_classification}{patientDir}\\{sessionDir}\\", f"{sessionDir}.Session.enf")
+                enfSession = eclipse.SessionEnfReader(f"{path_classification}{patientDir}/{sessionDir}/", f"{sessionDir}.Session.enf")
                 sessionIndex = utils.getNumberFromStr(sessionDir)
 
 
@@ -85,9 +85,9 @@ def checkprocessingFolder(path_classification):
 
     for patientDir in files.getDirs(path_classification):
 
-        patientPath = f"{path_classification}{patientDir}\\"
+        patientPath = f"{path_classification}{patientDir}/"
 
-        enfPatient = eclipse.PatientEnfReader(f"{path_classification}{patientDir}\\", f"{patientDir}.Patient.enf")
+        enfPatient = eclipse.PatientEnfReader(f"{path_classification}{patientDir}/", f"{patientDir}.Patient.enf")
         ipp = enfPatient.get("PatientID")
         
 
@@ -96,9 +96,9 @@ def checkprocessingFolder(path_classification):
 
             for sessionDir in files.getDirs(f"{path_classification}{patientDir}", pattern=r"Session [0-9]"):
 
-                sessionPath = f"{path_classification}{patientDir}\\{sessionDir}\\"
+                sessionPath = f"{path_classification}{patientDir}/{sessionDir}/"
 
-                enfSession = eclipse.SessionEnfReader(f"{path_classification}{patientDir}\\{sessionDir}\\", f"{sessionDir}.Session.enf")
+                enfSession = eclipse.SessionEnfReader(f"{path_classification}{patientDir}/{sessionDir}/", f"{sessionDir}.Session.enf")
                 sessionIndex = utils.getNumberFromStr(sessionDir)
 
                 
@@ -117,9 +117,9 @@ def checkprocessingFolder(path_classification):
 if __name__ == "__main__":
 
 
-    path_classification = "Z:\\Donnees_Nexus\\AQM Enfants\\"
+    path_classification = "Z:/Donnees_Nexus/AQM Enfants/"
 
-    # path_classification = "C:\\Users\\fleboeuf\\Documents\\DATA\\pyCGM2-Data-Tests\\NantesSamples\\AQM Adultes\\"
+    # path_classification = "C:/Users/fleboeuf/Documents/DATA/pyCGM2-Data-Tests/NantesSamples/AQM Adultes/"
 
     # checkprocessingFolder(path_classification)
 

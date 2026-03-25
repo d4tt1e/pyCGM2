@@ -114,8 +114,8 @@ def oconnor(acqGait:btk.btkAcquisition,
 def intellEvent(acqGait:btk.btkAcquisition):
     
     progressionAxis, forwardProgression, globalFrame = progression.detectProgressionFrame(acqGait, staticFlag=False)
-    initialContactModelFile = pyCGM2.PYCGM2_APPDATA_PATH+"intellEventModels\\version0\\ic_intellevent.onnx"
-    footOffModelFile = pyCGM2.PYCGM2_APPDATA_PATH+"intellEventModels\\version0\\fo_intellevent.onnx"
+    initialContactModelFile = pyCGM2.PYCGM2_APPDATA_PATH+"intellEventModels/version0/ic_intellevent.onnx"
+    footOffModelFile = pyCGM2.PYCGM2_APPDATA_PATH+"intellEventModels/version0/fo_intellevent.onnx"
 
     evp = intellEventProcedures.IntellEventProcedure(progressionAxis,forwardProgression)
     evp.setModels(initialContactModelFile,footOffModelFile)

@@ -158,7 +158,7 @@ class opensimCalibrationFilter(object):
         self.m_toMeter = 1000.0
 
         self._osimModel = osimProcessing.opensimModel(osimFile,model)
-        self.opensimOutputDir = dataDir if dataDir[-1:] =="\\" else dataDir+"\\"
+        self.opensimOutputDir = dataDir if dataDir[-1:] =="/" else dataDir+"/"
 
     def addMarkerSet(self,markerSetFile):
         """
@@ -232,7 +232,7 @@ class opensimFittingFilter(object):
         self.accuracy = accuracy
         self.m_acqMotion = acqMotion
 
-        self.opensimOutputDir = dataDir if dataDir[-1:] =="\\" else dataDir+"\\"
+        self.opensimOutputDir = dataDir if dataDir[-1:] =="/" else dataDir+"/"
 
         self.setAccuracy(self.accuracy)
         self.setResultsDirectory(self.opensimOutputDir)
@@ -247,7 +247,7 @@ class opensimFittingFilter(object):
         self.updateConfig()
 
     def setResultsDirectory(self,path):
-        self.m_ikSoup.results_directory.string = path.replace("\\","/")
+        self.m_ikSoup.results_directory.string = path.replace("/","/")
 
     def setTimeRange(self,acq,beginFrame=None,lastFrame=None):
         ff = acq.GetFirstFrame()
@@ -261,7 +261,7 @@ class opensimFittingFilter(object):
         self.updateConfig()
 
     def updateConfig(self):
-        newIkFile = self.opensimOutputDir + self.m_ikToolFile[self.m_ikToolFile.rfind("\\")+1:]
+        newIkFile = self.opensimOutputDir + self.m_ikToolFile[self.m_ikToolFile.rfind("/")+1:]
         with open(newIkFile, "w") as f:
             f.write(self.m_ikSoup.prettify())
 

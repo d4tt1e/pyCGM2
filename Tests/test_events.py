@@ -18,7 +18,7 @@ class Test_gaitEvents:
     def test_zeni(self):
 
 
-        MAIN_PATH = pyCGM2.TEST_DATA_PATH + "LowLevel\\events\\gaitEvents\\"
+        MAIN_PATH = pyCGM2.TEST_DATA_PATH + "LowLevel/events/gaitEvents/"
 
 
         gaitFilename="gait Trial 01.c3d"
@@ -34,7 +34,7 @@ class Test_gaitEvents:
     def test_oconnor(self):
 
 
-        MAIN_PATH = pyCGM2.TEST_DATA_PATH + "LowLevel\\events\\gaitEvents\\"
+        MAIN_PATH = pyCGM2.TEST_DATA_PATH + "LowLevel/events/gaitEvents/"
 
 
         gaitFilename="gait Trial 01.c3d"

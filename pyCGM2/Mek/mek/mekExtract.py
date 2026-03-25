@@ -34,7 +34,7 @@ class mekExtractFilter(object):
 
                 for pathfilename in pathfilenames:
 
-                    filename = pathfilename.split("\\")[-1]
+                    filename = pathfilename.split("/")[-1]
                     
                     acq = btkTools.smartReader(pathfilename)
                     valL = [frame/acq.GetPointFrequency() for frame in btkTools.smartGetEvents(acq,"Foot Strike","Left") ]

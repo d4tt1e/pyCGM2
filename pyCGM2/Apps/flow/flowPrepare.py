@@ -56,7 +56,7 @@ def main(args=None):
     userSettingsFile = userSettings+".settings" if not userSettings.endswith(".settings") else userSettings
     userSettings = files.openFile(data_path,userSettingsFile)
     userSettingsFileNoExt = userSettingsFile.replace(".settings","")
-    processedPath = data_path+f"Processing_{userSettingsFileNoExt}\\"
+    processedPath = data_path+f"Processing_{userSettingsFileNoExt}/"
 
     files.createDir(processedPath)
 

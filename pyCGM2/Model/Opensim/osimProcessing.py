@@ -299,8 +299,8 @@ class opensimKinematicFitting(object):
 
         # steps 2 : config ikTool
         self.m_ikTool.setModel(self.m_model)
-        self.m_ikTool.setMarkerDataFileName( filenameNoExt.replace("\\","/")  +".trc")
-        self.m_ikTool.setOutputMotionFileName(filenameNoExt.replace("\\","/")  +".mot")
+        self.m_ikTool.setMarkerDataFileName( filenameNoExt.replace("/","/")  +".trc")
+        self.m_ikTool.setOutputMotionFileName(filenameNoExt.replace("/","/")  +".mot")
 
         #  set times ( FIXME - I had surprise with set method, i prefer to handle the xmlnode directly)
         # prTime= self.m_ikTool.getPropertyByName("time_range")
@@ -329,5 +329,5 @@ class opensimKinematicFitting(object):
 
     def run(self):
 
-        # self.m_ikTool.printToXML(os.getcwd()+"\\IK_SETUP-pyCGM2.xml")
+        # self.m_ikTool.printToXML(os.getcwd()+"/IK_SETUP-pyCGM2.xml")
         self.m_ikTool.run()

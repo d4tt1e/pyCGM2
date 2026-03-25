@@ -23,7 +23,7 @@ else :
         def test_croppedC3d(self):
             NEXUS = ViconNexus.ViconNexus()
 
-            DATA_PATH =  pyCGM2.TEST_DATA_PATH+"NexusAPI\\BtkAcquisitionCreator\\sample0\\"
+            DATA_PATH =  pyCGM2.TEST_DATA_PATH+"NexusAPI/BtkAcquisitionCreator/sample0/"
             filenameNoExt = "gait_cropped"
             NEXUS.OpenTrial( str(DATA_PATH+filenameNoExt), 30 )
             subject = nexusTools.getActiveSubject(NEXUS)
@@ -42,7 +42,7 @@ else :
         def test_croppedC3d_noX2d(self):
             NEXUS = ViconNexus.ViconNexus()
 
-            DATA_PATH =  pyCGM2.TEST_DATA_PATH+"NexusAPI\\BtkAcquisitionCreator\\sample0\\"
+            DATA_PATH =  pyCGM2.TEST_DATA_PATH+"NexusAPI/BtkAcquisitionCreator/sample0/"
             filenameNoExt = "gait_cropped_nox2d"
             NEXUS.OpenTrial( str(DATA_PATH+filenameNoExt), 30 )
             subject = nexusTools.getActiveSubject(NEXUS)
@@ -61,7 +61,7 @@ else :
 
 
 
-            DATA_PATH =  pyCGM2.TEST_DATA_PATH+"NexusAPI\\BtkAcquisitionCreator\\sample0\\"
+            DATA_PATH =  pyCGM2.TEST_DATA_PATH+"NexusAPI/BtkAcquisitionCreator/sample0/"
             filenameNoExt = "gait_noCropped"
             NEXUS.OpenTrial( str(DATA_PATH+filenameNoExt), 30 )
 
@@ -81,7 +81,7 @@ else :
             NEXUS = ViconNexus.ViconNexus()
 
 
-            DATA_PATH =  pyCGM2.TEST_DATA_PATH+"NexusAPI\\BtkAcquisitionCreator\\sample0\\"
+            DATA_PATH =  pyCGM2.TEST_DATA_PATH+"NexusAPI/BtkAcquisitionCreator/sample0/"
             filenameNoExt = "gait_cropped"
             NEXUS.OpenTrial( str(DATA_PATH+filenameNoExt), 30 )
             subject = nexusTools.getActiveSubject(NEXUS)
@@ -118,7 +118,7 @@ else :
             NEXUS = ViconNexus.ViconNexus()
 
 
-            DATA_PATH =  pyCGM2.TEST_DATA_PATH+"NexusAPI\\BtkAcquisitionCreator\\sample0\\"
+            DATA_PATH =  pyCGM2.TEST_DATA_PATH+"NexusAPI/BtkAcquisitionCreator/sample0/"
             filenameNoExt = "gait_cropped"
 
             NEXUS.OpenTrial( str(DATA_PATH+filenameNoExt), 30 )
@@ -160,7 +160,7 @@ else :
             NEXUS = ViconNexus.ViconNexus()
 
 
-            DATA_PATH =  pyCGM2.TEST_DATA_PATH+"NexusAPI\\BtkAcquisitionCreator\\sample0\\"
+            DATA_PATH =  pyCGM2.TEST_DATA_PATH+"NexusAPI/BtkAcquisitionCreator/sample0/"
             filenameNoExt = "gait_cropped_ModelOutputDynamic"
 
             NEXUS.OpenTrial( str(DATA_PATH+filenameNoExt), 30 )
@@ -179,7 +179,7 @@ else :
         #     NEXUS = ViconNexus.ViconNexus()
         #     NEXUS_PYTHON_CONNECTED = NEXUS.Client.IsConnected()
         #
-        #     DATA_PATH =  pyCGM2.TEST_DATA_PATH+"NexusAPI\\BtkAcquisitionCreator\\sample3\\"
+        #     DATA_PATH =  pyCGM2.TEST_DATA_PATH+"NexusAPI/BtkAcquisitionCreator/sample3/"
         #     filenameNoExt = "capture 01"
         #
         #     NEXUS.OpenTrial( str(DATA_PATH+filenameNoExt), 30 )
@@ -198,10 +198,10 @@ else :
         def test_blueTrident(self):
             NEXUS = ViconNexus.ViconNexus()
 
-            DATA_PATH =  pyCGM2.TEST_DATA_PATH+"LowLevel\\IMU\\BlueTrident-markers\\"
+            DATA_PATH =  pyCGM2.TEST_DATA_PATH+"LowLevel/IMU/BlueTrident-markers/"
             filenameNoExt = "pycgm2-data01"
 
-            DATA_PATH =  pyCGM2.TEST_DATA_PATH+"LowLevel\\IMU\\BlueTrident-markers\\"
+            DATA_PATH =  pyCGM2.TEST_DATA_PATH+"LowLevel/IMU/BlueTrident-markers/"
             filenameNoExt = "pycgm2-data01"
 
             NEXUS.OpenTrial( str(DATA_PATH+filenameNoExt), 30 )
@@ -220,7 +220,7 @@ else :
             NEXUS = ViconNexus.ViconNexus()
 
 
-            DATA_PATH =  pyCGM2.TEST_DATA_PATH+"NexusAPI\\BtkAcquisitionCreator\\sample_withx2d\\"
+            DATA_PATH =  pyCGM2.TEST_DATA_PATH+"NexusAPI/BtkAcquisitionCreator/sample_withx2d/"
             filenameNoExt = "gait_noCropped"
             NEXUS.OpenTrial( str(DATA_PATH+filenameNoExt), 30 )
 
@@ -241,7 +241,7 @@ else :
             NEXUS = ViconNexus.ViconNexus()
 
 
-            DATA_PATH =  pyCGM2.TEST_DATA_PATH+"NexusAPI\\BtkAcquisitionCreator\\sample_withx2d\\"
+            DATA_PATH =  pyCGM2.TEST_DATA_PATH+"NexusAPI/BtkAcquisitionCreator/sample_withx2d/"
             filenameNoExt = "gait_cropped"
             NEXUS.OpenTrial( str(DATA_PATH+filenameNoExt), 30 )
 
@@ -264,7 +264,7 @@ else :
 
 
 
-            DATA_PATH =  pyCGM2.TEST_DATA_PATH+"NexusAPI\\BtkAcquisitionCreator\\sample_withx2d\\"
+            DATA_PATH =  pyCGM2.TEST_DATA_PATH+"NexusAPI/BtkAcquisitionCreator/sample_withx2d/"
             filenameNoExt = "gait_noCropped"
             NEXUS.OpenTrial( str(DATA_PATH+filenameNoExt), 30 )
             NEXUS.SetTrialRegionOfInterest(300, 400)
@@ -275,7 +275,7 @@ else :
             nacf = nexusFilters.NexusConstructAcquisitionFilter(NEXUS,DATA_PATH,filenameNoExt,subject)
             acq = nacf.build()
 
-            acq0 = btkTools.smartReader(str(DATA_PATH+ "forCheckingInteractiveCropped\\gait_Cropped - 300-400.c3d"))
+            acq0 = btkTools.smartReader(str(DATA_PATH+ "forCheckingInteractiveCropped/gait_Cropped - 300-400.c3d"))
 
             np.testing.assert_array_almost_equal(acq.GetPoint("LTHI").GetValues(),acq0.GetPoint("LTHI").GetValues(),decimal=2)
             np.testing.assert_array_almost_equal(acq.GetAnalog("Force.Fz1").GetValues(),acq0.GetAnalog("Force.Fz1").GetValues(),decimal=2)
@@ -286,7 +286,7 @@ else :
             NEXUS = ViconNexus.ViconNexus()
 
 
-            DATA_PATH =  pyCGM2.TEST_DATA_PATH+"NexusAPI\\BtkAcquisitionCreator\\sample_withx2d\\"
+            DATA_PATH =  pyCGM2.TEST_DATA_PATH+"NexusAPI/BtkAcquisitionCreator/sample_withx2d/"
             filenameNoExt = "gait_cropped"
             NEXUS.OpenTrial( str(DATA_PATH+filenameNoExt), 30 )
             NEXUS.SetTrialRegionOfInterest(300, 400)
@@ -297,7 +297,7 @@ else :
             nacf = nexusFilters.NexusConstructAcquisitionFilter(NEXUS,DATA_PATH,filenameNoExt,subject)
             acq = nacf.build()
 
-            acq0 = btkTools.smartReader(str(DATA_PATH+ "forCheckingInteractiveCropped\\gait_cropped - 300-400.c3d"))
+            acq0 = btkTools.smartReader(str(DATA_PATH+ "forCheckingInteractiveCropped/gait_cropped - 300-400.c3d"))
 
             np.testing.assert_array_almost_equal(acq.GetPoint("LTHI").GetValues(),acq0.GetPoint("LTHI").GetValues(),decimal=2)
             np.testing.assert_array_almost_equal(acq.GetAnalog("Force.Fz1").GetValues(),acq0.GetAnalog("Force.Fz1").GetValues(),decimal=2)
@@ -312,7 +312,7 @@ else :
             NEXUS = ViconNexus.ViconNexus()
 
 
-            DATA_PATH =  pyCGM2.TEST_DATA_PATH+"NexusAPI\\BtkAcquisitionCreator\\sample_NOx2d\\"
+            DATA_PATH =  pyCGM2.TEST_DATA_PATH+"NexusAPI/BtkAcquisitionCreator/sample_NOx2d/"
             filenameNoExt = "gait_noCropped"
             NEXUS.OpenTrial( str(DATA_PATH+filenameNoExt), 30 )
             # NEXUS.SetTrialRegionOfInterest(300, 400)
@@ -336,7 +336,7 @@ else :
             NEXUS = ViconNexus.ViconNexus()
 
 
-            DATA_PATH =  pyCGM2.TEST_DATA_PATH+"NexusAPI\\BtkAcquisitionCreator\\sample_NOx2d\\"
+            DATA_PATH =  pyCGM2.TEST_DATA_PATH+"NexusAPI/BtkAcquisitionCreator/sample_NOx2d/"
             filenameNoExt = "gait_cropped"
             NEXUS.OpenTrial( str(DATA_PATH+filenameNoExt), 30 )
             # NEXUS.SetTrialRegionOfInterest(300, 400)
@@ -361,7 +361,7 @@ else :
 
 
 
-            DATA_PATH =  pyCGM2.TEST_DATA_PATH+"NexusAPI\\BtkAcquisitionCreator\\sample_NOx2d\\"
+            DATA_PATH =  pyCGM2.TEST_DATA_PATH+"NexusAPI/BtkAcquisitionCreator/sample_NOx2d/"
             filenameNoExt = "gait_noCropped"
             NEXUS.OpenTrial( str(DATA_PATH+filenameNoExt), 30 )
             NEXUS.SetTrialRegionOfInterest(300, 400)
@@ -372,7 +372,7 @@ else :
             nacf = nexusFilters.NexusConstructAcquisitionFilter(NEXUS,DATA_PATH,filenameNoExt,subject)
             acq = nacf.build()
 
-            acq0 = btkTools.smartReader(str(DATA_PATH+ "forCheckingInteractiveCropped\\gait_Cropped - 300-400.c3d"))
+            acq0 = btkTools.smartReader(str(DATA_PATH+ "forCheckingInteractiveCropped/gait_Cropped - 300-400.c3d"))
 
             np.testing.assert_array_almost_equal(acq.GetPoint("LTHI").GetValues(),acq0.GetPoint("LTHI").GetValues(),decimal=2)
             np.testing.assert_array_almost_equal(acq.GetAnalog("Force.Fz1").GetValues(),acq0.GetAnalog("Force.Fz1").GetValues(),decimal=2)
@@ -387,7 +387,7 @@ else :
             NEXUS = ViconNexus.ViconNexus()
 
 
-            DATA_PATH =  pyCGM2.TEST_DATA_PATH+"NexusAPI\\BtkAcquisitionCreator\\sample_NOx2d\\"
+            DATA_PATH =  pyCGM2.TEST_DATA_PATH+"NexusAPI/BtkAcquisitionCreator/sample_NOx2d/"
             filenameNoExt = "gait_cropped"
             NEXUS.OpenTrial( str(DATA_PATH+filenameNoExt), 30 )
             NEXUS.SetTrialRegionOfInterest(300, 400)
@@ -398,7 +398,7 @@ else :
             nacf = nexusFilters.NexusConstructAcquisitionFilter(NEXUS,DATA_PATH,filenameNoExt,subject)
             acq = nacf.build()
 
-            acq0 = btkTools.smartReader(str(DATA_PATH+ "forCheckingInteractiveCropped\\gait_cropped - 300-400.c3d"))
+            acq0 = btkTools.smartReader(str(DATA_PATH+ "forCheckingInteractiveCropped/gait_cropped - 300-400.c3d"))
 
             np.testing.assert_array_almost_equal(acq.GetPoint("LTHI").GetValues(),acq0.GetPoint("LTHI").GetValues(),decimal=2)
             np.testing.assert_array_almost_equal(acq.GetAnalog("Force.Fz1").GetValues(),acq0.GetAnalog("Force.Fz1").GetValues(),decimal=2)

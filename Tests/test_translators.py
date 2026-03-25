@@ -83,10 +83,10 @@ class TestTranslatorScenario:
             """
         translators = files.readContent(contents24)
 
-        MAIN_PATH = pyCGM2.TEST_DATA_PATH + "LowLevel\\translators\\scenario1\\"
+        MAIN_PATH = pyCGM2.TEST_DATA_PATH + "LowLevel/translators/scenario1/"
         staticFilename = "static.c3d"
 
-        DATA_PATH_OUT = pyCGM2.TEST_DATA_PATH_OUT+"LowLevel\\translators\\scenario1\\"
+        DATA_PATH_OUT = pyCGM2.TEST_DATA_PATH_OUT+"LowLevel/translators/scenario1/"
         files.createDir(DATA_PATH_OUT)
 
 
@@ -172,10 +172,10 @@ class TestTranslatorScenario:
             """
         translators = files.readContent(contents24)
 
-        MAIN_PATH = pyCGM2.TEST_DATA_PATH + "LowLevel\\translators\\scenario2\\"
+        MAIN_PATH = pyCGM2.TEST_DATA_PATH + "LowLevel/translators/scenario2/"
         staticFilename = "staticAlana.c3d"
 
-        DATA_PATH_OUT = pyCGM2.TEST_DATA_PATH_OUT+"LowLevel\\translators\\scenario2\\"
+        DATA_PATH_OUT = pyCGM2.TEST_DATA_PATH_OUT+"LowLevel/translators/scenario2/"
         files.createDir(DATA_PATH_OUT)
 
 
@@ -262,10 +262,10 @@ class TestTranslatorScenario:
             """
         translators = files.readContent(contents24)
 
-        MAIN_PATH = pyCGM2.TEST_DATA_PATH + "LowLevel\\translators\\scenario3\\"
+        MAIN_PATH = pyCGM2.TEST_DATA_PATH + "LowLevel/translators/scenario3/"
         staticFilename = "staticAlana.c3d"
 
-        DATA_PATH_OUT = pyCGM2.TEST_DATA_PATH_OUT+"LowLevel\\translators\\scenario3\\"
+        DATA_PATH_OUT = pyCGM2.TEST_DATA_PATH_OUT+"LowLevel/translators/scenario3/"
         files.createDir(DATA_PATH_OUT)
 
 
@@ -348,10 +348,10 @@ class TestTranslatorScenario:
             """
         translators = files.readContent(contents24)
 
-        MAIN_PATH = pyCGM2.TEST_DATA_PATH + "LowLevel\\translators\\scenario4\\"
+        MAIN_PATH = pyCGM2.TEST_DATA_PATH + "LowLevel/translators/scenario4/"
         staticFilename = "staticAlana.c3d"
 
-        DATA_PATH_OUT = pyCGM2.TEST_DATA_PATH_OUT+"LowLevel\\translators\\scenario4\\"
+        DATA_PATH_OUT = pyCGM2.TEST_DATA_PATH_OUT+"LowLevel/translators/scenario4/"
         files.createDir(DATA_PATH_OUT)
 
 
@@ -370,10 +370,10 @@ class TestTranslatorScenario:
 class TestConcreteScenario_tests():
 
     def test_cgm1_sacrum(self):
-        MAIN_PATH = pyCGM2.TEST_DATA_PATH + "LowLevel\\translators\\cgm1-sacr\\"
+        MAIN_PATH = pyCGM2.TEST_DATA_PATH + "LowLevel/translators/cgm1-sacr/"
         staticFilename = "static.c3d"
 
-        DATA_PATH_OUT = pyCGM2.TEST_DATA_PATH_OUT+"LowLevel\\translators\\cgm1-sacr\\"
+        DATA_PATH_OUT = pyCGM2.TEST_DATA_PATH_OUT+"LowLevel/translators/cgm1-sacr/"
         files.createDir(DATA_PATH_OUT)
 
 
@@ -450,10 +450,10 @@ class TestConcreteScenario_tests():
             """
         translators = files.readContent(contents24)
 
-        MAIN_PATH = pyCGM2.TEST_DATA_PATH + "LowLevel\\translators\\cgm2.5\\"
+        MAIN_PATH = pyCGM2.TEST_DATA_PATH + "LowLevel/translators/cgm2.5/"
         staticFilename = "static.c3d"
 
-        DATA_PATH_OUT = pyCGM2.TEST_DATA_PATH_OUT+"LowLevel\\translators\\cgm2.5\\"
+        DATA_PATH_OUT = pyCGM2.TEST_DATA_PATH_OUT+"LowLevel/translators/cgm2.5/"
         files.createDir(DATA_PATH_OUT)
 
 

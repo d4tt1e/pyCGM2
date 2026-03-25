@@ -90,7 +90,7 @@ class StaticOptimisationXmlProcedure(opensimProcedures.OpensimInterfaceXmlProced
         self.m_frameRange = [int((self.m_beginTime*self.m_freq)+self.m_ff),int((self.m_endTime*self.m_freq)+self.m_ff)] 
 
         opensimTools.footReactionMotFile(
-            self.m_acq, self.m_DATA_PATH+self.m_resultsDir+"\\"+self.m_dynamicFile+"_grf.mot",
+            self.m_acq, self.m_DATA_PATH+self.m_resultsDir+"/"+self.m_dynamicFile+"_grf.mot",
             self.m_progressionAxis,self.m_forwardProgression,mfpa = self.m_mfpa)
 
 
@@ -186,12 +186,12 @@ class StaticOptimisationXmlCgmProcedure(StaticOptimisationXmlProcedure):
         self.m_modelVersion = modelVersion.replace(".", "") if modelVersion is not None else "UnversionedModel"
 
         if self.m_modelVersion == "CGM23":
-            analysisToolTemplateFile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface\\setup\\CGM23\\CGM23-soSetup_template.xml"
-            externalLoadTemplateFile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface\\setup\\walk_grf.xml"
+            analysisToolTemplateFile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface/setup/CGM23/CGM23-soSetup_template.xml"
+            externalLoadTemplateFile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface/setup/walk_grf.xml"
 
         if self.m_modelVersion == "CGM22":
-            analysisToolTemplateFile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface\\setup\\CGM22\\CGM22-soSetup_template.xml"
-            externalLoadTemplateFile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface\\setup\\walk_grf.xml"
+            analysisToolTemplateFile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface/setup/CGM22/CGM22-soSetup_template.xml"
+            externalLoadTemplateFile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface/setup/walk_grf.xml"
 
 
         self.m_soTool = self.m_DATA_PATH + self.m_modelVersion + "-SOTool-setup.xml"

@@ -11,7 +11,7 @@ LOGGER = pyCGM2.LOGGER
 from pyCGM2.Lib import emg
 from pyCGM2.Utils import files
 
-LAYOUT_PATH = "C:\\Users\\fleboeuf\\Documents\\2. AREA OF RESPONSABILITY\\Programmation\\pyCGM2\\pyCGM2\\pyCGM2\\Mek\\layout\\"
+LAYOUT_PATH = "C:/Users/fleboeuf/Documents/2. AREA OF RESPONSABILITY/Programmation/pyCGM2/pyCGM2/pyCGM2/Mek/layout/"
 
 try:
     import moveck
@@ -45,7 +45,7 @@ if MOVECK_AVAILABLE:
         
         def test_mekViconTransform(self):
 
-            path = pyCGM2.TEST_DATA_PATH + "NantesSamples\AQM Adultes\\BOUCHE Alain\\Session 1\\"
+            path = pyCGM2.TEST_DATA_PATH + "NantesSamples\AQM Adultes/BOUCHE Alain/Session 1/"
             modelledFilenames = ["20260203-AB-PRE-S-NNCN-dyn 01.c3d"]
 
             ds = moveck.data_store()
@@ -60,7 +60,7 @@ if MOVECK_AVAILABLE:
     class Test_mekFlow:
         def test_readSettings(self):
 
-            path = pyCGM2.TEST_DATA_PATH+"mek\\storageSample\\"
+            path = pyCGM2.TEST_DATA_PATH+"mek/storageSample/"
 
             storagefilter = mekInit.mekInitStorageFilter(storagePathFile=path+"019146680-zaidi-storage-multiSessionsAndConditions.h5")
             ds = storagefilter.getStorage()
@@ -77,11 +77,11 @@ if MOVECK_AVAILABLE:
     class Test_mekScheme:
         def test_gaitScheme(self):
 
-            # path = pyCGM2.TEST_DATA_PATH + "mek\\gaitdata\\"
+            # path = pyCGM2.TEST_DATA_PATH + "mek/gaitdata/"
             # modelledFilenames = ["gait Trial 01.c3d","gait Trial 02.c3d"]
 
 
-            path = pyCGM2.TEST_DATA_PATH + "Nantes\\OSMANOV Akhmed\\Session 3\\"
+            path = pyCGM2.TEST_DATA_PATH + "Nantes/OSMANOV Akhmed/Session 3/"
             modelledFilenames = ["20201209-AO-PONC-S-NNNN-dyn 05.c3d","20201209-AO-PONC-S-NNNN-dyn 06.c3d"]
 
             userSettings = files.openFile(path,"CGM23.userSettings")
@@ -91,7 +91,7 @@ if MOVECK_AVAILABLE:
             ds = storagefilter.getStorage()
 
 
-            osimInterface = opensimInterface.osimInterface(pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface\\CGM23\\", "pycgm2-gait2354_simbody.osim")
+            osimInterface = opensimInterface.osimInterface(pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface/CGM23/", "pycgm2-gait2354_simbody.osim")
             muscleDict = osimInterface.getMuscles_bySide(addToName="[MuscleLength]")
 
             # preparation
@@ -137,7 +137,7 @@ if MOVECK_AVAILABLE:
 
     class Test_mekLib:
         def test_iter(self):
-            path = pyCGM2.TEST_DATA_PATH + "mek\\storageSample\\"
+            path = pyCGM2.TEST_DATA_PATH + "mek/storageSample/"
             ds = moveck.data_store(path+"storage.h5")
 
             group = ds.root().retrieve_group("Session 2/Analysis 1/Condition1")
@@ -151,7 +151,7 @@ if MOVECK_AVAILABLE:
 
 
         def test_gather(self):
-            path = pyCGM2.TEST_DATA_PATH + "mek\\storageSample\\"
+            path = pyCGM2.TEST_DATA_PATH + "mek/storageSample/"
             ds = moveck.data_store(path+"storage.h5")
 
             group = ds.root().retrieve_group("Session 2/Analysis 1/Condition1")
@@ -160,7 +160,7 @@ if MOVECK_AVAILABLE:
             values[:, :, 0].mean(axis=0) # return frame by frame mean of col #0
 
         def test_gatherStp(self):
-            path = pyCGM2.TEST_DATA_PATH + "mek\\gaitdata\\"
+            path = pyCGM2.TEST_DATA_PATH + "mek/gaitdata/"
             ds = moveck.data_store(path+"storage2.h5")
 
             group = ds.root().retrieve_group("Session 1/Analysis 1/MultiConditions/SpatioTemporalParameters")
@@ -175,9 +175,9 @@ if MOVECK_AVAILABLE:
 
         def test_plotKinematicsDescriptive(self):
             
-            # path = pyCGM2.TEST_DATA_PATH + "mek\\storageSample\\"
+            # path = pyCGM2.TEST_DATA_PATH + "mek/storageSample/"
             # ds = moveck.data_store(path+"storage.h5")
-            path = "C:\\Users\\fleboeuf\\Documents\\DATA\\pyCGM2-Data-Tests\\flow\\Nantes\\ESNAULT Oceane\\"#pyCGM2.TEST_DATA_PATH + "mek\\storageSample\\"
+            path = "C:/Users/fleboeuf/Documents/DATA/pyCGM2-Data-Tests/flow/Nantes/ESNAULT Oceane/"#pyCGM2.TEST_DATA_PATH + "mek/storageSample/"
             ds = moveck.data_store(path+"010280945-storage.h5")
 
             group = ds.root().retrieve_group("Session 2/Analysis 1/Condition1")
@@ -196,9 +196,9 @@ if MOVECK_AVAILABLE:
         def test_plotKineticsDescriptive(self):
 
 
-            path = "C:\\Users\\fleboeuf\\Documents\\DATA\\pyCGM2-Data-Tests\\flow\\Nantes\\ESNAULT Oceane\\"#pyCGM2.TEST_DATA_PATH + "mek\\storageSample\\"
+            path = "C:/Users/fleboeuf/Documents/DATA/pyCGM2-Data-Tests/flow/Nantes/ESNAULT Oceane/"#pyCGM2.TEST_DATA_PATH + "mek/storageSample/"
             ds = moveck.data_store(path+"010280945-storage.h5")            
-            # path = pyCGM2.TEST_DATA_PATH + "mek\\storageSample\\"
+            # path = pyCGM2.TEST_DATA_PATH + "mek/storageSample/"
             # ds = moveck.data_store(path+"storage.h5")
 
             group = ds.root().retrieve_group("Session 2/Analysis 1/Condition1")
@@ -215,9 +215,9 @@ if MOVECK_AVAILABLE:
 
         def test_plotKinematicsConsistency(self):
             
-            # path = pyCGM2.TEST_DATA_PATH + "mek\\storageSample\\"
+            # path = pyCGM2.TEST_DATA_PATH + "mek/storageSample/"
             # ds = moveck.data_store(path+"storage.h5")
-            path = "C:\\Users\\fleboeuf\\Documents\\DATA\\pyCGM2-Data-Tests\\flow\\Nantes\\ESNAULT Oceane\\"#pyCGM2.TEST_DATA_PATH + "mek\\storageSample\\"
+            path = "C:/Users/fleboeuf/Documents/DATA/pyCGM2-Data-Tests/flow/Nantes/ESNAULT Oceane/"#pyCGM2.TEST_DATA_PATH + "mek/storageSample/"
             ds = moveck.data_store(path+"010280945-storage.h5")
 
             group = ds.root().retrieve_group("Session 2/Analysis 1/Condition1")
@@ -236,9 +236,9 @@ if MOVECK_AVAILABLE:
         def test_plotKineticsConsistency(self):
 
 
-            path = "C:\\Users\\fleboeuf\\Documents\\DATA\\pyCGM2-Data-Tests\\flow\\Nantes\\ESNAULT Oceane\\"#pyCGM2.TEST_DATA_PATH + "mek\\storageSample\\"
+            path = "C:/Users/fleboeuf/Documents/DATA/pyCGM2-Data-Tests/flow/Nantes/ESNAULT Oceane/"#pyCGM2.TEST_DATA_PATH + "mek/storageSample/"
             ds = moveck.data_store(path+"010280945-storage.h5")            
-            # path = pyCGM2.TEST_DATA_PATH + "mek\\storageSample\\"
+            # path = pyCGM2.TEST_DATA_PATH + "mek/storageSample/"
             # ds = moveck.data_store(path+"storage.h5")
 
             group = ds.root().retrieve_group("Session 2/Analysis 1/Condition1")
@@ -261,7 +261,7 @@ if MOVECK_AVAILABLE:
 
 
 
-            path = "C:\\Users\\fleboeuf\\Documents\\DATA\\pyCGM2-Data-Tests\\flow\\Nantes\\ESNAULT Oceane\\"#pyCGM2.TEST_DATA_PATH + "mek\\storageSample\\"
+            path = "C:/Users/fleboeuf/Documents/DATA/pyCGM2-Data-Tests/flow/Nantes/ESNAULT Oceane/"#pyCGM2.TEST_DATA_PATH + "mek/storageSample/"
             ds = moveck.data_store(path+"010280945-storage.h5")
 
 
@@ -299,7 +299,7 @@ if MOVECK_AVAILABLE:
 
 
             
-            path = pyCGM2.TEST_DATA_PATH + "mek\\storageSample\\"
+            path = pyCGM2.TEST_DATA_PATH + "mek/storageSample/"
             ds = moveck.data_store(path+"010280945-storage.h5")
 
 

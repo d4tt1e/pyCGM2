@@ -16,13 +16,13 @@ class Test_forcePlateTypes():
 
     def test_forcePlateType4(self):
 
-        DATA_PATH =  pyCGM2.TEST_DATA_PATH + "LowLevel\\ForcePlate\\ForcePlateTypeManagement\\"
+        DATA_PATH =  pyCGM2.TEST_DATA_PATH + "LowLevel/ForcePlate/ForcePlateTypeManagement/"
         acq = btkTools.smartReader(DATA_PATH+"Qualisys-bertec ForcePlate4.c3d")
         btkTools.smartWriter(acq,"test.c3d")
 
     def test_forcePlateBertec3digital(self):
 
-        DATA_PATH =  pyCGM2.TEST_DATA_PATH + "Issues\\issue_digitalBertec_3FP\\Bertec data\\"
+        DATA_PATH =  pyCGM2.TEST_DATA_PATH + "Issues/issue_digitalBertec_3FP/Bertec data/"
         acq = btkTools.smartReader(DATA_PATH+"Gait LB - CGM2 2-fromQTM.c3d")
         btkTools.smartWriter(acq,DATA_PATH+"test.c3d")
 

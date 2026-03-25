@@ -14,7 +14,7 @@ from pyCGM2.Utils import testingUtils
 class Test_FullBody:
 
     def test_FullBody_noOptions_distal(self):
-        DATA_PATH = pyCGM2.TEST_DATA_PATH + "GaitModels\\CGM1\\fullBody-native-noOptions\\"
+        DATA_PATH = pyCGM2.TEST_DATA_PATH + "GaitModels/CGM1/fullBody-native-noOptions/"
         staticFilename = "static.c3d"
 
         markerDiameter=14
@@ -116,7 +116,7 @@ class Test_FullBody:
         # testingUtils.plotComparison_ForcePanel(acqGait,None,"test","Right")
 
     def test_FullBody_noOptions_proximal(self):
-        DATA_PATH = pyCGM2.TEST_DATA_PATH + "GaitModels\\CGM1\\fullBody-native-noOptions\\"
+        DATA_PATH = pyCGM2.TEST_DATA_PATH + "GaitModels/CGM1/fullBody-native-noOptions/"
         staticFilename = "static.c3d"
 
 
@@ -215,7 +215,7 @@ class Test_FullBody:
 
 
     def test_FullBody_noOptions_global(self):
-        DATA_PATH = pyCGM2.TEST_DATA_PATH + "GaitModels\\CGM1\\fullBody-native-noOptions\\"
+        DATA_PATH = pyCGM2.TEST_DATA_PATH + "GaitModels/CGM1/fullBody-native-noOptions/"
         staticFilename = "static.c3d"
 
 
@@ -317,7 +317,7 @@ class Test_LowerBody_progressionY:
 
 
     def test_LowerBody_noOptions_distal(self):
-        DATA_PATH = pyCGM2.TEST_DATA_PATH + "GaitModels\\CGM1\\LowerLimb-medMed_Yprogression\\"
+        DATA_PATH = pyCGM2.TEST_DATA_PATH + "GaitModels/CGM1/LowerLimb-medMed_Yprogression/"
         staticFilename = "static.c3d"
 
         markerDiameter=14
@@ -413,7 +413,7 @@ class Test_LowerBody_progressionY:
         testingUtils.test_point_rms(acqGait,"RHipMoment","RHipMoment_test",60.0,init = 380, end = 502)
 
     def test_LowerBody_noOptions_global(self):
-        DATA_PATH = pyCGM2.TEST_DATA_PATH + "GaitModels\\CGM1\\LowerLimb-medMed_Yprogression\\"
+        DATA_PATH = pyCGM2.TEST_DATA_PATH + "GaitModels/CGM1/LowerLimb-medMed_Yprogression/"
         staticFilename = "static.c3d"
 
         markerDiameter=14
@@ -511,7 +511,7 @@ class Test_LowerBody_progressionY:
         testingUtils.test_point_rms(acqGait,"RHipMoment","RHipMoment_test",60.0,init = 380, end = 502)
 
     def test_LowerBody_noOptions_proximal(self):
-        DATA_PATH = pyCGM2.TEST_DATA_PATH + "GaitModels\\CGM1\\LowerLimb-medMed_Yprogression\\"
+        DATA_PATH = pyCGM2.TEST_DATA_PATH + "GaitModels/CGM1/LowerLimb-medMed_Yprogression/"
         staticFilename = "static.c3d"
 
         markerDiameter=14

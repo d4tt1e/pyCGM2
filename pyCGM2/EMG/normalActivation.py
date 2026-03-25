@@ -26,7 +26,7 @@ def getNormalBurstActivity(muscle:str, fo:int):
     """
 
     normalActivations = files.openJson(
-        pyCGM2.NORMATIVE_DATABASE_PATH+"emg\\", "normalActivation.json")
+        pyCGM2.NORMATIVE_DATABASE_PATH+"emg/", "normalActivation.json")
 
     NORMAL_STANCE_PHASE = normalActivations["NORMAL_STANCE_PHASE"]
     TABLE = normalActivations["Activation"]
@@ -92,7 +92,7 @@ def getNormalBurstActivity_fromCycles(muscle:str,
     """
 
     normalActivations = files.openJson(
-        pyCGM2.NORMATIVE_DATABASE_PATH+"emg\\", "normalActivation.json")
+        pyCGM2.NORMATIVE_DATABASE_PATH+"emg/", "normalActivation.json")
 
     NORMAL_STANCE_PHASE = normalActivations["NORMAL_STANCE_PHASE"]
     TABLE = normalActivations["Activation"]

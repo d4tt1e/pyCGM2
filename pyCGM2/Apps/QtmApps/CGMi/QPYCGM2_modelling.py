@@ -46,7 +46,7 @@ def main(args=None):
 
     
     #---------------------------------------------------------------------------
-    DATA_PATH = str(sessionFolder)+"\\"
+    DATA_PATH = str(sessionFolder)+"/"
     sessionXML = files.readXml(DATA_PATH, sessionFilename)
     CGM2_Model = sessionXML.Subsession.CGM2_Model.text
     if "CGM2.6" in CGM2_Model:
@@ -93,21 +93,21 @@ def main(args=None):
 
     #  translators management
     if CGM2_Model == "CGM1.0":
-        translators = files.getTranslators(os.getcwd()+"\\", "CGM1.translators")
+        translators = files.getTranslators(os.getcwd()+"/", "CGM1.translators")
     elif CGM2_Model == "CGM1.1":
-        translators = files.getTranslators(os.getcwd()+"\\", "CGM1_1.translators")
+        translators = files.getTranslators(os.getcwd()+"/", "CGM1_1.translators")
     elif CGM2_Model == "CGM2.1-HJC":
-        translators = files.getTranslators(os.getcwd()+"\\", "CGM2_1.translators")
+        translators = files.getTranslators(os.getcwd()+"/", "CGM2_1.translators")
     elif CGM2_Model == "CGM2.2-IK":
-        translators = files.getTranslators(os.getcwd()+"\\", "CGM2_2.translators")
+        translators = files.getTranslators(os.getcwd()+"/", "CGM2_2.translators")
     elif CGM2_Model == "CGM2.3-skinClusters":
-        translators = files.getTranslators(os.getcwd()+"\\", "CGM2_3.translators")
+        translators = files.getTranslators(os.getcwd()+"/", "CGM2_3.translators")
     elif CGM2_Model == "CGM2.4-ForeFoot":
-        translators = files.getTranslators(os.getcwd()+"\\", "CGM2_4.translators")
+        translators = files.getTranslators(os.getcwd()+"/", "CGM2_4.translators")
     elif CGM2_Model == "CGM2.5-UpperLimb":
-        translators = files.getTranslators(os.getcwd()+"\\", "CGM2_5.translators")
+        translators = files.getTranslators(os.getcwd()+"/", "CGM2_5.translators")
     elif CGM2_Model == "CGM2.6-Knee Calibration":
-        translators = files.getTranslators(os.getcwd()+"\\", "CGM2_5.translators")
+        translators = files.getTranslators(os.getcwd()+"/", "CGM2_5.translators")
     if not translators:
         translators = settings["Translators"]
 
@@ -254,12 +254,12 @@ def main(args=None):
 
         LOGGER.logger.info("--------------------------Knee Calibration ----------------------------------")
 
-        # if os.getcwd() + "\\" != DATA_PATH: # since cwd and data path are not related anymore, this is obsolete
+        # if os.getcwd() + "/" != DATA_PATH: # since cwd and data path are not related anymore, this is obsolete
         #     if leftKneeFuncMeasurement is not None:
-        #         shutil.copyfile(os.getcwd()+"\\"+qtmTools.getFilename(leftKneeFuncMeasurement),
+        #         shutil.copyfile(os.getcwd()+"/"+qtmTools.getFilename(leftKneeFuncMeasurement),
         #                         DATA_PATH+qtmTools.getFilename(leftKneeFuncMeasurement))
         #     if rightKneeFuncMeasurement is not None:
-        #         shutil.copyfile(os.getcwd()+"\\"+qtmTools.getFilename(rightKneeFuncMeasurement),
+        #         shutil.copyfile(os.getcwd()+"/"+qtmTools.getFilename(rightKneeFuncMeasurement),
         #                         DATA_PATH+qtmTools.getFilename(rightKneeFuncMeasurement))
 
         if leftKneeFuncMeasurement is not None:
@@ -518,7 +518,7 @@ def main(args=None):
     else:
         LOGGER.logger.info("workflow return with no detected anomalies")
 
-    # os.startfile( os.getcwd()+"\\"+ LOGFILE)
+    # os.startfile( os.getcwd()+"/"+ LOGFILE)
 
 
 if __name__ == '__main__':

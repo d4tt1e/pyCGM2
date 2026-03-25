@@ -1708,7 +1708,7 @@ def plot_DescriptiveGRF(DATA_PATH:str,analysis:Analysis,normativeDataset:Normati
 
     .. code-block:: python
 
-        plot_DescriptiveKinematic("c:\\mydata\\",analysisInstance,"LowerLimb",normativeInstance)
+        plot_DescriptiveKinematic("c:/mydata/",analysisInstance,"LowerLimb",normativeInstance)
 
     """
     if OUT_PATH is None:
@@ -1775,7 +1775,7 @@ def plot_ConsistencyGRF(DATA_PATH:str,analysis:Analysis,normativeDataset:Normati
 
     .. code-block:: python
 
-        plot_DescriptiveKinematic("c:\\mydata\\",analysisInstance,"LowerLimb",normativeInstance)
+        plot_DescriptiveKinematic("c:/mydata/",analysisInstance,"LowerLimb",normativeInstance)
 
     """
     if OUT_PATH is None:
@@ -1995,7 +1995,7 @@ def plotSaggitalGagePanel(DATA_PATH:str,
 
 #     .. code-block:: python
 
-#         plot_DescriptiveKinematic("c:\\mydata\\",analysisInstance,"LowerLimb",normativeInstance)
+#         plot_DescriptiveKinematic("c:/mydata/",analysisInstance,"LowerLimb",normativeInstance)
 
 #     """
 #     if OUT_PATH is None:

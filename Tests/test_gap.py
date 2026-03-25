@@ -16,7 +16,7 @@ class Test_gap:
     def test_kalman(self):
 
 
-        MAIN_PATH = pyCGM2.TEST_DATA_PATH + "LowLevel\\gapFilling\\gaitData\\"
+        MAIN_PATH = pyCGM2.TEST_DATA_PATH + "LowLevel/gapFilling/gaitData/"
 
 
         gaitFilename="gait Trial 01.c3d"
@@ -34,7 +34,7 @@ class Test_gap:
     def test_gloersen(self):
 
 
-        MAIN_PATH = pyCGM2.TEST_DATA_PATH + "LowLevel\\gapFilling\\gaitData\\"
+        MAIN_PATH = pyCGM2.TEST_DATA_PATH + "LowLevel/gapFilling/gaitData/"
 
 
         gaitFilename="gait Trial 01.c3d"

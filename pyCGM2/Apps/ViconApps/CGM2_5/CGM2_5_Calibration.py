@@ -64,7 +64,7 @@ def main(args=None):
             DATA_PATH, calibrateFilenameLabelledNoExt = nexusTools.getTrialName(NEXUS)
             calibrateFilenameLabelled = calibrateFilenameLabelledNoExt+".c3d"
         else:
-            DATA_PATH = os.getcwd()+"\\"
+            DATA_PATH = os.getcwd()+"/"
             calibrateFilenameLabelled = args.offline[1]
             if not os.path.exists(DATA_PATH+calibrateFilenameLabelled):
                 raise Exception("[pyCGM2]  file [%s] not found in the folder"%(calibrateFilenameLabelled))

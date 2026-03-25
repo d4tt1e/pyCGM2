@@ -42,7 +42,7 @@ def loadSettings(DATA_PATH:str,settingFile:str,subfolder:str=""):
         LOGGER.logger.warning(
             "[pyCGM2]: settings [%s] detected in the data folder"%(settingFile))
     else:
-        settings = openFile(pyCGM2.PYCGM2_SETTINGS_FOLDER+subfolder, settingFile)
+        settings = openFile(os.path.join(pyCGM2.PYCGM2_SETTINGS_FOLDER, subfolder) if subfolder else pyCGM2.PYCGM2_SETTINGS_FOLDER, settingFile)
 
     return settings
 
@@ -84,8 +84,8 @@ def openFile(path:str,filename:str):
         path =  getDirname(filename)
         filename =  getFilename(filename)
 
-    if os.path.isfile( (path + filename)):
-        content = open((path+filename)).read()
+    if os.path.isfile(os.path.join(path, filename)):
+        content = open(os.path.join(path, filename)).read()
 
         jsonFlag = is_json(content)
         yamlFlag = is_yaml(content)
@@ -126,7 +126,7 @@ def openJson(path:str,filename:str):
         if path is None:
             jsonStuct= json.loads(open((filename)).read(),object_pairs_hook=OrderedDict)
         else:
-            jsonStuct= json.loads(open((path+filename)).read(),object_pairs_hook=OrderedDict)
+            jsonStuct= json.loads(open(os.path.join(path, filename)).read(),object_pairs_hook=OrderedDict)
         return jsonStuct
     except :
         raise Exception ("[pyCGM2] : json syntax of file (%s) is incorrect. check it" %(filename))
@@ -151,7 +151,7 @@ def openYaml(path:str,filename:str):
         if path is None:
             struct = yaml.load(open((filename)).read(),Loader=yamlordereddictloader.Loader)
         else:
-            struct= yaml.load(open((path+filename)).read(),Loader=yamlordereddictloader.Loader)
+            struct= yaml.load(open(os.path.join(path, filename)).read(),Loader=yamlordereddictloader.Loader)
         return struct
     except :
         raise Exception ("[pyCGM2] : yaml syntax of file (%s) is incorrect. check it" %(filename))
@@ -169,7 +169,7 @@ def openPickleFile(path:str,filename:str):
     """
 
 
-    with open(path+filename, 'rb') as f:
+    with open(os.path.join(path, filename), 'rb') as f:
         content = pickle.load(f)
 
     return content
@@ -184,11 +184,11 @@ def savePickleFile(instance:object,path:str,filename:str):
         filename (str): The filename for the saved file.
     """
 
-    if os.path.isfile((path + filename)):
+    if os.path.isfile(os.path.join(path, filename)):
         LOGGER.logger.info("previous file removed")
-        os.remove((path + filename))
+        os.remove(os.path.join(path, filename))
 
-    with open(path+filename, "wb") as FILE:
+    with open(os.path.join(path, filename), "wb") as FILE:
         pickle.dump(instance, FILE)
 
 
@@ -243,10 +243,10 @@ def loadModel(path:str,FilenameNoExt:str):
         filename = "pyCGM2.model"
 
     # --------------------pyCGM2 MODEL ------------------------------
-    if not os.path.isfile((path + filename)):
+    if not os.path.isfile(os.path.join(path, filename)):
         raise Exception ("%s-pyCGM2.model file doesn't exist. Run CGM Calibration operation"%filename)
     else:
-        with open(path+filename, 'rb') as f:
+        with open(os.path.join(path, filename), 'rb') as f:
             model = pickle.load(f)
 
         return model
@@ -267,11 +267,11 @@ def saveModel(model:Model,path:str,FilenameNoExt:str):
         filename = "pyCGM2.model"
 
     #pyCGM2.model
-    if os.path.isfile((path + filename)):
+    if os.path.isfile(os.path.join(path, filename)):
         LOGGER.logger.info("previous model removed")
-        os.remove((path + filename))
+        os.remove(os.path.join(path, filename))
 
-    with open(path+filename, "wb") as modelFile:
+    with open(os.path.join(path, filename), "wb") as modelFile:
         pickle.dump(model, modelFile)
     # modelFile.close()
 
@@ -296,10 +296,10 @@ def loadAnalysis(path:str,FilenameNoExt:str):
         filename = "pyCGM2.analysis"
 
     # --------------------pyCGM2 MODEL ------------------------------
-    if not os.path.isfile((path + filename)):
+    if not os.path.isfile(os.path.join(path, filename)):
         raise Exception ("%s-pyCGM2.analysis file doesn't exist"%filename)
     else:
-        with open(path+filename, 'rb') as f:
+        with open(os.path.join(path, filename), 'rb') as f:
             analysis = pickle.load(f)
 
         return analysis
@@ -319,11 +319,11 @@ def saveAnalysis(analysisInstance:Analysis,path:str,FilenameNoExt:str):
         filename = "pyCGM2.analysis"
 
     #pyCGM2.model
-    if os.path.isfile((path + filename)):
+    if os.path.isfile(os.path.join(path, filename)):
         LOGGER.logger.info("previous analysis removed")
-        os.remove((path + filename))
+        os.remove(os.path.join(path, filename))
 
-    with open(path+filename, "wb") as analysisFile:
+    with open(os.path.join(path, filename), "wb") as analysisFile:
         pickle.dump(analysisInstance, analysisFile)
     # modelFile.close()
 
@@ -345,7 +345,7 @@ def saveJson(path:str, filename:str, content:Dict,ensure_ascii:bool=False):
         with open((filename), 'w') as outfile:
             json.dump(content, outfile,indent=4,ensure_ascii=ensure_ascii)
     else:
-        with open((path+filename), 'w') as outfile:
+        with open(os.path.join(path, filename), 'w') as outfile:
             json.dump(content, outfile,indent=4,ensure_ascii=ensure_ascii)
 
 def saveYaml(path:str, filename:str, content:Dict):
@@ -367,7 +367,7 @@ def saveYaml(path:str, filename:str, content:Dict):
         with open((filename), 'w') as outfile:
             yaml.dump(content, outfile,indent=4,default_flow_style=False)
     else:
-        with open((path+filename), 'w') as outfile:
+        with open(os.path.join(path, filename), 'w') as outfile:
             yaml.dump(content, outfile,indent=4,default_flow_style=False)
 
 
@@ -431,8 +431,8 @@ def getMpFileContent(DATA_PATH:str,file:str,subject:str):
     else:
         out = file
 
-    if not os.path.isfile( (DATA_PATH + file)):
-        copyfile((pyCGM2.PYCGM2_SETTINGS_FOLDER+file), (DATA_PATH + out))
+    if not os.path.isfile(os.path.join(DATA_PATH, file)):
+        copyfile(os.path.join(pyCGM2.PYCGM2_SETTINGS_FOLDER, file), os.path.join(DATA_PATH, out))
         LOGGER.logger.info("Copy of %s from pyCGM2 Settings folder"%(file))
 
     content = openFile(DATA_PATH,out)
@@ -647,20 +647,20 @@ def copySessionFolder(folderPath:str, folder2copy:str, newFolder:str, selectedFi
     """
 
 
-    if not os.path.isdir((folderPath+"\\"+newFolder)):
-        os.makedirs((folderPath+"\\"+newFolder))
+    if not os.path.isdir((folderPath+"/"+newFolder)):
+        os.makedirs((folderPath+"/"+newFolder))
 
-    for file in os.listdir((folderPath+"\\"+folder2copy)):
+    for file in os.listdir((folderPath+"/"+folder2copy)):
         if file.endswith(".Session.enf"):
-            src = (folderPath+"\\"+folder2copy+"\\" +file)
-            dst = (folderPath+"\\"+newFolder+"\\" +newFolder+".Session.enf")
+            src = (folderPath+"/"+folder2copy+"/" +file)
+            dst = (folderPath+"/"+newFolder+"/" +newFolder+".Session.enf")
 
             shutil.copyfile(src, dst)
         else:
             if selectedFiles is None:
                 fileToCopy = file
-                src = (folderPath+"\\"+folder2copy+"\\" +fileToCopy)
-                dst = (folderPath+"\\"+newFolder+"\\" + fileToCopy)
+                src = (folderPath+"/"+folder2copy+"/" +fileToCopy)
+                dst = (folderPath+"/"+newFolder+"/" + fileToCopy)
 
                 shutil.copyfile(src, dst)
 
@@ -669,8 +669,8 @@ def copySessionFolder(folderPath:str, folder2copy:str, newFolder:str, selectedFi
                 if file in selectedFiles:
                     fileToCopy = file
 
-                    src = (folderPath+"\\"+folder2copy+"\\" +fileToCopy)
-                    dst = (folderPath+"\\"+newFolder+"\\" + fileToCopy)
+                    src = (folderPath+"/"+folder2copy+"/" +fileToCopy)
+                    dst = (folderPath+"/"+newFolder+"/" + fileToCopy)
 
                     shutil.copyfile(src, dst)
 
@@ -685,12 +685,12 @@ def createDir(fullPathName:str):
         str: The full path of the created directory.
     """
     fullPathName = fullPathName
-    pathOut = fullPathName[:-1] if fullPathName[-1:]=="\\" else fullPathName
+    pathOut = fullPathName[:-1] if fullPathName[-1:]=="/" else fullPathName
     if not os.path.isdir((pathOut)):
         os.makedirs((pathOut))
     else:
         LOGGER.logger.info("directory already exists")
-    return pathOut+"\\"
+    return pathOut+"/"
 
 def getDirs(folderPath:str, contain:Optional[str]=None, pattern: Optional[str] = None):
     """
@@ -701,13 +701,13 @@ def getDirs(folderPath:str, contain:Optional[str]=None, pattern: Optional[str] =
         contain (str, optional): If specified, only subdirectories containing this string will be returned. Defaults to None.
         pattern (str, optional): If specified, only subdirectories matching this regex pattern will be returned. Defaults to None.  
 
-    Example:getDirs("C:\\Data\\", contain="Session", pattern= r"Session [0-9]+")     
+    Example:getDirs("C:/Data/", contain="Session", pattern= r"Session [0-9]+")     
 
     Returns:
         List[str]: A list of subdirectory names.
     """
     folderPath = folderPath
-    pathOut = folderPath[:-1] if folderPath[-1:]=="\\" else folderPath
+    pathOut = folderPath[:-1] if folderPath[-1:]=="/" else folderPath
     dirs = [ name for name in os.listdir(pathOut) if os.path.isdir(os.path.join(pathOut, name)) ]
 
     if contain is not None:

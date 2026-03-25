@@ -13,7 +13,7 @@ from pyCGM2.Processing.Representative import representativeFilters, representati
 
 
 def dataTest1():
-    DATA_PATH = pyCGM2.TEST_DATA_PATH + "GaitData//CGM1-NormalGaitData-Events//Hannibal Lecter\\"
+    DATA_PATH = pyCGM2.TEST_DATA_PATH + "GaitData//CGM1-NormalGaitData-Events//Hannibal Lecter/"
     modelledFilenames = ["gait Trial 01.c3d", "gait Trial 02.c3d"]
     analysisInstance = analysis.makeAnalysis(DATA_PATH,
                         modelledFilenames,

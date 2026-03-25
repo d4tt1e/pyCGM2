@@ -21,7 +21,7 @@ from pyCGM2.Lib.CGM import cgm2_3, cgm2_5
 class Test_qualisysIssues:
     def test_3digitalBertecFp(self):
         
-        DATA_PATH = pyCGM2.TEST_DATA_PATH + "Issues\\qualisys\\issue_digitalBertec_3FP\\Bertec data\\"
+        DATA_PATH = pyCGM2.TEST_DATA_PATH + "Issues/qualisys/issue_digitalBertec_3FP/Bertec data/"
 
         staticFilename = "Static LB - CGM2 2-fromQTM.c3d"
         reconstructFilenameLabelled= "Gait LB-CGM21-fromVincent.c3d"

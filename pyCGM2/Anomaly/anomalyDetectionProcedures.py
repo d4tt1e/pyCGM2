@@ -1,6 +1,6 @@
 """ This module gathers anomaly detectors on markers, events, force plate signals and anthropometric data
 
-check out the script : `\\Tests\\test_anomalies.py` for example
+check out the script : `/Tests/test_anomalies.py` for example
 
 """
 

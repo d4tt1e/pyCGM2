@@ -20,7 +20,7 @@ else :
 
             NEXUS = ViconNexus.ViconNexus()
 
-            DATA_PATH =  pyCGM2.TEST_DATA_PATH+"NexusAPI\\forcePlatesDetection\\"
+            DATA_PATH =  pyCGM2.TEST_DATA_PATH+"NexusAPI/forcePlatesDetection/"
             filename = "gait4FP"
 
             NEXUS.OpenTrial( str(DATA_PATH+filename), 30 )

@@ -13,7 +13,7 @@ from pyCGM2.Utils import files
 
 
 def dataTest1():
-    DATA_PATH = pyCGM2.TEST_DATA_PATH + "GaitData//CGM1-NormalGaitData-Events//Hannibal Lecter\\"
+    DATA_PATH = pyCGM2.TEST_DATA_PATH + "GaitData//CGM1-NormalGaitData-Events//Hannibal Lecter/"
     modelledFilenames = ["gait Trial 01.c3d", "gait Trial 02.c3d"]
     analysisInstance = analysis.makeAnalysis(DATA_PATH,
                         modelledFilenames,
@@ -42,7 +42,7 @@ class Test_lowLevel:
 
     def test_PFKE2(self):
 
-        analysisInstance = files.loadAnalysis("C:\\Users\\fleboeuf\\Documents\\ANALYSES\\inclined walk\\2021-july-reprocessing\\results\\1IC-CP\\Processing-CGM21\\", "Condition1")
+        analysisInstance = files.loadAnalysis("C:/Users/fleboeuf/Documents/ANALYSES/inclined walk/2021-july-reprocessing/results/1IC-CP/Processing-CGM21/", "Condition1")
 
 
         nds = normativeDatasets.NormativeData("Schwartz2008","Free")

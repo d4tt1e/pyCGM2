@@ -61,7 +61,7 @@ def main():
     else:
         args = parser.parse_args()
         LOGGER.logger.info("[pyCGM2] - Script worked with marked node of Vicon Eclipse")
-        DATA_PATH = os.getcwd()+"\\"
+        DATA_PATH = os.getcwd()+"/"
         # --- acquisition file and path----
         DATA_PATHS, modelledFilenames =eclipse.getCurrentMarkedNodes()
         ECLIPSE_MODE = True

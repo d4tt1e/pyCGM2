@@ -8,7 +8,7 @@ from pyCGM2.Utils import files
 class FlowEdittingFilter(object):
 
     def __init__(self,data_path, modelVersion,procedure=None, emgSettings = None):
-        self.m_template = pyCGM2.PYCGM2_SETTINGS_FOLDER+"templates\\cgm#i-settings.tpl"
+        self.m_template = pyCGM2.PYCGM2_SETTINGS_FOLDER+"templates/cgm#i-settings.tpl"
 
         self.m_procedure = procedure
 

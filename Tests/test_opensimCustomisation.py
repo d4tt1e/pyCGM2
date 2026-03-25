@@ -30,7 +30,7 @@ class Test_opensimcustom:
     def test_cgm23(self):
 
 
-        data_path = "C:\\Users\\fleboeuf\\Documents\\ANALYSES\\pyCGM2-Analyses\\musclePersonalisation\\data\\bah\\"
+        data_path = "C:/Users/fleboeuf/Documents/ANALYSES/pyCGM2-Analyses/musclePersonalisation/data/bah/"
         #--- fichiers d 'entrée-----
         staticFilename = "BAH Mariama Cal 01.c3d" 
         gaitFilename ="20240306-MB-PRE-S-NNNN-dyn04.c3d"
@@ -99,10 +99,10 @@ class Test_opensimcustom:
         # --- OPENSIM SCALING---
 
         # fichier de configuration Opensim prédéfini pour le CGM2.3   
-        osimConverterSettings = files.openFile(pyCGM2.OPENSIM_PREBUILD_MODEL_PATH,"interface\\CGM23\\OsimToCGM.settings")
-        markersetTemplateFullFile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface\\CGM23\\markerset\\CGM23-markerset.xml"
-        osimTemplateFullFile =pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface\\CGM23\\pycgm2-gait2354_simbody.osim"
-        scaleToolFullFile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface\\CGM23\\setup\\CGM23_scaleSetup_template.xml"
+        osimConverterSettings = files.openFile(pyCGM2.OPENSIM_PREBUILD_MODEL_PATH,"interface/CGM23/OsimToCGM.settings")
+        markersetTemplateFullFile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface/CGM23/markerset/CGM23-markerset.xml"
+        osimTemplateFullFile =pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface/CGM23/pycgm2-gait2354_simbody.osim"
+        scaleToolFullFile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface/CGM23/setup/CGM23_scaleSetup_template.xml"
 
         # appel de la procedure "generic"
         proc = opensimScalingInterfaceProcedure.ScalingXmlProcedure(data_path,model.mp["Bodymass"],model.mp["Height"])

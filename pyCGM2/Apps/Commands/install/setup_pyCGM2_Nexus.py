@@ -12,9 +12,9 @@ if os.getenv("PUBLIC") is not None:
 else:
     user_folder = "~/"
 
-NEXUS_PUBLIC_PATH = user_folder+"\\Documents\\Vicon\\Nexus2.x\\"
-NEXUS_PUBLIC_DOCUMENT_VST_PATH = NEXUS_PUBLIC_PATH + "ModelTemplates\\"
-NEXUS_PUBLIC_DOCUMENT_PIPELINE_PATH = NEXUS_PUBLIC_PATH+"Configurations\\Pipelines\\"
+NEXUS_PUBLIC_PATH = user_folder+"/Documents/Vicon/Nexus2.x/"
+NEXUS_PUBLIC_DOCUMENT_VST_PATH = NEXUS_PUBLIC_PATH + "ModelTemplates/"
+NEXUS_PUBLIC_DOCUMENT_PIPELINE_PATH = NEXUS_PUBLIC_PATH+"Configurations/Pipelines/"
 
 def find_latest_nexus_sdk():
 
@@ -100,21 +100,21 @@ def main_install_pyCGM2_NexusFiles():
         f.write('@echo off\n\n')
         f.write(f'set "CONDA_PATH={conda_root}"\n')
         f.write(f'set "ENV_NAME={env_name}"\n')
-        f.write('call "%CONDA_PATH%\\Scripts\\activate.bat" %ENV_NAME%\n')
+        f.write('call "%CONDA_PATH%/Scripts/activate.bat" %ENV_NAME%\n')
 
     print(f"[pyCGM2] activate Script for Nexus generated : {script_path}")
 
     path = get_install_path(pyCGM2)
 
-    template = path+"\\vicon\\pipeline template\\pyCGM2-CGM23-Pipeline.tpl"
+    template = path+"/vicon/pipeline template/pyCGM2-CGM23-Pipeline.tpl"
     data = {
         "path": path,
-        "commands_path": path+"\\pyCGM2\\Apps\\Commands\\rullThemAllCommands.py",
+        "commands_path": path+"/pyCGM2/Apps/Commands/rullThemAllCommands.py",
         "activate_path": script_path
     }
     jinja2_template_string = open(template, 'rb').read()
     template = Template(jinja2_template_string.decode("utf-8"))
-    template.stream(data=data).dump(nexus_pipeline_folder +"\\" + f"pyCGM2-{env_name}-CGM23.Pipeline")
+    template.stream(data=data).dump(nexus_pipeline_folder +"/" + f"pyCGM2-{env_name}-CGM23.Pipeline")
 
     print(f"[pyCGM2] CGM23 vicon Pipeline generated : {nexus_pipeline_folder}")
 

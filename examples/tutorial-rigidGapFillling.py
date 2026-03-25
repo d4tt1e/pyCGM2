@@ -5,7 +5,7 @@ from pyCGM2.Tools import btkTools
 from pyCGM2.Model.Models import singleBody
 
 
-DATA_PATH = "C:\\YOURPATH\\"
+DATA_PATH = "C:/YOURPATH/"
 
 acqStatic = btkTools.smartReader(DATA_PATH + "static.c3d")
 acqDyn = btkTools.smartReader(DATA_PATH + "motion 01.c3d")

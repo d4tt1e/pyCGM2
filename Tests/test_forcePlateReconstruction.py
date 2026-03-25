@@ -12,7 +12,7 @@ import pyCGM2
 class Test_bertec:
     def test_onePF_lowLevel(self):
         
-        dataPath = DATA_PATH =  pyCGM2.TEST_DATA_PATH + "LowLevel\\ForcePlate\\ForcePlateReconstruction\\"
+        dataPath = DATA_PATH =  pyCGM2.TEST_DATA_PATH + "LowLevel/ForcePlate/ForcePlateReconstruction/"
         filename = "bertec-yannisDataSample.csv"
         dataframe =   pd.read_csv(dataPath+filename,sep=",",skiprows=4)
 

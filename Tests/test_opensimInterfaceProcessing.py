@@ -40,7 +40,7 @@ class Test_opensimModelOuputprocessing_fromNexus:
 
     def test_specificMuscleLabels_lowLevelViewer(self):
 
-        DATA_PATH = pyCGM2.TEST_DATA_PATH + "OpenSim\\processingC3dOutputs\\"
+        DATA_PATH = pyCGM2.TEST_DATA_PATH + "OpenSim/processingC3dOutputs/"
 
         opensimSettings = files.loadSettings(DATA_PATH,"opensim.settings")
         
@@ -79,7 +79,7 @@ class Test_opensimModelOuputprocessing_fromNexus:
 
     def test_specificMuscleLabels_highLevelViewer(self):
 
-        DATA_PATH = pyCGM2.TEST_DATA_PATH + "OpenSim\\processingC3dOutputs\\"
+        DATA_PATH = pyCGM2.TEST_DATA_PATH + "OpenSim/processingC3dOutputs/"
 
         opensimSettings = files.loadSettings(DATA_PATH,"opensim.settings")
         
@@ -99,13 +99,13 @@ class Test_opensimModelOuputprocessing_fromNexus:
 
     def test_AllMuscleLabels_highLevelViewer(self):
 
-        DATA_PATH = pyCGM2.TEST_DATA_PATH + "OpenSim\\processingC3dOutputs\\"
+        DATA_PATH = pyCGM2.TEST_DATA_PATH + "OpenSim/processingC3dOutputs/"
 
         # opensimSettings = files.loadSettings(DATA_PATH,"opensim.settings")
 
         # muscleDict= {"Left": [it +"_l[MuscleLength]" for it in opensimSettings["Muscles"]],
         #             "Right" : [it +"_r[MuscleLength]" for it in opensimSettings["Muscles"]]}
-        osimInterface = opensimInterface.osimInterface(pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface\\CGM23\\", "pycgm2-gait2354_simbody.osim")
+        osimInterface = opensimInterface.osimInterface(pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface/CGM23/", "pycgm2-gait2354_simbody.osim")
         muscleDict = osimInterface.getMuscles_bySide(addToName="[MuscleLength]")
         
         modelledFilenames = ["gait1.c3d", "gait2.c3d"]

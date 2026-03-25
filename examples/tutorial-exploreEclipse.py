@@ -6,11 +6,11 @@ from pyCGM2 import enums
 
 
 
-DATA_PATH = "C:\\Users\\fleboeuf\\Documents\\DATA\\pyCGM2-flow-data\\Nantes\\MAIGNAN Olympe\\Session 1\\"
+DATA_PATH = "C:/Users/fleboeuf/Documents/DATA/pyCGM2-flow-data/Nantes/MAIGNAN Olympe/Session 1/"
 
 
 # read a patient enf file
-patientDir = up(up(DATA_PATH))+"\\"
+patientDir = up(up(DATA_PATH))+"/"
 enfPatientFile = eclipse.getEnfFiles(patientDir,enums.EclipseType.Patient)
 enfPatient = eclipse.PatientEnfReader(patientDir,enfPatientFile)
 

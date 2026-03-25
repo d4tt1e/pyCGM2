@@ -96,7 +96,7 @@ class Pinzone2014(object):
 
         """
 
-        self.m_filename = pyCGM2.NORMATIVE_DATABASE_PATH+"Pinzone 2014\\Formatted- Pinzone2014.xlsx"
+        self.m_filename = pyCGM2.NORMATIVE_DATABASE_PATH+"Pinzone 2014/Formatted- Pinzone2014.xlsx"
         self.m_centre = centre
         self.data = {}
 
@@ -203,7 +203,7 @@ class Schwartz2008(object):
 
         """
 
-        self.m_filename = pyCGM2.NORMATIVE_DATABASE_PATH+"Schwartz 2008\\Formatted- Schwartz2008.xlsx"
+        self.m_filename = pyCGM2.NORMATIVE_DATABASE_PATH+"Schwartz 2008/Formatted- Schwartz2008.xlsx"
 
         self.m_speedModality = speed
         self.data = {}

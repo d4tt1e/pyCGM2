@@ -86,7 +86,7 @@ class mekNormalizeFilter(object):
 
                 for pathfilename in pathfilenames:
 
-                    filename = pathfilename.split("\\")[-1]
+                    filename = pathfilename.split("/")[-1]
 
                     eventGr = extractGrp.retrieve_group(f"{key}/{filename}/events")  
 

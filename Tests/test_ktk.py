@@ -36,7 +36,7 @@ class Test_ktk:
 
 
         # --- advanced-----
-        path = "C:\\Users\\fleboeuf\\Documents\\Programmation\\pyCGM2\\pyCGM2\\Sandbox\\ktk\\wheelchair_kinetics.ktk\\"
+        path = "C:/Users/fleboeuf/Documents/Programmation/pyCGM2/pyCGM2/Sandbox/ktk/wheelchair_kinetics.ktk/"
         ts = files.load(path+"wheelchair_kinetics.ktk.zip")
         # Calculate Ftot
         ts.data["Ftot"] = np.sqrt(np.sum(ts.data["Forces"] ** 2, axis=1))

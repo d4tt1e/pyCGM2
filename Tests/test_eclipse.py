@@ -13,7 +13,7 @@ from pyCGM2.Nexus import vskTools
 class Test_VSK:
 
     def test_reader(self):
-        DATA_PATH = pyCGM2.TEST_DATA_PATH + "GaitModels\\CGM1\\fullBody-native-noOptions-customMP\\"
+        DATA_PATH = pyCGM2.TEST_DATA_PATH + "GaitModels/CGM1/fullBody-native-noOptions-customMP/"
         staticFilename = "static.c3d"
 
         markerDiameter=14
@@ -31,12 +31,12 @@ class Test_eclipse:
 
     def test_eclipse(self):
 
-        files = eclipse.getEnfFiles(pyCGM2.TEST_DATA_PATH+"LowLevel\\eclipse\\Hännibål\\", enums.EclipseType.Trial)
+        files = eclipse.getEnfFiles(pyCGM2.TEST_DATA_PATH+"LowLevel/eclipse/Hännibål/", enums.EclipseType.Trial)
 
 
     def test_modipyForcePlate(self):
 
-        path = pyCGM2.TEST_DATA_PATH+"LowLevel\\eclipse\\ForcePlate\\"
+        path = pyCGM2.TEST_DATA_PATH+"LowLevel/eclipse/ForcePlate/"
 
         gaitFilename="PN01OP01S01SS03.c3d"
         acqGait = btkTools.smartReader(str(path +  gaitFilename))

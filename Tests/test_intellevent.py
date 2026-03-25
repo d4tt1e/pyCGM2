@@ -18,13 +18,13 @@ class Test_Intellevent:
     def test_0_lowLevel(self):
 
 
-        path = "C:\\Users\\fleboeuf\\Documents\\DATA\\pyCGM2-Data-Tests\\events\\intellevent\\"
+        path = "C:/Users/fleboeuf/Documents/DATA/pyCGM2-Data-Tests/events/intellevent/"
 
         acq = btkTools.smartReader(path+"gait_vicon.c3d")
 
         progressionAxis, forwardProgression, globalFrame = progression.detectProgressionFrame(acq, staticFlag=False)
-        initialContactModelFile = pyCGM2.PYCGM2_APPDATA_PATH+"intellEventModels\\version0\\ic_intellevent.onnx"
-        footOffModelFile = pyCGM2.PYCGM2_APPDATA_PATH+"intellEventModels\\version0\\fo_intellevent.onnx"
+        initialContactModelFile = pyCGM2.PYCGM2_APPDATA_PATH+"intellEventModels/version0/ic_intellevent.onnx"
+        footOffModelFile = pyCGM2.PYCGM2_APPDATA_PATH+"intellEventModels/version0/fo_intellevent.onnx"
 
         evp = intellEventProcedures.IntellEventProcedure(progressionAxis,forwardProgression)
         evp.setModels(initialContactModelFile,footOffModelFile)
@@ -38,7 +38,7 @@ class Test_Intellevent:
     def test_0_highLevel(self):
 
 
-        path = "C:\\Users\\fleboeuf\\Documents\\DATA\\pyCGM2-Data-Tests\\events\\intellevent\\"
+        path = "C:/Users/fleboeuf/Documents/DATA/pyCGM2-Data-Tests/events/intellevent/"
         acq = btkTools.smartReader(path+"gait_vicon.c3d")
 
         eventDetector.intellEvent(acq)

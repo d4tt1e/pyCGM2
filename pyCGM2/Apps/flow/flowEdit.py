@@ -31,7 +31,7 @@ def main(args=None):
     #     cgmVersion="CGM2.1",
     #     suffix="",
     #     display=False,
-    #     data_path="C:\\blabab\\"
+    #     data_path="C:/blabab/"
     # )
 
     # import ipdb; ipdb.set_trace()

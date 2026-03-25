@@ -15,8 +15,8 @@ class Test_ForcePlateTypeReader():
 
     def test_ForcePlateType5(self):
 
-        MAIN_PATH = pyCGM2.TEST_DATA_PATH + "LowLevel\\ForcePlate\\ForcePlateTypeManagement\\"
-        DATA_PATH_OUT = pyCGM2.TEST_DATA_PATH_OUT+"LowLevel\\ForcePlate\\ForcePlateTypeManagement\\"
+        MAIN_PATH = pyCGM2.TEST_DATA_PATH + "LowLevel/ForcePlate/ForcePlateTypeManagement/"
+        DATA_PATH_OUT = pyCGM2.TEST_DATA_PATH_OUT+"LowLevel/ForcePlate/ForcePlateTypeManagement/"
         #files.createDir(DATA_PATH_OUT)
 
         btkAcq = btkTools.smartReader(MAIN_PATH + "HUG_gait_type5_origin.c3d")
@@ -37,7 +37,7 @@ class Test_ForcePlateFiltering():
 
     def test_type2(self):
 
-        DATA_PATH = pyCGM2.TEST_DATA_PATH + "LowLevel\\ForcePlate\\ForcePlateTypeManagement\\"
+        DATA_PATH = pyCGM2.TEST_DATA_PATH + "LowLevel/ForcePlate/ForcePlateTypeManagement/"
         btkAcq = btkTools.smartReader(DATA_PATH + "HUG_gait_type5_convert.c3d")
 
         acqClone = btk.btkAcquisition.Clone(btkAcq)
@@ -67,12 +67,12 @@ class Test_ForcePlateFiltering():
 
 
     def test_bertecType3(self):
-        DATA_PATH = pyCGM2.TEST_DATA_PATH + "Issues\\qualisys\\issue_digitalBertec_3FP\\Bertec data\\"
+        DATA_PATH = pyCGM2.TEST_DATA_PATH + "Issues/qualisys/issue_digitalBertec_3FP/Bertec data/"
         staticFilename = "Static LB - CGM2 2-fromQTM.c3d"
         reconstructFilenameLabelled= "Gait LB-CGM21-fromVincent.c3d"
         btkAcq = btkTools.smartReader(str(DATA_PATH +  reconstructFilenameLabelled))
 
-        DATA_PATH = pyCGM2.TEST_DATA_PATH + "LowLevel\\ForcePlate\\ForcePlateTypeManagement\\"
+        DATA_PATH = pyCGM2.TEST_DATA_PATH + "LowLevel/ForcePlate/ForcePlateTypeManagement/"
         btkAcq = btkTools.smartReader(DATA_PATH + "HUG_gait_type5_convert.c3d")
 
         acqClone = btk.btkAcquisition.Clone(btkAcq)

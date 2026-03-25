@@ -14,7 +14,7 @@ DB_PATH = connection.DB_TEST_PATH
 class Test_eclipseConnection:
     def test_usageExample(self):
 
-        db_path = "C:\\Users\\fleboeuf\\Documents\DATA\\pyCGM2-Data-Tests\\NantesSamples\\eclipseDB_test.db "
+        db_path = "C:/Users/fleboeuf/Documents\DATA/pyCGM2-Data-Tests/NantesSamples/eclipseDB_test.db "
 
         factory = eclDB.SQLiteConnectionFactory(db_path)
         con = factory.connect()
@@ -25,7 +25,7 @@ class Test_eclipseConnection:
             svc = eclDB.DataIndexService(con)
 
             # 1) Define your Z: root (or any root)
-            root = svc.storage_roots.upsert(name="AQM Adultes", root_path="C:\\Users\\fleboeuf\\Documents\\DATA\\pyCGM2-Data-Tests\\NantesSamples\\AQM Adultes")  # adapt if your root is Z:\Data etc.
+            root = svc.storage_roots.upsert(name="AQM Adultes", root_path="C:/Users/fleboeuf/Documents/DATA/pyCGM2-Data-Tests/NantesSamples/AQM Adultes")  # adapt if your root is Z:\Data etc.
 
             # 2) Register a patient
             # If folder name == ipp, keep it identical. Otherwise store the actual folder name.

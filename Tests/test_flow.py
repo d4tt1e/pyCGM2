@@ -23,7 +23,7 @@ from argparse import Namespace
 class Test_flow:
     def test_empty(self):
 
-        template = pyCGM2.PYCGM2_SETTINGS_FOLDER+"templates\\cgm#i-settings.tpl"
+        template = pyCGM2.PYCGM2_SETTINGS_FOLDER+"templates/cgm#i-settings.tpl"
 
         data = {
             "Patient": {},
@@ -46,14 +46,14 @@ class Test_flow:
 
 
     def test_CGM21WithFilters(self):
-        path = "C:\\Users\\fleboeuf\\Documents\\DATA\\pyCGM2-Data-Tests\\flow\\Nantes\\MAIGNAN Olympe\\Session 1\\"
+        path = "C:/Users/fleboeuf/Documents/DATA/pyCGM2-Data-Tests/flow/Nantes/MAIGNAN Olympe/Session 1/"
 
         fef = flowFilters.FlowEdittingFilter(path,"CGM2.1", procedure=eclipseFlowProcedure.EclipseFlowProcedure())
         fef.run("CGMversion21-verif.settings")
 
 
     def test_CGM24WithFilters2Conditions(self):
-        path = "C:\\Users\\fleboeuf\\Documents\\DATA\\pyCGM2-Data-Tests\\flow\\Nantes\\ESNAULT Oceane\\Session 3\\"
+        path = "C:/Users/fleboeuf/Documents/DATA/pyCGM2-Data-Tests/flow/Nantes/ESNAULT Oceane/Session 3/"
 
         previousEmgSttings = files.openFile(path, "emg.settings")
 
@@ -81,18 +81,18 @@ class Test_flow:
 
 class Test_flowApp:
     def test_init(self):
-        path = pyCGM2.TEST_DATA_PATH + "Nantes\\OSMANOV Akhmed\\Session 3\\"
+        path = pyCGM2.TEST_DATA_PATH + "Nantes/OSMANOV Akhmed/Session 3/"
         args = Namespace(  subparser="FLOW" ,  FLOW="Init",         data_path=path    )
         flowInit.main(args=args) 
 
     def test_edit(self):
-        path = pyCGM2.TEST_DATA_PATH + "Nantes\\OSMANOV Akhmed\\Session 3\\"
+        path = pyCGM2.TEST_DATA_PATH + "Nantes/OSMANOV Akhmed/Session 3/"
         args = Namespace(  subparser="FLOW" ,  FLOW="Edit",         
                          cgmVersion="CGM2.3", suffix="newtest", display=True,data_path=path    )
         flowEdit.main(args=args) 
     
     def test_mekImport(self):
-        path = pyCGM2.TEST_DATA_PATH + "NantesSamples\\AQM Adultes\\BOUCHE Alain\\Session 1\\"
+        path = pyCGM2.TEST_DATA_PATH + "NantesSamples/AQM Adultes/BOUCHE Alain/Session 1/"
         args = Namespace(  subparser="FLOW" ,  FLOW="Import",         
                          userSettings="CGM23_v2", data_path=path,
                         conditions=None )
@@ -101,7 +101,7 @@ class Test_flowApp:
 
 
     def test_prepare(self):
-        path = pyCGM2.TEST_DATA_PATH + "NantesSamples\\AQM Adultes\\BOUCHE Alain\\Session 1\\"
+        path = pyCGM2.TEST_DATA_PATH + "NantesSamples/AQM Adultes/BOUCHE Alain/Session 1/"
         args = Namespace(  subparser="FLOW" ,  FLOW="Prepare",         
                          userSettings="CGM23_v2", data_path=path,
                          conditions=None )
@@ -111,7 +111,7 @@ class Test_flowApp:
 
 
     def test_mekPopulate(self):
-        path = pyCGM2.TEST_DATA_PATH + "NantesSamples\\AQM Adultes\\BOUCHE Alain\\Session 1\\"
+        path = pyCGM2.TEST_DATA_PATH + "NantesSamples/AQM Adultes/BOUCHE Alain/Session 1/"
         args = Namespace(  subparser="FLOW" ,  FLOW="Populate",         
                          userSettings="CGM23_v2", data_path=path,
                          analysisID =None,

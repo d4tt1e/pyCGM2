@@ -10,8 +10,8 @@ from pyCGM2.Lib import analysis
 
 from pyCGM2.Utils import files
 
-MOVECKPATH = "C:\\Users\\fleboeuf\\Documents\\2. AREA OF RESPONSABILITY\\Programmation\\moveck\\"
-sys.path.append(MOVECKPATH+"Moveck_pipe-2024.1.0-win64-pipeline_install\\packages")
+MOVECKPATH = "C:/Users/fleboeuf/Documents/2. AREA OF RESPONSABILITY/Programmation/moveck/"
+sys.path.append(MOVECKPATH+"Moveck_pipe-2024.1.0-win64-pipeline_install/packages")
 import moveck
 
 SHOW = False
@@ -32,7 +32,7 @@ normalActivityEmgs=['RECFEM','RECFEM', None,None,None,
 
 class Test_moveck:
     def test_analysis(self):
-        DATA_PATH = pyCGM2.TEST_DATA_PATH + "OpenSim\\processingC3dOutputs\\"
+        DATA_PATH = pyCGM2.TEST_DATA_PATH + "OpenSim/processingC3dOutputs/"
 
         opensimSettings = files.loadSettings(DATA_PATH,"opensim.settings")
         
@@ -46,7 +46,7 @@ class Test_moveck:
                         dynamicMuscleLabelsDict = None)
 
 
-        ds2 = moveck.data_store("C:\\Users\\fleboeuf\\Documents\\2. AREA OF RESPONSABILITY\\Programmation\\pyCGM2\\pyCGM2\\ressources\\moveck\\analysisSample.h5")
+        ds2 = moveck.data_store("C:/Users/fleboeuf/Documents/2. AREA OF RESPONSABILITY/Programmation/pyCGM2/pyCGM2/ressources/moveck/analysisSample.h5")
 
         ds = moveck.data_store()
         root = ds.root()

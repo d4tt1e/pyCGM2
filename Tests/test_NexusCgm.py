@@ -22,7 +22,7 @@ else :
         def test_fullBody(self):
 
 
-            DATA_PATH =  pyCGM2.TEST_DATA_PATH+"Nexus\\CGM1\\pyCGM2_FullBody_CGM1_KADmed\\"
+            DATA_PATH =  pyCGM2.TEST_DATA_PATH+"Nexus/CGM1/pyCGM2_FullBody_CGM1_KADmed/"
             filenameNoExt = "Static"
             NEXUS.OpenTrial( str(DATA_PATH+filenameNoExt), 30 )
             os.system("pyCGM2.exe NEXUS CGM1.0 Calibration")
@@ -37,7 +37,7 @@ else :
         def test_fullBody(self):
 
 
-            DATA_PATH =  pyCGM2.TEST_DATA_PATH+"Nexus\\CGM1.1\\pyCGM2_FullBody_CGM1_medial\\"
+            DATA_PATH =  pyCGM2.TEST_DATA_PATH+"Nexus/CGM1.1/pyCGM2_FullBody_CGM1_medial/"
             filenameNoExt = "FullBody CGM2 data Cal 01"
             NEXUS.OpenTrial( str(DATA_PATH+filenameNoExt), 30 )
             os.system("pyCGM2.exe NEXUS CGM1.1 Calibration")
@@ -51,7 +51,7 @@ else :
     class Test_CGM21:
         def test_fullBody(self):
 
-            DATA_PATH =  pyCGM2.TEST_DATA_PATH+"Nexus\\CGM2.1\\pyCGM2_FullBody_CGM21\\"
+            DATA_PATH =  pyCGM2.TEST_DATA_PATH+"Nexus/CGM2.1/pyCGM2_FullBody_CGM21/"
             filenameNoExt = "FullBody CGM2 data Cal 01"
             NEXUS.OpenTrial( str(DATA_PATH+filenameNoExt), 30 )
             os.system("pyCGM2.exe NEXUS CGM2.1 Calibration")
@@ -65,7 +65,7 @@ else :
     class Test_CGM22:
         def test_fullBody(self):
 
-            DATA_PATH =  pyCGM2.TEST_DATA_PATH+"Nexus\\CGM2.2\\pyCGM2_FullBody_CGM22\\"
+            DATA_PATH =  pyCGM2.TEST_DATA_PATH+"Nexus/CGM2.2/pyCGM2_FullBody_CGM22/"
             filenameNoExt = "FullBody CGM2 data Cal 01"
             NEXUS.OpenTrial( str(DATA_PATH+filenameNoExt), 30 )
             os.system("pyCGM2.exe NEXUS CGM2.2 Calibration")
@@ -79,7 +79,7 @@ else :
     class Test_CGM23:
         def test_fullBody(self):
 
-            DATA_PATH =  pyCGM2.TEST_DATA_PATH+"Nexus\\CGM2.3\\pyCGM2_FullBody_CGM23\\"
+            DATA_PATH =  pyCGM2.TEST_DATA_PATH+"Nexus/CGM2.3/pyCGM2_FullBody_CGM23/"
             filenameNoExt = "FullBody CGM2 data Cal 01"
             NEXUS.OpenTrial( str(DATA_PATH+filenameNoExt), 30 )
             os.system("pyCGM2.exe NEXUS CGM2.3 Calibration")
@@ -96,7 +96,7 @@ else :
     class Test_CGM24:
         def test_fullBody(self):
 
-            DATA_PATH =  pyCGM2.TEST_DATA_PATH+"Nexus\\CGM2.4\\pyCGM2_FullBody_CGM24\\"
+            DATA_PATH =  pyCGM2.TEST_DATA_PATH+"Nexus/CGM2.4/pyCGM2_FullBody_CGM24/"
             filenameNoExt = "FullBody CGM2 data Cal 01"
             NEXUS.OpenTrial( str(DATA_PATH+filenameNoExt), 30 )
             os.system("pyCGM2.exe NEXUS CGM2.4 Calibration")
@@ -110,7 +110,7 @@ else :
     class Test_CGM25:
         def test_fullBody(self):
 
-            DATA_PATH =  pyCGM2.TEST_DATA_PATH+"Nexus\\CGM2.5\\pyCGM2_FullBody_CGM24\\"
+            DATA_PATH =  pyCGM2.TEST_DATA_PATH+"Nexus/CGM2.5/pyCGM2_FullBody_CGM24/"
             filenameNoExt = "CGM2_Static_01"
             NEXUS.OpenTrial( str(DATA_PATH+filenameNoExt), 30 )
             os.system("pyCGM2.exe NEXUS CGM2.5 Calibration")
@@ -125,7 +125,7 @@ else :
 
         def test_stp(self):
 
-            DATA_PATH =  pyCGM2.TEST_DATA_PATH+"Nexus\\CGM23-Patient\\Session 1\\"
+            DATA_PATH =  pyCGM2.TEST_DATA_PATH+"Nexus/CGM23-Patient/Session 1/"
 
             filenameNoExt = "20240214-EC-PONC-F-NNNN04"
             NEXUS.OpenTrial( str(DATA_PATH+filenameNoExt), 30 )
@@ -135,7 +135,7 @@ else :
 
         def test_kinematics(self):
 
-            DATA_PATH =  pyCGM2.TEST_DATA_PATH+"Nexus\\CGM23-Patient\\Session 1\\"
+            DATA_PATH =  pyCGM2.TEST_DATA_PATH+"Nexus/CGM23-Patient/Session 1/"
 
             filenameNoExt = "20240214-EC-PONC-F-NNNN04"
             NEXUS.OpenTrial( str(DATA_PATH+filenameNoExt), 30 )
@@ -146,7 +146,7 @@ else :
 
         def test_kinetics(self):
 
-            DATA_PATH =  pyCGM2.TEST_DATA_PATH+"Nexus\\CGM23-Patient\\Session 1\\"
+            DATA_PATH =  pyCGM2.TEST_DATA_PATH+"Nexus/CGM23-Patient/Session 1/"
 
             filenameNoExt = "20240214-EC-PONC-F-NNNN04"
             NEXUS.OpenTrial( str(DATA_PATH+filenameNoExt), 30 )
@@ -156,7 +156,7 @@ else :
 
         def test_reaction(self):
 
-            DATA_PATH =  pyCGM2.TEST_DATA_PATH+"Nexus\\CGM23-Patient\\Session 1\\"
+            DATA_PATH =  pyCGM2.TEST_DATA_PATH+"Nexus/CGM23-Patient/Session 1/"
 
             filenameNoExt = "20240214-EC-PONC-F-NNNN04"
             NEXUS.OpenTrial( str(DATA_PATH+filenameNoExt), 30 )

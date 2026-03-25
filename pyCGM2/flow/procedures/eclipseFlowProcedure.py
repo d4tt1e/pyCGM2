@@ -17,7 +17,7 @@ class EclipseFlowProcedure(flowProcedures.AbstractFlowProcedure):
 
         # modelVersion = modelVersion.replace(".","")
         
-        parent = os.path.abspath(os.path.join(data_path,os.pardir))+"\\"
+        parent = os.path.abspath(os.path.join(data_path,os.pardir))+"/"
 
         vskFile = vskTools.getVskFiles(data_path)
         vsk = vskTools.Vsk(str(data_path +  vskFile))

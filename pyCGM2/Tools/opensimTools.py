@@ -276,7 +276,7 @@ def export_CgmToMot(acq:btk.btkAcquisition,datapath:str,filename:str,osimModelIn
         osimModelInterface (osimInterface): The OpenSim model interface used for the export.
     """
 
-    osim2cgm_converter = files.openFile(pyCGM2.PYCGM2_SETTINGS_FOLDER,"opensim\\interface\\CGM23\\CGMtoOsim.settings")
+    osim2cgm_converter = files.openFile(pyCGM2.PYCGM2_SETTINGS_FOLDER,"opensim/interface/CGM23/CGMtoOsim.settings")
 
     coordinateNames = osimModelInterface.getCoordinates()
     coordNamesStr = "time"

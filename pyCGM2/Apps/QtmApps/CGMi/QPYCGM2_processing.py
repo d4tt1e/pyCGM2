@@ -41,7 +41,7 @@ def main(args=None):
 
     LOGGER.logger.info("------------QTM - pyCGM2 CGM Processing---------------")
 
-    DATA_PATH = str(sessionFolder)+"\\"
+    DATA_PATH = str(sessionFolder)+"/"
     sessionXML = files.readXml(DATA_PATH, sessionFilename)
     CGM2_Model = sessionXML.Subsession.CGM2_Model.text
 
@@ -128,7 +128,7 @@ def main(args=None):
     else:
         LOGGER.logger.info("workflow return with NO detected anomalies")
     
-    # os.startfile( os.getcwd()+"\\"+LOGFILE)
+    # os.startfile( os.getcwd()+"/"+LOGFILE)
 
 
 if __name__ == '__main__':

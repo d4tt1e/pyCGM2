@@ -42,7 +42,7 @@ from pyCGM2.Model.Opensim.interface.procedures.staticOptimisation import opensim
 class Test_GenericXmlprocedures:
     def test_cgm23_complete(self):
 
-        data_path = pyCGM2.TEST_DATA_PATH + "OpenSim\CGM23\\CGM23-progressionX-test\\"
+        data_path = pyCGM2.TEST_DATA_PATH + "OpenSim\CGM23/CGM23-progressionX-test/"
         settings = files.openFile(pyCGM2.PYCGM2_SETTINGS_FOLDER,"CGM2_3-pyCGM2.settings")
 
         staticFilename = "static.c3d" 
@@ -127,8 +127,8 @@ class Test_GenericXmlprocedures:
 
         # # --- osim builder ---
         # cgmCalibrationprocedure = opensimFilters.CgmOpensimCalibrationProcedures(model)
-        # markersetFile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "models\\settings\\cgm2_3\\cgm2_3-markerset.xml"
-        # osimfile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "models\\osim\\lowerLimb_ballsJoints.osim"
+        # markersetFile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "models/settings/cgm2_3/cgm2_3-markerset.xml"
+        # osimfile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "models/osim/lowerLimb_ballsJoints.osim"
 
         # oscf = opensimFilters.opensimCalibrationFilter(osimfile,
         #                                         model,
@@ -139,7 +139,7 @@ class Test_GenericXmlprocedures:
 
         # # --- IK ---
         # cgmFittingProcedure = opensimFilters.CgmOpensimFittingProcedure(model)
-        # iksetupFile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "models\\settings\\cgm2_3\\cgm2_3-ikSetUp_template.xml"
+        # iksetupFile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "models/settings/cgm2_3/cgm2_3-ikSetUp_template.xml"
 
         # osrf = opensimFilters.opensimFittingFilter(iksetupFile,
         #                                                   scalingOsim,
@@ -162,12 +162,12 @@ class Test_GenericXmlprocedures:
 
         # --- osim builder ---
         
-        osimConverterSettings = files.openFile(pyCGM2.OPENSIM_PREBUILD_MODEL_PATH,"interface\\CGM23\\OsimToCGM.settings")
+        osimConverterSettings = files.openFile(pyCGM2.OPENSIM_PREBUILD_MODEL_PATH,"interface/CGM23/OsimToCGM.settings")
 
         # scaling
-        markersetTemplateFullFile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface\\CGM23\\markerset\\CGM23-markerset.xml"
-        osimTemplateFullFile =pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface\\CGM23\\pycgm2-gait2354_simbody.osim"
-        scaleToolFullFile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface\\CGM23\\setup\\CGM23_scaleSetup_template.xml"
+        markersetTemplateFullFile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface/CGM23/markerset/CGM23-markerset.xml"
+        osimTemplateFullFile =pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface/CGM23/pycgm2-gait2354_simbody.osim"
+        scaleToolFullFile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface/CGM23/setup/CGM23_scaleSetup_template.xml"
 
         proc = opensimScalingInterfaceProcedure.ScalingXmlProcedure(data_path,model.mp["Bodymass"],model.mp["Height"])
         proc.setSetupFiles(osimTemplateFullFile,markersetTemplateFullFile,scaleToolFullFile)
@@ -183,7 +183,7 @@ class Test_GenericXmlprocedures:
 
         # --- IK ---
         ikWeights = settings["Fitting"]["Weight"]
-        ikTemplateFullFile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface\\CGM23\\setup\\CGM23-ikSetUp_template.xml"
+        ikTemplateFullFile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface/CGM23/setup/CGM23-ikSetUp_template.xml"
 
         progressionAxis, forwardProgression, globalFrame =progression.detectProgressionFrame(acqGait)
 
@@ -217,7 +217,7 @@ class Test_GenericXmlprocedures:
         finalJcs.compute(description="new", pointLabelSuffix = "new")#
 
         #correct the ankle angles in the mot files
-        motDataframe = opensimIO.OpensimDataFrame(data_path+"musculoskeletal_modelling\\",gaitFilename[:-4]+".mot")
+        motDataframe = opensimIO.OpensimDataFrame(data_path+"musculoskeletal_modelling/",gaitFilename[:-4]+".mot")
         motDataframe.getDataFrame()["ankle_flexion_r"] = acqIK.GetPoint("RAnkleAngles_new").GetValues()[:,0]
         motDataframe.getDataFrame()["ankle_adduction_r"] = acqIK.GetPoint("RAnkleAngles_new").GetValues()[:,1]
         motDataframe.getDataFrame()["ankle_rotation_r"] = acqIK.GetPoint("RAnkleAngles_new").GetValues()[:,2]
@@ -262,8 +262,8 @@ class Test_GenericXmlprocedures:
         
 
         # --- ID ------
-        idTemplateFullFile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface\\CGM23\\setup\\CGM23-idToolSetup_template.xml"
-        externalLoadTemplateFullFile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface\\CGM23\\setup\\walk_grf.xml"
+        idTemplateFullFile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface/CGM23/setup/CGM23-idToolSetup_template.xml"
+        externalLoadTemplateFullFile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface/CGM23/setup/walk_grf.xml"
 
 
         procID = opensimInverseDynamicsInterfaceProcedure.InverseDynamicsXmlProcedure(data_path,scaledOsimName,"musculoskeletal_modelling")
@@ -302,8 +302,8 @@ class Test_GenericXmlprocedures:
 
        # --- opensimStaticOptimizationInterfaceProcedure ------
 
-        soTemplateFullFile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface\\CGM23\\setup\\CGM23-soSetup_template.xml"
-        externalLoadTemplateFullFile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface\\CGM23\\setup\\walk_grf.xml"
+        soTemplateFullFile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface/CGM23/setup/CGM23-soSetup_template.xml"
+        externalLoadTemplateFullFile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface/CGM23/setup/walk_grf.xml"
  
         procSO = opensimStaticOptimizationInterfaceProcedure.StaticOptimisationXmlProcedure(data_path,scaledOsimName,"musculoskeletal_modelling")
         procSO.prepareTrial_fromBtkAcq(acqIK,gaitFilename[:-4],None,progressionAxis,forwardProgression)
@@ -316,8 +316,8 @@ class Test_GenericXmlprocedures:
 
         # --- Analyses ------
 
-        anaTemplateFullFile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface\\CGM23\\setup\\CGM23-muscleAnalysisSetup_template.xml"
-        externalLoadTemplateFullFile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface\\CGM23\\setup\\walk_grf.xml"
+        anaTemplateFullFile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface/CGM23/setup/CGM23-muscleAnalysisSetup_template.xml"
+        externalLoadTemplateFullFile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface/CGM23/setup/walk_grf.xml"
         procAna = opensimAnalysesInterfaceProcedure.AnalysesXmlProcedure(data_path,scaledOsimName,"musculoskeletal_modelling")
         procAna.setSetupFiles(anaTemplateFullFile,externalLoadTemplateFullFile)
         procAna.prepareTrial_fromBtkAcq(acqIK,gaitFilename[:-4],None,progressionAxis,forwardProgression)
@@ -333,7 +333,7 @@ class Test_GenericXmlprocedures:
 
     def test_cgm23_scaling_ik_muscle(self):
 
-        data_path = pyCGM2.TEST_DATA_PATH + "OpenSim\CGM23\\CGM23-progressionX-test\\"
+        data_path = pyCGM2.TEST_DATA_PATH + "OpenSim\CGM23/CGM23-progressionX-test/"
         settings = files.openFile(pyCGM2.PYCGM2_SETTINGS_FOLDER,"CGM2_3-pyCGM2.settings")
 
         staticFilename = "static.c3d" 
@@ -419,12 +419,12 @@ class Test_GenericXmlprocedures:
 
         # --- osim builder ---
         
-        osimConverterSettings = files.openFile(pyCGM2.OPENSIM_PREBUILD_MODEL_PATH,"interface\\CGM23\\OsimToCGM.settings")
+        osimConverterSettings = files.openFile(pyCGM2.OPENSIM_PREBUILD_MODEL_PATH,"interface/CGM23/OsimToCGM.settings")
 
         # scaling
-        markersetTemplateFullFile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface\\CGM23\\markerset\\CGM23-markerset.xml"
-        osimTemplateFullFile =pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface\\CGM23\\pycgm2-gait2354_simbody.osim"
-        scaleToolFullFile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface\\CGM23\\setup\\CGM23_scaleSetup_template.xml"
+        markersetTemplateFullFile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface/CGM23/markerset/CGM23-markerset.xml"
+        osimTemplateFullFile =pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface/CGM23/pycgm2-gait2354_simbody.osim"
+        scaleToolFullFile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface/CGM23/setup/CGM23_scaleSetup_template.xml"
 
         proc = opensimScalingInterfaceProcedure.ScalingXmlProcedure(data_path,model.mp["Bodymass"],model.mp["Height"])
         proc.setSetupFiles(osimTemplateFullFile,markersetTemplateFullFile,scaleToolFullFile)
@@ -440,7 +440,7 @@ class Test_GenericXmlprocedures:
 
         # --- IK ---
         ikWeights = settings["Fitting"]["Weight"]
-        ikTemplateFullFile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface\\CGM23\\setup\\CGM23-ikSetUp_template.xml"
+        ikTemplateFullFile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface/CGM23/setup/CGM23-ikSetUp_template.xml"
 
         progressionAxis, forwardProgression, globalFrame =progression.detectProgressionFrame(acqGait)
 
@@ -468,7 +468,7 @@ class Test_GenericXmlprocedures:
         finalJcs.compute(description="new", pointLabelSuffix = "new")#
 
         #correct the ankle angles in the mot files
-        motDataframe = opensimIO.OpensimDataFrame(data_path+"musculoskeletal_modelling\\",gaitFilename[:-4]+".mot")
+        motDataframe = opensimIO.OpensimDataFrame(data_path+"musculoskeletal_modelling/",gaitFilename[:-4]+".mot")
         motDataframe.getDataFrame()["ankle_flexion_r"] = acqIK.GetPoint("RAnkleAngles_new").GetValues()[:,0]
         motDataframe.getDataFrame()["ankle_adduction_r"] = acqIK.GetPoint("RAnkleAngles_new").GetValues()[:,1]
         motDataframe.getDataFrame()["ankle_rotation_r"] = acqIK.GetPoint("RAnkleAngles_new").GetValues()[:,2]
@@ -479,8 +479,8 @@ class Test_GenericXmlprocedures:
 
         # --- Analyses ------
 
-        anaTemplateFullFile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface\\CGM23\\setup\\CGM23-muscleAnalysisSetup_template.xml"
-        externalLoadTemplateFullFile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface\\CGM23\\setup\\walk_grf.xml"
+        anaTemplateFullFile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface/CGM23/setup/CGM23-muscleAnalysisSetup_template.xml"
+        externalLoadTemplateFullFile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface/CGM23/setup/walk_grf.xml"
         
         procAna = opensimAnalysesInterfaceProcedure.AnalysesXmlProcedure(data_path,scaledOsimName,"musculoskeletal_modelling")
         procAna.setSetupFiles(anaTemplateFullFile,externalLoadTemplateFullFile)
@@ -498,7 +498,7 @@ class Test_GenericXmlprocedures:
 
     def test_cgm23_scaling_ik_muscle_noLoad(self):
 
-        data_path = pyCGM2.TEST_DATA_PATH + "OpenSim\CGM23\\CGM23-progressionX-test\\"
+        data_path = pyCGM2.TEST_DATA_PATH + "OpenSim\CGM23/CGM23-progressionX-test/"
         settings = files.openFile(pyCGM2.PYCGM2_SETTINGS_FOLDER,"CGM2_3-pyCGM2.settings")
 
         staticFilename = "static.c3d" 
@@ -584,12 +584,12 @@ class Test_GenericXmlprocedures:
 
         # --- osim builder ---
         
-        osimConverterSettings = files.openFile(pyCGM2.OPENSIM_PREBUILD_MODEL_PATH,"interface\\CGM23\\OsimToCGM.settings")
+        osimConverterSettings = files.openFile(pyCGM2.OPENSIM_PREBUILD_MODEL_PATH,"interface/CGM23/OsimToCGM.settings")
 
         # scaling
-        markersetTemplateFullFile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface\\CGM23\\markerset\\CGM23-markerset.xml"
-        osimTemplateFullFile =pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface\\CGM23\\pycgm2-gait2354_simbody.osim"
-        scaleToolFullFile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface\\CGM23\\setup\\CGM23_scaleSetup_template.xml"
+        markersetTemplateFullFile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface/CGM23/markerset/CGM23-markerset.xml"
+        osimTemplateFullFile =pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface/CGM23/pycgm2-gait2354_simbody.osim"
+        scaleToolFullFile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface/CGM23/setup/CGM23_scaleSetup_template.xml"
 
         proc = opensimScalingInterfaceProcedure.ScalingXmlProcedure(data_path,model.mp["Bodymass"],model.mp["Height"])
         proc.setSetupFiles(osimTemplateFullFile,markersetTemplateFullFile,scaleToolFullFile)
@@ -605,7 +605,7 @@ class Test_GenericXmlprocedures:
 
         # --- IK ---
         ikWeights = settings["Fitting"]["Weight"]
-        ikTemplateFullFile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface\\CGM23\\setup\\CGM23-ikSetUp_template.xml"
+        ikTemplateFullFile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface/CGM23/setup/CGM23-ikSetUp_template.xml"
 
         progressionAxis, forwardProgression, globalFrame =progression.detectProgressionFrame(acqGait)
 
@@ -636,7 +636,7 @@ class Test_GenericXmlprocedures:
         finalJcs.compute(description="new", pointLabelSuffix = "new")#
 
         #correct the ankle angles in the mot files
-        motDataframe = opensimIO.OpensimDataFrame(data_path+"musculoskeletal_modelling\\",gaitFilename[:-4]+".mot")
+        motDataframe = opensimIO.OpensimDataFrame(data_path+"musculoskeletal_modelling/",gaitFilename[:-4]+".mot")
         motDataframe.getDataFrame()["ankle_flexion_r"] = acqIK.GetPoint("RAnkleAngles_new").GetValues()[:,0]
         motDataframe.getDataFrame()["ankle_adduction_r"] = acqIK.GetPoint("RAnkleAngles_new").GetValues()[:,1]
         motDataframe.getDataFrame()["ankle_rotation_r"] = acqIK.GetPoint("RAnkleAngles_new").GetValues()[:,2]
@@ -647,8 +647,8 @@ class Test_GenericXmlprocedures:
 
         # --- Analyses ------
 
-        anaTemplateFullFile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface\\CGM23\\setup\\CGM23-muscleAnalysisSetup_template.xml"
-        externalLoadTemplateFullFile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface\\CGM23\\setup\\walk_grf.xml"
+        anaTemplateFullFile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface/CGM23/setup/CGM23-muscleAnalysisSetup_template.xml"
+        externalLoadTemplateFullFile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface/CGM23/setup/walk_grf.xml"
         procAna = opensimAnalysesInterfaceProcedure.AnalysesXmlProcedure(data_path,scaledOsimName,"musculoskeletal_modelling")
         procAna.setSetupFiles(anaTemplateFullFile,None)
         procAna.prepareTrial_fromBtkAcq(acqIK,gaitFilename[:-4],None,progressionAxis,forwardProgression)
@@ -662,7 +662,7 @@ class Test_GenericXmlprocedures:
 
     def test_cgm23_scaling(self):
 
-        data_path = pyCGM2.TEST_DATA_PATH + "OpenSim\CGM23\\CGM23-progressionX-test\\"
+        data_path = pyCGM2.TEST_DATA_PATH + "OpenSim\CGM23/CGM23-progressionX-test/"
         settings = files.openFile(pyCGM2.PYCGM2_SETTINGS_FOLDER,"CGM2_3-pyCGM2.settings")
 
         staticFilename = "static.c3d" 
@@ -749,9 +749,9 @@ class Test_GenericXmlprocedures:
         
         
         # scaling
-        markersetTemplateFullFile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface\\CGM23\\markerset\\CGM23-markerset.xml"
-        osimTemplateFullFile =pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface\\CGM23\\pycgm2-gait2354_simbody.osim"
-        scaleToolFullFile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface\\CGM23\\setup\\CGM23_scaleSetup_template.xml"
+        markersetTemplateFullFile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface/CGM23/markerset/CGM23-markerset.xml"
+        osimTemplateFullFile =pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface/CGM23/pycgm2-gait2354_simbody.osim"
+        scaleToolFullFile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface/CGM23/setup/CGM23_scaleSetup_template.xml"
 
         proc = opensimScalingInterfaceProcedure.ScalingXmlProcedure(data_path,model.mp["Bodymass"],model.mp["Height"])
         proc.setSetupFiles(osimTemplateFullFile,markersetTemplateFullFile,scaleToolFullFile)
@@ -768,7 +768,7 @@ class Test_CGM_XmlProcedures:
 
     def test_cgm23_scaling_ik_muscle(self):
 
-        data_path = pyCGM2.TEST_DATA_PATH + "OpenSim\CGM23\\CGM23-progressionX-test\\"
+        data_path = pyCGM2.TEST_DATA_PATH + "OpenSim\CGM23/CGM23-progressionX-test/"
         settings = files.openFile(pyCGM2.PYCGM2_SETTINGS_FOLDER,"CGM2_3-pyCGM2.settings")
 
         staticFilename = "static.c3d" 
@@ -854,7 +854,7 @@ class Test_CGM_XmlProcedures:
 
         # --- osim builder ---
         
-        osimConverterSettings = files.openFile(pyCGM2.OPENSIM_PREBUILD_MODEL_PATH,"interface\\CGM23\\OsimToCGM.settings")
+        osimConverterSettings = files.openFile(pyCGM2.OPENSIM_PREBUILD_MODEL_PATH,"interface/CGM23/OsimToCGM.settings")
 
         # scaling
         proc = opensimScalingInterfaceProcedure.ScalingXmlCgmProcedure(data_path,"CGM2.3",model.mp["Bodymass"],model.mp["Height"])
@@ -895,7 +895,7 @@ class Test_CGM_XmlProcedures:
         finalJcs.compute(description="new", pointLabelSuffix = "new")#
 
         #correct the ankle angles in the mot files
-        motDataframe = opensimIO.OpensimDataFrame(data_path+"musculoskeletal_modelling\\",gaitFilename[:-4]+".mot")
+        motDataframe = opensimIO.OpensimDataFrame(data_path+"musculoskeletal_modelling/",gaitFilename[:-4]+".mot")
         motDataframe.getDataFrame()["ankle_flexion_r"] = acqIK.GetPoint("RAnkleAngles_new").GetValues()[:,0]
         motDataframe.getDataFrame()["ankle_adduction_r"] = acqIK.GetPoint("RAnkleAngles_new").GetValues()[:,1]
         motDataframe.getDataFrame()["ankle_rotation_r"] = acqIK.GetPoint("RAnkleAngles_new").GetValues()[:,2]
@@ -915,7 +915,7 @@ class Test_CGM_XmlProcedures:
         
     def test_cgm22_scaling_ik_muscle(self):
 
-            data_path = pyCGM2.TEST_DATA_PATH + "OpenSim\CGM2.2\Hånnibøl-medial\\"
+            data_path = pyCGM2.TEST_DATA_PATH + "OpenSim\CGM2.2\Hånnibøl-medial/"
             settings = files.openFile(pyCGM2.PYCGM2_SETTINGS_FOLDER,"CGM2_2-pyCGM2.settings")
 
             staticFilename = "static.c3d" 
@@ -1003,7 +1003,7 @@ class Test_CGM_XmlProcedures:
 
             # --- osim builder ---
             
-            osimConverterSettings = files.openFile(pyCGM2.OPENSIM_PREBUILD_MODEL_PATH,"interface\\CGM22\\OsimToCGM.settings")
+            osimConverterSettings = files.openFile(pyCGM2.OPENSIM_PREBUILD_MODEL_PATH,"interface/CGM22/OsimToCGM.settings")
 
             # scaling
             proc = opensimScalingInterfaceProcedure.ScalingXmlCgmProcedure(data_path,"CGM2.2",model.mp["Bodymass"],model.mp["Height"])
@@ -1044,7 +1044,7 @@ class Test_CGM_XmlProcedures:
             finalJcs.compute(description="new", pointLabelSuffix = "new")#
 
             #correct the ankle angles in the mot files
-            motDataframe = opensimIO.OpensimDataFrame(data_path+"musculoskeletal_modelling\\",gaitFilename[:-4]+".mot")
+            motDataframe = opensimIO.OpensimDataFrame(data_path+"musculoskeletal_modelling/",gaitFilename[:-4]+".mot")
             motDataframe.getDataFrame()["ankle_flexion_r"] = acqIK.GetPoint("RAnkleAngles_new").GetValues()[:,0]
             motDataframe.getDataFrame()["ankle_adduction_r"] = acqIK.GetPoint("RAnkleAngles_new").GetValues()[:,1]
             motDataframe.getDataFrame()["ankle_rotation_r"] = acqIK.GetPoint("RAnkleAngles_new").GetValues()[:,2]
@@ -1064,7 +1064,7 @@ class Test_CGM_XmlProcedures:
 
     def test_cgm23_scaling_kalmanIk_muscle(self):
 
-            data_path = pyCGM2.TEST_DATA_PATH + "OpenSim\CGM23\\CGM23-progressionX-test\\"
+            data_path = pyCGM2.TEST_DATA_PATH + "OpenSim\CGM23/CGM23-progressionX-test/"
             settings = files.openFile(pyCGM2.PYCGM2_SETTINGS_FOLDER,"CGM2_3-pyCGM2.settings")
 
             staticFilename = "static.c3d" 
@@ -1150,7 +1150,7 @@ class Test_CGM_XmlProcedures:
 
             # --- osim builder ---
             
-            osimConverterSettings = files.openFile(pyCGM2.OPENSIM_PREBUILD_MODEL_PATH,"interface\\CGM23\\OsimToCGM.settings")
+            osimConverterSettings = files.openFile(pyCGM2.OPENSIM_PREBUILD_MODEL_PATH,"interface/CGM23/OsimToCGM.settings")
 
             # scaling
             proc = opensimScalingInterfaceProcedure.ScalingXmlCgmProcedure(data_path,"CGM2.3",model.mp["Bodymass"],model.mp["Height"])
@@ -1194,7 +1194,7 @@ class Test_CGM_XmlProcedures:
 
 
             # #correct the ankle angles in the mot files
-            # motDataframe = opensimIO.OpensimDataFrame(data_path+"musculoskeletal_modelling\\",gaitFilename[:-4]+".mot")
+            # motDataframe = opensimIO.OpensimDataFrame(data_path+"musculoskeletal_modelling/",gaitFilename[:-4]+".mot")
             # motDataframe.getDataFrame()["ankle_flexion_r"] = acqIK.GetPoint("RAnkleAngles_new").GetValues()[:,0]
             # motDataframe.getDataFrame()["ankle_adduction_r"] = acqIK.GetPoint("RAnkleAngles_new").GetValues()[:,1]
             # motDataframe.getDataFrame()["ankle_rotation_r"] = acqIK.GetPoint("RAnkleAngles_new").GetValues()[:,2]
@@ -1215,7 +1215,7 @@ class Test_CGM_XmlProcedures:
             # oiamf.pushStoToAcq()
 
     def test_cgm23_scaling_ik_muscle_noForcePlate(self):
-        DATA_PATH = pyCGM2.TEST_DATA_PATH + "services\\aurelieDrum\\"
+        DATA_PATH = pyCGM2.TEST_DATA_PATH + "services/aurelieDrum/"
 
         staticFilename = "S03_Quentin Cal 01.c3d"
         reconstructFilenameLabelled= "130bpm-shrink.c3d"
@@ -1259,7 +1259,7 @@ class Test_CGM_XmlProcedures:
         btkTools.smartWriter(acqGait, str(DATA_PATH + outFilename))
 
     def test_cgm22_scaling_ISSUE_oneFrame(self):
-        DATA_PATH = pyCGM2.TEST_DATA_PATH + "OpenSim\\issue-oneStaticFrame\\"
+        DATA_PATH = pyCGM2.TEST_DATA_PATH + "OpenSim/issue-oneStaticFrame/"
 
         staticFilename = "ARNOU Marina Cal 01.c3d"
 
@@ -1291,7 +1291,7 @@ class Test_CGM_XmlProcedures:
 class Test_Generic_DrivenPose:
 
     def test_staticMuscleLength(self):
-        DATA_PATH = pyCGM2.TEST_DATA_PATH + "OpenSim\CGM23\\CGM23-progressionX-test\\"
+        DATA_PATH = pyCGM2.TEST_DATA_PATH + "OpenSim\CGM23/CGM23-progressionX-test/"
         settings = files.openFile(pyCGM2.PYCGM2_SETTINGS_FOLDER,"CGM2_3-pyCGM2.settings")
 
         staticFilename = "static.c3d" 
@@ -1376,12 +1376,12 @@ class Test_Generic_DrivenPose:
 
         # --- osim builder ---
         
-        osimConverterSettings = files.openFile(pyCGM2.OPENSIM_PREBUILD_MODEL_PATH,"interface\\CGM23\\OsimToCGM.settings")
+        osimConverterSettings = files.openFile(pyCGM2.OPENSIM_PREBUILD_MODEL_PATH,"interface/CGM23/OsimToCGM.settings")
 
         # scaling
-        markersetTemplateFullFile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface\\CGM23\\markerset\\CGM23-markerset.xml"
-        osimTemplateFullFile =pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface\\CGM23\\pycgm2-gait2354_simbody.osim"
-        scaleToolFullFile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface\\CGM23\\setup\\CGM23_scaleSetup_template.xml"
+        markersetTemplateFullFile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface/CGM23/markerset/CGM23-markerset.xml"
+        osimTemplateFullFile =pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface/CGM23/pycgm2-gait2354_simbody.osim"
+        scaleToolFullFile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface/CGM23/setup/CGM23_scaleSetup_template.xml"
 
         proc = opensimScalingInterfaceProcedure.ScalingXmlCgmProcedure(DATA_PATH,"CGM2.3",model.mp["Bodymass"],model.mp["Height"])
         proc.setSetupFiles(osimTemplateFullFile,markersetTemplateFullFile,scaleToolFullFile)

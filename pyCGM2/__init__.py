@@ -14,17 +14,17 @@ LOGGER = log.pyCGM2_Logger(__name__)
 
 
 # CONSTANTS
-MAIN_PYCGM2_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir)) + "\\"
+MAIN_PYCGM2_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir)) + os.sep
 
-MAIN_PYCGM2_TESTS_PATH = MAIN_PYCGM2_PATH+"Tests\\"
+MAIN_PYCGM2_TESTS_PATH = os.path.join(MAIN_PYCGM2_PATH, "Tests") + os.sep
 
 #opensim plugin binaries
-sys.path.append( MAIN_PYCGM2_PATH +"pyCGM2\\opensim4\\KSlibaries\\lib\\bin")
-OPENSIM_KSLIB_PATH = MAIN_PYCGM2_PATH +"pyCGM2\\opensim4\\KSlibaries\\lib\\bin\\" 
+sys.path.append(os.path.join(MAIN_PYCGM2_PATH, "pyCGM2", "opensim4", "KSlibaries", "lib", "bin"))
+OPENSIM_KSLIB_PATH = os.path.join(MAIN_PYCGM2_PATH, "pyCGM2", "opensim4", "KSlibaries", "lib", "bin") + os.sep
 
 
 #  [Optional] setting folder
-PYCGM2_SETTINGS_FOLDER = MAIN_PYCGM2_PATH+"pyCGM2\Settings\\"
+PYCGM2_SETTINGS_FOLDER = os.path.join(MAIN_PYCGM2_PATH, "pyCGM2", "Settings") + os.sep
 
 EMG_CHANNELS = []
 try:
@@ -33,12 +33,12 @@ try:
 except:
     LOGGER.logger.error ("EMG_CHANNELS is empty ")
 
-PYCGM2_APPDATA_PATH = MAIN_PYCGM2_PATH +"Data\\" 
+PYCGM2_APPDATA_PATH = os.path.join(MAIN_PYCGM2_PATH, "Data") + os.sep
 
 # #  [Optional]programData
 # if (os.getenv("PROGRAMDATA") is not None) and \
-#    os.path.isdir(os.getenv("PROGRAMDATA")+"\\pyCGM2"):
-#     PYCGM2_APPDATA_PATH = os.getenv("PROGRAMDATA")+"\\pyCGM2\\"
+#    os.path.isdir(os.getenv("PROGRAMDATA")+"/pyCGM2"):
+#     PYCGM2_APPDATA_PATH = os.getenv("PROGRAMDATA")+"/pyCGM2/"
 # else:
 #     PYCGM2_APPDATA_PATH = PYCGM2_SETTINGS_FOLDER
 
@@ -46,26 +46,26 @@ PYCGM2_APPDATA_PATH = MAIN_PYCGM2_PATH +"Data\\"
 
 
 # [Optional]: Apps path
-MAIN_PYCGM2_APPS_PATH = MAIN_PYCGM2_PATH+"Apps\\"
+MAIN_PYCGM2_APPS_PATH = os.path.join(MAIN_PYCGM2_PATH, "Apps") + os.sep
 
 # [Optional] path to embbbed Normative data base.
-NORMATIVE_DATABASE_PATH = MAIN_PYCGM2_PATH +"Data\\normativeData\\"  # By default, use pyCGM2-embedded normative data ( Schartz - Pinzone )
+NORMATIVE_DATABASE_PATH = os.path.join(MAIN_PYCGM2_PATH, "Data", "normativeData") + os.sep  # By default, use pyCGM2-embedded normative data ( Schartz - Pinzone )
 
 # [Optional] main folder containing osim model
-OPENSIM_PREBUILD_MODEL_PATH = PYCGM2_SETTINGS_FOLDER + "opensim\\"
+OPENSIM_PREBUILD_MODEL_PATH = os.path.join(PYCGM2_SETTINGS_FOLDER, "opensim") + os.sep
 
 # [Optional] path pointing at Data Folders used for Tests
 
-TEST_DATA_PATH = "C:\\Users\\fleboeuf\\Documents\\DATA\\pyCGM2-Data-Tests\\"
-TEST_DATA_PATH_OUT = "C:\\Users\\fleboeuf\\Documents\\DATA\\pyCGM2-Data-Tests-OUT\\"
+TEST_DATA_PATH = "C:/Users/fleboeuf/Documents/DATA/pyCGM2-Data-Tests/"
+TEST_DATA_PATH_OUT = "C:/Users/fleboeuf/Documents/DATA/pyCGM2-Data-Tests-OUT/"
 
 
 # [optional] path pointing pyCGM2-Nexus tools
-NEXUS_PYCGM2_TOOLS_PATH = MAIN_PYCGM2_PATH + "pyCGM2\\Nexus\\"
+NEXUS_PYCGM2_TOOLS_PATH = os.path.join(MAIN_PYCGM2_PATH, "pyCGM2", "Nexus") + os.sep
 
 # [optional] moveck path
-MOVECKPATH = "C:\\Users\\fleboeuf\\Documents\\2. AREA OF RESPONSABILITY\\Programmation\\moveck\\"
-sys.path.append(MOVECKPATH+"Moveck_pipe-2024.1.0-win64-pipeline_install\\packages")
+MOVECKPATH = "C:/Users/fleboeuf/Documents/2. AREA OF RESPONSABILITY/Programmation/moveck/"
+sys.path.append(os.path.join(MOVECKPATH, "Moveck_pipe-2024.1.0-win64-pipeline_install", "packages"))
 
 #----- CONSTANTES -----
 

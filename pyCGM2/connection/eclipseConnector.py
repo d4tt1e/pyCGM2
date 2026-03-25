@@ -629,7 +629,7 @@ class DataIndexService:
 # ============================================================
 
 def main() -> None:
-    db_path = Path("Z:\\Donnees_Nexus\\lamDB.sqlite")
+    db_path = Path("Z:/Donnees_Nexus/lamDB.sqlite")
 
     factory = SQLiteConnectionFactory(db_path)
     con = factory.connect()

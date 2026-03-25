@@ -17,7 +17,7 @@ from pyCGM2.Utils import testingUtils,utils
 
 class Test_Data_withNoFP:
     def test_CGM1_FullBody_noOptions_noFP(self):
-        DATA_PATH = pyCGM2.TEST_DATA_PATH + "GaitModels\CGM1\\fullBody-native-noOptions - noFP\\"
+        DATA_PATH = pyCGM2.TEST_DATA_PATH + "GaitModels\CGM1/fullBody-native-noOptions - noFP/"
         staticFilename = "static.c3d"
 
         acqStatic = btkTools.smartReader(DATA_PATH +  staticFilename)
@@ -67,7 +67,7 @@ class Test_Data_withNoFP:
 
 class Test_DifferentStaticDynamicMarkerSet:
     def test_CGM1_FullBody_noOptions_uncorrectUpperLimbMarker(self):
-        DATA_PATH = pyCGM2.TEST_DATA_PATH + "Scenarii\different static and dynamic marker set\CGM1-fullBody\\"
+        DATA_PATH = pyCGM2.TEST_DATA_PATH + "Scenarii\different static and dynamic marker set\CGM1-fullBody/"
         staticFilename = "static.c3d"
 
         acqStatic = btkTools.smartReader(DATA_PATH +  staticFilename)
@@ -116,7 +116,7 @@ class Test_DifferentStaticDynamicMarkerSet:
 
 
     def test_CGM1_FullBody_noOptions_uncorrectThoraxMarker(self):
-        DATA_PATH = pyCGM2.TEST_DATA_PATH + "Scenarii\\different static and dynamic marker set\CGM1-fullBody\\"
+        DATA_PATH = pyCGM2.TEST_DATA_PATH + "Scenarii/different static and dynamic marker set\CGM1-fullBody/"
         staticFilename = "static.c3d"
 
         acqStatic = btkTools.smartReader(DATA_PATH +  staticFilename)
@@ -163,7 +163,7 @@ class Test_DifferentStaticDynamicMarkerSet:
         assert model.m_bodypart  == enums.BodyPart.FullBody
 
     def test_CGM1_FullBody_noOptions_uncorrectPelvisMarker(self):
-        DATA_PATH = pyCGM2.TEST_DATA_PATH + "Scenarii\\different static and dynamic marker set\CGM1-fullBody\\"
+        DATA_PATH = pyCGM2.TEST_DATA_PATH + "Scenarii/different static and dynamic marker set\CGM1-fullBody/"
         staticFilename = "static.c3d"
 
         acqStatic = btkTools.smartReader(DATA_PATH +  staticFilename)
@@ -211,7 +211,7 @@ class Test_DifferentStaticDynamicMarkerSet:
 
 
     def test_CGM24_FullBody_noOptions_uncorrectUpperLimbMarker(self):
-        DATA_PATH = pyCGM2.TEST_DATA_PATH + "Scenarii\\different static and dynamic marker set\\CGM24-fullBody\\"
+        DATA_PATH = pyCGM2.TEST_DATA_PATH + "Scenarii/different static and dynamic marker set/CGM24-fullBody/"
         staticFilename = "static.c3d"
 
         acqStatic = btkTools.smartReader(DATA_PATH +  staticFilename)
@@ -270,7 +270,7 @@ class Test_DifferentStaticDynamicMarkerSet:
         assert model.m_bodypart  == enums.BodyPart.FullBody
 
     def test_CGM24_FullBody_noOptions_uncorrectThoraxMarker(self):
-        DATA_PATH = pyCGM2.TEST_DATA_PATH + "Scenarii\\different static and dynamic marker set\\CGM24-fullBody\\"
+        DATA_PATH = pyCGM2.TEST_DATA_PATH + "Scenarii/different static and dynamic marker set/CGM24-fullBody/"
         staticFilename = "static.c3d"
 
         acqStatic = btkTools.smartReader(DATA_PATH +  staticFilename)
@@ -329,7 +329,7 @@ class Test_DifferentStaticDynamicMarkerSet:
         assert model.m_bodypart  == enums.BodyPart.FullBody
 
     def test_CGM24_FullBody_noOptions_uncorrectLowerLimbMarker(self):
-        DATA_PATH = pyCGM2.TEST_DATA_PATH + "Scenarii\\different static and dynamic marker set\\CGM24-fullBody\\"
+        DATA_PATH = pyCGM2.TEST_DATA_PATH + "Scenarii/different static and dynamic marker set/CGM24-fullBody/"
         staticFilename = "static.c3d"
 
         acqStatic = btkTools.smartReader(DATA_PATH +  staticFilename)

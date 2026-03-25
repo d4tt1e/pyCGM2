@@ -32,14 +32,14 @@ normalActivityEmgs=['RECFEM','RECFEM', None,None,None,
 
 
 def dataTest1():
-    DATA_PATH = pyCGM2.TEST_DATA_PATH + "GaitData//CGM1-NormalGaitData-Events//Hannibal Lecter\\"
+    DATA_PATH = pyCGM2.TEST_DATA_PATH + "GaitData//CGM1-NormalGaitData-Events//Hannibal Lecter/"
     modelledFilenames = ["gait Trial 01.c3d", "gait Trial 02.c3d"]
     acq = btkTools.smartReader(DATA_PATH+modelledFilenames[0])
 
     return DATA_PATH, modelledFilenames,acq
 
 def dataTest2():
-    DATA_PATH = pyCGM2.TEST_DATA_PATH + "GaitData\\Patient\\session 1 - CGM1\\"
+    DATA_PATH = pyCGM2.TEST_DATA_PATH + "GaitData/Patient/session 1 - CGM1/"
     modelledFilenames = ["20180706_CS_PONC_S_NNNN dyn 02.c3d",
                         "20180706_CS_PONC_S_NNNN dyn 03.c3d",
                         "20180706_CS_PONC_S_NNNN dyn 05.c3d"]

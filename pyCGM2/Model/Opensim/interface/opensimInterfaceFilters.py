@@ -94,16 +94,16 @@ class opensimInterfaceInverseKinematicsFilter(object):
         """
         Updates the acquisition object with fitted marker data from the inverse kinematics results.
         """
-        marker_location_filename = self.m_procedure.m_DATA_PATH + self.m_procedure.m_resultsDir+"\\"+ self.m_procedure.m_dynamicFile+"_ik_model_marker_locations.sto"
+        marker_location_filename = self.m_procedure.m_DATA_PATH + self.m_procedure.m_resultsDir+"/"+ self.m_procedure.m_dynamicFile+"_ik_model_marker_locations.sto"
         if os.path.isfile(marker_location_filename):
             os.remove(marker_location_filename)
-        os.rename(self.m_procedure.m_DATA_PATH + self.m_procedure.m_resultsDir+ "\\_ik_model_marker_locations.sto",
+        os.rename(self.m_procedure.m_DATA_PATH + self.m_procedure.m_resultsDir+ "/_ik_model_marker_locations.sto",
                     marker_location_filename)
 
-        marker_errors_filename = self.m_procedure.m_DATA_PATH + self.m_procedure.m_resultsDir+"\\"+ self.m_procedure.m_dynamicFile+"_ik_marker_errors.sto"
+        marker_errors_filename = self.m_procedure.m_DATA_PATH + self.m_procedure.m_resultsDir+"/"+ self.m_procedure.m_dynamicFile+"_ik_marker_errors.sto"
         if os.path.isfile(marker_errors_filename):
             os.remove(marker_errors_filename)
-        os.rename(self.m_procedure.m_DATA_PATH + self.m_procedure.m_resultsDir+"\\_ik_marker_errors.sto",
+        os.rename(self.m_procedure.m_DATA_PATH + self.m_procedure.m_resultsDir+"/_ik_marker_errors.sto",
                  marker_errors_filename)
 
         acqMotionFinal = btk.btkAcquisition.Clone(self.m_procedure.m_acq0)
@@ -112,9 +112,9 @@ class opensimInterfaceInverseKinematicsFilter(object):
 
 
         # storageDataframe = opensimIO.OpensimDataFrame(
-        #     self.m_procedure.m_DATA_PATH+self.m_procedure.m_resultsDir+"\\", self.m_procedure.m_dynamicFile+"_ik_model_marker_locations.sto")
+        #     self.m_procedure.m_DATA_PATH+self.m_procedure.m_resultsDir+"/", self.m_procedure.m_dynamicFile+"_ik_model_marker_locations.sto")
 
-        storageObject = opensim.Storage(self.m_procedure.m_DATA_PATH + self.m_procedure.m_resultsDir+"\\"+self.m_procedure.m_dynamicFile +"_ik_model_marker_locations.sto")
+        storageObject = opensim.Storage(self.m_procedure.m_DATA_PATH + self.m_procedure.m_resultsDir+"/"+self.m_procedure.m_dynamicFile +"_ik_model_marker_locations.sto")
         for marker in self.m_procedure.m_weights.keys():
             if self.m_procedure.m_weights[marker] != 0:
                 values =opensimTools.sto2pointValues(storageObject,marker,self.m_procedure.m_R_LAB_OSIM)
@@ -141,7 +141,7 @@ class opensimInterfaceInverseKinematicsFilter(object):
         """
 
         storageDataframe = opensimIO.OpensimDataFrame(
-            self.m_procedure.m_DATA_PATH+self.m_procedure.m_resultsDir+"\\", self.m_procedure.m_dynamicFile+".mot")
+            self.m_procedure.m_DATA_PATH+self.m_procedure.m_resultsDir+"/", self.m_procedure.m_dynamicFile+".mot")
 
         for jointIt in osimConverter["Angles"]:
 
@@ -202,7 +202,7 @@ class opensimInterfaceInverseDynamicsFilter(object):
         if self.m_procedure.m_resultsDir == "":
             path = self.m_procedure.m_DATA_PATH
         else:
-            path = self.m_procedure.m_DATA_PATH+self.m_procedure.m_resultsDir+"\\"
+            path = self.m_procedure.m_DATA_PATH+self.m_procedure.m_resultsDir+"/"
 
         if self.m_procedure.m_modelVersion == "":
             filename = self.m_procedure.m_dynamicFile + "-inverse_dynamics.sto"
@@ -267,7 +267,7 @@ class opensimInterfaceStaticOptimizationFilter(object):
             filename = self.m_procedure.m_dynamicFile+"-"+self.m_procedure.m_modelVersion + "-analyses_StaticOptimization_force.sto"
 
         storageDataframe = opensimIO.OpensimDataFrame(
-            self.m_procedure.m_DATA_PATH+self.m_procedure.m_resultsDir+"\\",filename)
+            self.m_procedure.m_DATA_PATH+self.m_procedure.m_resultsDir+"/",filename)
 
         values = np.zeros(
             (self.m_procedure.m_acq.GetPointFrameNumber(), 3))
@@ -285,7 +285,7 @@ class opensimInterfaceStaticOptimizationFilter(object):
             filename = self.m_procedure.m_dynamicFile+"-"+self.m_procedure.m_modelVersion + "-analyses_StaticOptimization_activation.sto"
  
         storageDataframe = opensimIO.OpensimDataFrame(
-            self.m_procedure.m_DATA_PATH+self.m_procedure.m_resultsDir+"\\",filename)
+            self.m_procedure.m_DATA_PATH+self.m_procedure.m_resultsDir+"/",filename)
 
         values = np.zeros(
             (self.m_procedure.m_acq.GetPointFrameNumber(), 3))
@@ -375,7 +375,7 @@ class opensimInterfaceAnalysesFilter(object):
                     filename = self.m_procedure.m_dynamicFile+"-"+self.m_procedure.m_modelVersion + "-analyses_"+type+"_"+output+".sto"
 
                 storageDataframe = opensimIO.OpensimDataFrame(
-                    self.m_procedure.m_DATA_PATH+self.m_procedure.m_resultsDir+"\\",
+                    self.m_procedure.m_DATA_PATH+self.m_procedure.m_resultsDir+"/",
                     filename)
 
                 values = np.zeros(

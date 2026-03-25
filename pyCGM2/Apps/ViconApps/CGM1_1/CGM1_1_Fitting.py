@@ -65,7 +65,7 @@ def main(args=None):
             DATA_PATH, reconstructFilenameLabelledNoExt = nexusTools.getTrialName(NEXUS)
             reconstructFilenameLabelled = reconstructFilenameLabelledNoExt+".c3d"
         else:
-            DATA_PATH = os.getcwd()+"\\"
+            DATA_PATH = os.getcwd()+"/"
             reconstructFilenameLabelled = args.offline[1]
             if not os.path.exists(DATA_PATH+reconstructFilenameLabelled):
                 raise Exception("[pyCGM2]  file [%s] not found in the folder"%(reconstructFilenameLabelled))

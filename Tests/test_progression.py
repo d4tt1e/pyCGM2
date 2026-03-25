@@ -26,7 +26,7 @@ class Test_LibProgression():
     def test_gaitTrialProgression(self):
         """
         """
-        MAIN_PATH = pyCGM2.TEST_DATA_PATH + "LowLevel\\ProgressionFrame\\sample 1\\"
+        MAIN_PATH = pyCGM2.TEST_DATA_PATH + "LowLevel/ProgressionFrame/sample 1/"
 
 
         gaitFilename="gait_X_forward.c3d"
@@ -62,7 +62,7 @@ class Test_LibProgression():
     def test_staticTrialProgression(self):
         """
         """
-        MAIN_PATH = pyCGM2.TEST_DATA_PATH + "LowLevel\\ProgressionFrame\\sample 1\\"
+        MAIN_PATH = pyCGM2.TEST_DATA_PATH + "LowLevel/ProgressionFrame/sample 1/"
 
 
         gaitFilename="static_X.c3d"
@@ -103,7 +103,7 @@ class Test_btkProgression():
     def test_gaitTrialProgressionX_forward_lateralY(self):
         """
         """
-        MAIN_PATH = pyCGM2.TEST_DATA_PATH + "LowLevel\\ProgressionFrame\\sample 1\\"
+        MAIN_PATH = pyCGM2.TEST_DATA_PATH + "LowLevel/ProgressionFrame/sample 1/"
 
 
         gaitFilename="gait_X_forward.c3d"
@@ -137,7 +137,7 @@ class Test_btkProgression():
         """
 
         """
-        MAIN_PATH = pyCGM2.TEST_DATA_PATH + "LowLevel\\ProgressionFrame\\sample 1\\"
+        MAIN_PATH = pyCGM2.TEST_DATA_PATH + "LowLevel/ProgressionFrame/sample 1/"
 
         gaitFilename="gait_X_backward.c3d"
         acq = btkTools.smartReader(MAIN_PATH +  gaitFilename)
@@ -171,7 +171,7 @@ class Test_btkProgression():
     def test_gaitTrialProgressionY_forward_lateralX(self):
         """
         """
-        MAIN_PATH = pyCGM2.TEST_DATA_PATH + "LowLevel\\ProgressionFrame\\sample 1\\"
+        MAIN_PATH = pyCGM2.TEST_DATA_PATH + "LowLevel/ProgressionFrame/sample 1/"
 
 
         gaitFilename="gait_Y_forward.c3d"
@@ -202,7 +202,7 @@ class Test_btkProgression():
     def test_gaitTrialProgressionY_backward_lateralX(self):
         """
         """
-        MAIN_PATH = pyCGM2.TEST_DATA_PATH + "LowLevel\\ProgressionFrame\\sample 1\\"
+        MAIN_PATH = pyCGM2.TEST_DATA_PATH + "LowLevel/ProgressionFrame/sample 1/"
 
 
         gaitFilename="gait_Y_backward.c3d"
@@ -234,7 +234,7 @@ class Test_btkProgression():
     def test_upperBody_gaitTrialProgressionX_forward_lateralY(self):
         """
         """
-        MAIN_PATH = pyCGM2.TEST_DATA_PATH + "LowLevel\\ProgressionFrame\\sample 1\\"
+        MAIN_PATH = pyCGM2.TEST_DATA_PATH + "LowLevel/ProgressionFrame/sample 1/"
 
 
         gaitFilename="fullBody_GaitX_forward.c3d"
@@ -253,7 +253,7 @@ class Test_btkProgression():
     def test_upperBody_gaitTrialProgressionX_backward_lateralY(self):
         """
         """
-        MAIN_PATH = pyCGM2.TEST_DATA_PATH + "LowLevel\\ProgressionFrame\\sample 1\\"
+        MAIN_PATH = pyCGM2.TEST_DATA_PATH + "LowLevel/ProgressionFrame/sample 1/"
 
 
         gaitFilename="UpperBody_GaitX_backward.c3d"
@@ -275,7 +275,7 @@ class Test_btkProgression_static():
         """
 
         """
-        MAIN_PATH = pyCGM2.TEST_DATA_PATH + "LowLevel\\ProgressionFrame\\sample 1\\"
+        MAIN_PATH = pyCGM2.TEST_DATA_PATH + "LowLevel/ProgressionFrame/sample 1/"
 
         gaitFilename="static_X.c3d"
         acq = btkTools.smartReader(MAIN_PATH +  gaitFilename)
@@ -308,7 +308,7 @@ class Test_btkProgression_static():
         """
 
         """
-        MAIN_PATH = pyCGM2.TEST_DATA_PATH + "LowLevel\\ProgressionFrame\\sample 1\\"
+        MAIN_PATH = pyCGM2.TEST_DATA_PATH + "LowLevel/ProgressionFrame/sample 1/"
 
         gaitFilename="static_X_backward.c3d"
         acq = btkTools.smartReader(MAIN_PATH +  gaitFilename)
@@ -337,7 +337,7 @@ class Test_btkProgression_static():
     def test_gaitTrialProgressionY_backward_lateralX_static(self):
         """
         """
-        MAIN_PATH = pyCGM2.TEST_DATA_PATH + "LowLevel\\ProgressionFrame\\sample 1\\"
+        MAIN_PATH = pyCGM2.TEST_DATA_PATH + "LowLevel/ProgressionFrame/sample 1/"
 
 
         gaitFilename="static_Y_backward.c3d"
@@ -368,7 +368,7 @@ class Test_btkProgression_static():
     def test_upperBody_StaticProgressionX_forward_lateralY(self):
         """
         """
-        MAIN_PATH = pyCGM2.TEST_DATA_PATH + "LowLevel\\ProgressionFrame\\sample 1\\"
+        MAIN_PATH = pyCGM2.TEST_DATA_PATH + "LowLevel/ProgressionFrame/sample 1/"
 
 
         gaitFilename="upperBody_StaticX.c3d"

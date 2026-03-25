@@ -143,7 +143,7 @@ class ImuInverseKinematicXMLProcedure(object):
         self.xml.set_one("orientations_file", self.m_dynamicFile)
 
 
-        self.xml.set_one("output_motion_file", self.m_DATA_PATH+self.m_resultsDir + "\\"+ self.m_dynamicFile[:-4]+".mot")
+        self.xml.set_one("output_motion_file", self.m_DATA_PATH+self.m_resultsDir + "/"+ self.m_dynamicFile[:-4]+".mot")
         # for marker in self.m_weights.keys():
         #     self.xml.set_inList_fromAttr("IKMarkerTask","weight","name",marker,str(self.m_weights[marker]))
         # self.xml.set_one("accuracy",str(self.m_accuracy))

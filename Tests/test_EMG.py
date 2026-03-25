@@ -18,7 +18,7 @@ from pyCGM2.EMG import emgManager
 class Test_EMG:
 
     def test_emgManager(self):
-        DATA_PATH = pyCGM2.TEST_DATA_PATH+"LowLevel\\emg\\"
+        DATA_PATH = pyCGM2.TEST_DATA_PATH+"LowLevel/emg/"
 
         manager0 = emgManager.EmgManager(DATA_PATH,None)
         manager1 = emgManager.EmgManager(DATA_PATH,"emg.settings")
@@ -28,7 +28,7 @@ class Test_EMG:
     
     def test_MVC(self):
 
-        DATA_PATH = "C:\\Users\\fleboeuf\\Documents\\DATA\\pyCGM2-Data-Tests\\EMG\\Normalisation\\Mvc\\"
+        DATA_PATH = "C:/Users/fleboeuf/Documents/DATA/pyCGM2-Data-Tests/EMG/Normalisation/Mvc/"
 
         emgManager = emg.loadEmg(DATA_PATH)
         EMG_LABELS = emgManager.getChannels()
@@ -84,7 +84,7 @@ class Test_EMG:
 
     def test_Coactivation_unithan(self):
 
-        DATA_PATH = "C:\\Users\\fleboeuf\\Documents\\DATA\\pyCGM2-Data-Tests\\EMG\\Normalisation\\Mvc\\"
+        DATA_PATH = "C:/Users/fleboeuf/Documents/DATA/pyCGM2-Data-Tests/EMG/Normalisation/Mvc/"
 
         emgManager = emg.loadEmg(DATA_PATH)
         EMG_LABELS = emgManager.getChannels()
@@ -117,7 +117,7 @@ class Test_EMG:
 
     def test_Coactivation_falconer(self):
 
-        DATA_PATH = "C:\\Users\\fleboeuf\\Documents\\DATA\\pyCGM2-Data-Tests\\EMG\\Normalisation\\Mvc\\"
+        DATA_PATH = "C:/Users/fleboeuf/Documents/DATA/pyCGM2-Data-Tests/EMG/Normalisation/Mvc/"
 
         emgManager = emg.loadEmg(DATA_PATH)
         EMG_LABELS = emgManager.getChannels()

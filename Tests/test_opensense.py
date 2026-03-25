@@ -31,7 +31,7 @@ class Test_OpensenseC3d:
 
     def test_blueTrident_placer_IK_Rajagopal2015(self):
 
-        data_path = pyCGM2.TEST_DATA_PATH + "Opensense\\nexus\\"
+        data_path = pyCGM2.TEST_DATA_PATH + "Opensense/nexus/"
         os.chdir(data_path)
 
         
@@ -77,8 +77,8 @@ class Test_OpensenseC3d:
         
         freq= imu1.m_freq
         
-        osimTemplateFullFile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface\\nativeOpensim\\osim\\Rajagopal2015_opensense.osim"
-        imuPlacerToolFullFile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface\\opensense\\imuPlacer_Setup.xml"
+        osimTemplateFullFile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface/nativeOpensim/osim/Rajagopal2015_opensense.osim"
+        imuPlacerToolFullFile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface/opensense/imuPlacer_Setup.xml"
 
         
         proc = opensenseImuPlacerInterfaceProcedure.ImuPlacerXMLProcedure(data_path,osimTemplateFullFile)
@@ -159,7 +159,7 @@ class Test_OpensenseC3d:
         imu8 = irf.run() 
 
 
-        imuInverseKinematicToolFullFile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface\\opensense\\imuInverseKinematics_Setup.xml"
+        imuInverseKinematicToolFullFile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface/opensense/imuInverseKinematics_Setup.xml"
 
         calibratedModel = filter.getCalibratedOsimName()
 
@@ -184,7 +184,7 @@ class Test_OpensenseC3d:
 
     def test_blueTrident_placer_IK_CGM23(self):
 
-        data_path = pyCGM2.TEST_DATA_PATH + "Opensense\\nexus\\"
+        data_path = pyCGM2.TEST_DATA_PATH + "Opensense/nexus/"
         os.chdir(data_path)
 
         staticFilename = "Calibration.c3d"
@@ -228,9 +228,9 @@ class Test_OpensenseC3d:
         freq= imu1.m_freq
         
 
-        osimTemplateFullFile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface\\CGM23\\pycgm2-gait2392_simbody.osim"
+        osimTemplateFullFile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface/CGM23/pycgm2-gait2392_simbody.osim"
          
-        imuPlacerToolFullFile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface\\opensense\\imuPlacer_Setup.xml"
+        imuPlacerToolFullFile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface/opensense/imuPlacer_Setup.xml"
         
         proc = opensenseImuPlacerInterfaceProcedure.ImuPlacerXMLProcedure(data_path,osimTemplateFullFile)
         proc.setSetupFile(imuPlacerToolFullFile)
@@ -308,7 +308,7 @@ class Test_OpensenseC3d:
         irf = imuFilters.ImuReaderFilter(irp)
         imu8 = irf.run() 
 
-        imuInverseKinematicToolFullFile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface\\opensense\\imuInverseKinematics_Setup.xml"
+        imuInverseKinematicToolFullFile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface/opensense/imuInverseKinematics_Setup.xml"
 
         calibratedModel = filter.getCalibratedOsimName()
 
@@ -332,7 +332,7 @@ class Test_OpensenseC3d:
         filter.run()
 
         # # --- Analyses ------
-        anaTemplateFullFile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface\\CGM23\\setup\\CGM23-muscleAnalysisSetup_template.xml"
+        anaTemplateFullFile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface/CGM23/setup/CGM23-muscleAnalysisSetup_template.xml"
         procAna = opensimAnalysesInterfaceProcedure.AnalysesXmlProcedure(data_path,calibratedModel,"resutsTest")
         procAna.setSetupFiles(anaTemplateFullFile,None)
         procAna.prepareTrial_fromMotFiles("Walk.mot",None)

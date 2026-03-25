@@ -196,7 +196,7 @@ class TrcDataFrame(object):
             marker_fields = self._lines[self._idx_markers].split()
 
         if len(marker_fields) < 3 or marker_fields[0].strip() != "Frame#" or marker_fields[1].strip() != "Time":
-            raise ValueError("Unexpected TRC marker line format (expected 'Frame#\\tTime\\t...').")
+            raise ValueError("Unexpected TRC marker line format (expected 'Frame#/tTime/t...').")
 
         # TRC marker line often has marker name then 2 empty tab fields per marker -> filter empties
         self.m_markerNames = [f.strip() for f in marker_fields[2:] if f.strip() != ""]

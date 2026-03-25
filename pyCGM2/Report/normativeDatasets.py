@@ -91,7 +91,7 @@ class NormalSTP(object):
         Initializes the NormalSTP instance and populates the `data` attribute from an Excel file.
         """
 
-        self.m_filename = pyCGM2.NORMATIVE_DATABASE_PATH+"stp\\normal_stp.xlsx"
+        self.m_filename = pyCGM2.NORMATIVE_DATABASE_PATH+"stp/normal_stp.xlsx"
         self.data = {}
         self._construct()
 

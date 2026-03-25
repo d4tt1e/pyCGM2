@@ -113,7 +113,7 @@ class Test_GroundReactionForcePlate():
             plt.plot(acq.GetPoint("RGroundReactionForce").GetValues()[:,2],'-b')
             plt.plot(acq.GetPoint("RGroundReactionForce_check").GetValues()[:,2],'ob')
 
-        data_path =  pyCGM2.TEST_DATA_PATH + "GaitModels\CGM1\\fullBody-native-noOptions_Xprogression\\"
+        data_path =  pyCGM2.TEST_DATA_PATH + "GaitModels\CGM1/fullBody-native-noOptions_Xprogression/"
         model = getModel(data_path,"X")
 
         #------- X axis forward
@@ -164,7 +164,7 @@ class Test_GroundReactionForcePlate():
         #plot(acqGaitXb)
 
 
-        data_path =  pyCGM2.TEST_DATA_PATH + "GaitModels\CGM1\\LowerLimb-medMed_Yprogression\\"
+        data_path =  pyCGM2.TEST_DATA_PATH + "GaitModels\CGM1/LowerLimb-medMed_Yprogression/"
         model = getModel(data_path,"Y")
 
         # Y axis forward
@@ -227,7 +227,7 @@ class Test_GroundReactionForcePlate():
 
 
 
-        data_path =  pyCGM2.TEST_DATA_PATH + "GaitModels\CGM1\\fullBody-native-noOptions_Xprogression\\"
+        data_path =  pyCGM2.TEST_DATA_PATH + "GaitModels\CGM1/fullBody-native-noOptions_Xprogression/"
         model = getModel(data_path,"X")
 
         #------- X axis forward
@@ -292,7 +292,7 @@ class Test_GroundReactionForcePlate():
 
 
 
-        data_path =  pyCGM2.TEST_DATA_PATH + "GaitModels\CGM1\\LowerLimb-medMed_Yprogression\\"
+        data_path =  pyCGM2.TEST_DATA_PATH + "GaitModels\CGM1/LowerLimb-medMed_Yprogression/"
         model = getModel(data_path,"Y")
 
         #------- Y axis forward
@@ -340,7 +340,7 @@ class Test_GroundReactionForcePlate():
         plt.show()
 
     def test_plots(self):
-        data_path =  pyCGM2.TEST_DATA_PATH + "GaitModels\CGM1\\LowerLimb-medMed_Yprogression\\"
+        data_path =  pyCGM2.TEST_DATA_PATH + "GaitModels\CGM1/LowerLimb-medMed_Yprogression/"
         model = getModel(data_path,"Y")
 
         #------- Y axis forward
@@ -421,7 +421,7 @@ class Test_GroundReactionForcePlate():
 class Test_GRF_Integration():
 
     def test_NormalGaitIntegration(self): 
-        data_path =  pyCGM2.TEST_DATA_PATH + "GaitModels\CGM1\\fullBody-native-noOptions\\"   
+        data_path =  pyCGM2.TEST_DATA_PATH + "GaitModels\CGM1/fullBody-native-noOptions/"   
 
         staticFilename = "static.c3d"
         markerDiameter=14
@@ -517,7 +517,7 @@ class Test_GRF_Integration():
 
 
     # def test_integration(self): 
-    #     data_path =  pyCGM2.TEST_DATA_PATH + "GaitModels\CGM1\\LowerLimb-medMed_Yprogression\\"
+    #     data_path =  pyCGM2.TEST_DATA_PATH + "GaitModels\CGM1/LowerLimb-medMed_Yprogression/"
 
     #     model = getModel(data_path,"Y")
 

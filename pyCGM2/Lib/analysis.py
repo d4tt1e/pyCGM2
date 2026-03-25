@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+import os
 from pyCGM2.Utils import files
 from pyCGM2.Processing.JointPatterns import jointPatternFilters
 from pyCGM2.Processing.JointPatterns import jointPatternProcedures
@@ -214,7 +215,7 @@ def exportAnalysis(analysisInstance:Analysis, DATA_PATH:str, name:str,
 
     .. code-block:: python
 
-        exportAnalysis(AnalysisInstance, "c:\\DATA\\","johnDoe")
+        exportAnalysis(AnalysisInstance, "c:/DATA/","johnDoe")
 
 
     """
@@ -262,7 +263,7 @@ def automaticCPdeviations(
     # Your function's code remains unchanged
 
 
-    RULES_PATH = pyCGM2.PYCGM2_SETTINGS_FOLDER + "jointPatterns\\"
+    RULES_PATH = pyCGM2.PYCGM2_SETTINGS_FOLDER + "jointPatterns" + os.sep
     rulesXls = RULES_PATH+reference+language+".xlsx"
     jpp = jointPatternProcedures.XlsJointPatternProcedure(
         rulesXls, pointSuffix=pointLabelSuffix)

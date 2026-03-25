@@ -192,10 +192,10 @@ class InverseKinematicXmlCgmProcedure(InverseKinematicXmlProcedure):
         self.m_modelVersion = modelVersion.replace(".", "") if modelVersion is not None else "UnversionedModel"
 
         if self.m_modelVersion == "CGM23": 
-            ikToolFile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface\\CGM23\\setup\\CGM23-ikSetUp_template.xml"
+            ikToolFile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface/CGM23/setup/CGM23-ikSetUp_template.xml"
 
         if self.m_modelVersion == "CGM22": 
-            ikToolFile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface\\CGM22\\setup\\CGM22-ikSetUp_template.xml"
+            ikToolFile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface/CGM22/setup/CGM22-ikSetUp_template.xml"
 
         self.m_ikTool = self.m_DATA_PATH + self.m_modelVersion + "-IKTool-setup.xml"
         self.xml = opensimInterface.opensimXmlInterface(ikToolFile,self.m_ikTool)
@@ -226,9 +226,9 @@ class KalmanInverseKinematicXmlCgmProcedure(InverseKinematicXmlProcedure):
         self.m_modelVersion = modelVersion.replace(".", "") if modelVersion is not None else "UnversionedModel"
 
         if self.m_modelVersion == "CGM22": 
-            ikToolFile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface\\CGM22\\setup\\CGM22-kalmanIkSetUp_template.xml"
+            ikToolFile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface/CGM22/setup/CGM22-kalmanIkSetUp_template.xml"
         elif self.m_modelVersion == "CGM23": 
-            ikToolFile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface\\CGM23\\setup\\CGM23-kalmanIkSetUp_template.xml"
+            ikToolFile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface/CGM23/setup/CGM23-kalmanIkSetUp_template.xml"
 
 
         self.m_ikTool = self.m_DATA_PATH + self.m_modelVersion + "-kalmanIk-setup.xml"
@@ -288,9 +288,9 @@ class KalmanInverseKinematicXmlCgmProcedure(InverseKinematicXmlProcedure):
         files.renameFile(self.m_ikTool, 
                     self.m_DATA_PATH + self.m_dynamicFile+ "-"+self.m_modelVersion + "-kalmanIk-setup.xml")
 
-        files.renameFile(self.m_DATA_PATH+self.m_resultsDir + "\\_ks_model_marker_locations.sto", 
-                    self.m_DATA_PATH+self.m_resultsDir + "\\_ik_model_marker_locations.sto")
+        files.renameFile(self.m_DATA_PATH+self.m_resultsDir + "/_ks_model_marker_locations.sto", 
+                    self.m_DATA_PATH+self.m_resultsDir + "/_ik_model_marker_locations.sto")
 
-        files.renameFile(self.m_DATA_PATH+self.m_resultsDir + "\\_ks_marker_errors.sto", 
-                    self.m_DATA_PATH+self.m_resultsDir + "\\_ik_marker_errors.sto")
+        files.renameFile(self.m_DATA_PATH+self.m_resultsDir + "/_ks_marker_errors.sto", 
+                    self.m_DATA_PATH+self.m_resultsDir + "/_ik_marker_errors.sto")
 

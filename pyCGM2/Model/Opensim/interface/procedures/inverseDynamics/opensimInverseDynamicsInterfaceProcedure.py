@@ -82,7 +82,7 @@ class InverseDynamicsXmlProcedure(opensimProcedures.OpensimInterfaceXmlProcedure
         self.m_frameRange = [int((self.m_beginTime*self.m_freq)+self.m_ff),int((self.m_endTime*self.m_freq)+self.m_ff)] 
 
         opensimTools.footReactionMotFile(
-            self.m_acq, self.m_DATA_PATH+self.m_resultsDir+"\\"+self.m_dynamicFile+"_grf.mot",
+            self.m_acq, self.m_DATA_PATH+self.m_resultsDir+"/"+self.m_dynamicFile+"_grf.mot",
             self.m_progressionAxis,self.m_forwardProgression,mfpa = self.m_mfpa)
 
 
@@ -174,12 +174,12 @@ class InverseDynamicsXmlCgmProcedure(InverseDynamicsXmlProcedure):
         self.m_modelVersion = modelVersion.replace(".", "") if modelVersion is not None else "UnversionedModel"
 
         if self.m_modelVersion == "CGM23": 
-            idToolTemplateFile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface\\CGM23\\setup\\CGM23-idToolSetup_template.xml"
-            externalLoadFile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface\\CGM23\\setup\\walk_grf.xml"
+            idToolTemplateFile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface/CGM23/setup/CGM23-idToolSetup_template.xml"
+            externalLoadFile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface/CGM23/setup/walk_grf.xml"
 
         if self.m_modelVersion == "CGM22": 
-            idToolTemplateFile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface\\CGM22\\setup\\CGM22-idToolSetup_template.xml"
-            externalLoadFile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface\\CGM22\\setup\\walk_grf.xml"
+            idToolTemplateFile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface/CGM22/setup/CGM22-idToolSetup_template.xml"
+            externalLoadFile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface/CGM22/setup/walk_grf.xml"
 
         self.m_idTool = self.m_DATA_PATH + self.m_modelVersion + "-idTool-setup.xml"
         self.xml = opensimInterface.opensimXmlInterface(idToolTemplateFile,self.m_idTool)

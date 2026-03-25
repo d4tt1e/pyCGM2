@@ -1,7 +1,7 @@
 """ This module contains pyCGM2 anomaly filters to deal with either an anomaly
 detector procedure or an anomaly correction procedure
 
-check out the script : `\Tests\\test_anomalies.py` for examples
+check out the script : `\Tests/test_anomalies.py` for examples
 """
 import btk
 import pyCGM2

@@ -25,7 +25,7 @@ else :
             NEXUS = ViconNexus.ViconNexus()
 
 
-            DATA_PATH =  pyCGM2.TEST_DATA_PATH+"NexusAPI\\c3d_x2d\\"
+            DATA_PATH =  pyCGM2.TEST_DATA_PATH+"NexusAPI/c3d_x2d/"
 
             filenameNoExt = "gait_GAP"
             NEXUS.OpenTrial( str(DATA_PATH+filenameNoExt), 30 )
@@ -42,7 +42,7 @@ else :
             NEXUS = ViconNexus.ViconNexus()
 
 
-            DATA_PATH =  pyCGM2.TEST_DATA_PATH+"NexusAPI\\c3d_x2d\\"
+            DATA_PATH =  pyCGM2.TEST_DATA_PATH+"NexusAPI/c3d_x2d/"
 
             filenameNoExt = "gait_GAP"
             NEXUS.OpenTrial( str(DATA_PATH+filenameNoExt), 30 )

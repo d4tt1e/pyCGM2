@@ -21,7 +21,7 @@ else :
             NEXUS = ViconNexus.ViconNexus()
 
 
-            DATA_PATH =  pyCGM2.TEST_DATA_PATH+"Nexus\\CGM1\\kad-med-Options\\"
+            DATA_PATH =  pyCGM2.TEST_DATA_PATH+"Nexus/CGM1/kad-med-Options/"
 
             # calibration
             filenameNoExt = "static"
@@ -73,7 +73,7 @@ else :
             NEXUS = ViconNexus.ViconNexus()
 
 
-            DATA_PATH =  pyCGM2.TEST_DATA_PATH+"Nexus\\CGM1.1\\pyCGM2 lower limb CGM1 medial\\"
+            DATA_PATH =  pyCGM2.TEST_DATA_PATH+"Nexus/CGM1.1/pyCGM2 lower limb CGM1 medial/"
 
             # calibration
             filenameNoExt = "pyCGM2 lower limb CGM1 medial Static"
@@ -126,7 +126,7 @@ else :
             NEXUS = ViconNexus.ViconNexus()
 
 
-            DATA_PATH =  pyCGM2.TEST_DATA_PATH+"Nexus\\CGM2.1\\pyCGM2 lower limb CGM21\\"
+            DATA_PATH =  pyCGM2.TEST_DATA_PATH+"Nexus/CGM2.1/pyCGM2 lower limb CGM21/"
 
             # calibration
             filenameNoExt = "pyCGM2 lower limb CGM21 Static"
@@ -178,7 +178,7 @@ else :
             NEXUS = ViconNexus.ViconNexus()
 
 
-            DATA_PATH =  pyCGM2.TEST_DATA_PATH+"Nexus\\CGM2.2\\pyCGM2 lower limb CGM22\\"
+            DATA_PATH =  pyCGM2.TEST_DATA_PATH+"Nexus/CGM2.2/pyCGM2 lower limb CGM22/"
 
             # calibration
             filenameNoExt = "pyCGM2 lower limb CGM22 Static"
@@ -230,7 +230,7 @@ else :
             NEXUS = ViconNexus.ViconNexus()
 
 
-            DATA_PATH =  pyCGM2.TEST_DATA_PATH+"Nexus\\CGM2.3\\pyCGM2 lower limb CGM23\\"
+            DATA_PATH =  pyCGM2.TEST_DATA_PATH+"Nexus/CGM2.3/pyCGM2 lower limb CGM23/"
 
             # calibration
             filenameNoExt = "pyCGM2 lower limb CGM23 Static"
@@ -282,7 +282,7 @@ else :
             NEXUS = ViconNexus.ViconNexus()
 
 
-            DATA_PATH =  pyCGM2.TEST_DATA_PATH+"Nexus\\CGM2.4\\pyCGM2 lower limb CGM23\\"
+            DATA_PATH =  pyCGM2.TEST_DATA_PATH+"Nexus/CGM2.4/pyCGM2 lower limb CGM23/"
 
             # calibration
             filenameNoExt = "pyCGM2 lower limb CGM24 Static"
@@ -335,7 +335,7 @@ else :
             NEXUS = ViconNexus.ViconNexus()
 
 
-            DATA_PATH =  pyCGM2.TEST_DATA_PATH+"Nexus\\CGM2.5\\pyCGM2_FullBody_CGM25\\"
+            DATA_PATH =  pyCGM2.TEST_DATA_PATH+"Nexus/CGM2.5/pyCGM2_FullBody_CGM25/"
 
             # calibration
             filenameNoExt = "CGM2_Static_01"

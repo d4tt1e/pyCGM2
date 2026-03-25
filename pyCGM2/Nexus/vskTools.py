@@ -21,8 +21,8 @@ def getVskFiles(path:str):
         str: The first vsk file found in the specified folder.
     """
 
-    path = path[:-1] if path[-1:]=="\\" else path
-    vskFile = files.getFiles(path+"\\",".vsk")
+    path = path[:-1] if path[-1:]=="/" else path
+    vskFile = files.getFiles(path+"/",".vsk")
     if len(vskFile)>1:
         LOGGER.logger.info("Folder with several vsk. %s selected"%(vskFile[0]))
 

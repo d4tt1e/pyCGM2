@@ -19,7 +19,7 @@ from pyCGM2.Lib.CGM import cgm2_3
 
 class Test_CGM23:
     def test_lowLevel(self):
-        DATA_PATH = pyCGM2.TEST_DATA_PATH + "GaitModels\CGM2.3\\Hannibal-medial\\"
+        DATA_PATH = pyCGM2.TEST_DATA_PATH + "GaitModels/CGM2.3/Hannibal-medial/"
 
         staticFilename = "static.c3d"
         gaitFilename= "gait1.c3d"
@@ -94,9 +94,9 @@ class Test_CGM23:
         # ------- OPENSIM IK --------------------------------------
         # --- osim builder ---
         cgmCalibrationprocedure = opensimFilters.CgmOpensimCalibrationProcedures(model)
-        markersetFile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "models\\settings\\cgm2_3\\cgm2_3-markerset.xml"
+        markersetFile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "models/settings/cgm2_3/cgm2_3-markerset.xml"
 
-        osimfile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "models\\osim\\lowerLimb_ballsJoints.osim"
+        osimfile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "models/osim/lowerLimb_ballsJoints.osim"
 
 
         oscf = opensimFilters.opensimCalibrationFilter(osimfile,
@@ -111,7 +111,7 @@ class Test_CGM23:
         #procedure
         cgmFittingProcedure = opensimFilters.CgmOpensimFittingProcedure(model)
 
-        iksetupFile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "models\\settings\\cgm2_3\\cgm2_3-ikSetUp_template.xml"
+        iksetupFile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "models/settings/cgm2_3/cgm2_3-ikSetUp_template.xml"
 
         osrf = opensimFilters.opensimFittingFilter(iksetupFile,
                                                           scalingOsim,
@@ -135,7 +135,7 @@ class Test_CGM23:
 
     def test_highLevel(self):
 
-        DATA_PATH = pyCGM2.TEST_DATA_PATH + "GaitModels\CGM2.3\\Hannibal-medial\\"
+        DATA_PATH = pyCGM2.TEST_DATA_PATH + "GaitModels/CGM2.3/Hannibal-medial/"
 
         staticFilename = "static.c3d"
         reconstructFilenameLabelled= "gait1.c3d"

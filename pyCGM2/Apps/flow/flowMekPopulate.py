@@ -83,7 +83,7 @@ def main(args=None):
     userSettingsFile = userSettings+".settings" if not userSettings.endswith(".settings") else userSettings
     userSettings = files.openFile(data_path,userSettingsFile)
     userSettingsFileNoExt = userSettingsFile.replace(".settings","")
-    processedPath = data_path+f"Processing_{userSettingsFileNoExt}\\"
+    processedPath = data_path+f"Processing_{userSettingsFileNoExt}/"
 
     subject_path = files.get_parent_directory(data_path)
 
@@ -152,7 +152,7 @@ def main(args=None):
                 }
 
             if modelVersion in ["CGM2.2","CGM2.3"]:
-                osimInterface = opensimInterface.osimInterface(pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface\\"+modelVersion.replace(".","")+"\\", "pycgm2-gait2354_simbody.osim")
+                osimInterface = opensimInterface.osimInterface(pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface/"+modelVersion.replace(".","")+"/", "pycgm2-gait2354_simbody.osim")
                 muscleDict = osimInterface.getMuscles_bySide(addToName="[MuscleLength]")
                 scheme["MuscleKinematics/MTUL"] = [[processedPath+filename for filename in trialnames],  [it+":Left" for it  in muscleDict["Left"]] + [it+":Right" for it  in muscleDict["Right"]]]
 

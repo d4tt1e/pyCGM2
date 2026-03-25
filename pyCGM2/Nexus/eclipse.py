@@ -53,7 +53,7 @@ def getCurrentMarkedEnfs():
         List[str]: A list of marked .enf filenames, or None if none are found.
     """
     currentMarkedNodesFile = os.getenv(
-        "PUBLIC")+"\\Documents\\Vicon\\Eclipse\\CurrentlyMarkedNodes.xml"
+        "PUBLIC")+"/Documents/Vicon/Eclipse/CurrentlyMarkedNodes.xml"
 
     infile = open(currentMarkedNodesFile, "r")
     soup = BeautifulSoup(infile.read(), 'xml')
@@ -62,7 +62,7 @@ def getCurrentMarkedEnfs():
     nodes = soup.find_all("MarkedNode")
     for node in nodes:
         fullFilename = node.get("MarkedNodePath")
-        out.append(fullFilename.split("\\")[-1])
+        out.append(fullFilename.split("/")[-1])
 
     return out if out != [] else None
 
@@ -78,7 +78,7 @@ def getCurrentMarkedNodes(fileType:str="c3d"):
         Tuple[str, List[str]]: The path and a list of marked files with the specified file type.
     """
     currentMarkedNodesFile = os.getenv(
-        "PUBLIC")+"\\Documents\\Vicon\\Eclipse\\CurrentlyMarkedNodes.xml"
+        "PUBLIC")+"/Documents/Vicon/Eclipse/CurrentlyMarkedNodes.xml"
 
     infile = open(currentMarkedNodesFile, "r")
     soup = BeautifulSoup(infile.read(), 'xml')
@@ -91,8 +91,8 @@ def getCurrentMarkedNodes(fileType:str="c3d"):
 
     for node in nodes:
         fullFilename = node.get("MarkedNodePath")
-        nodepath = fullFilename[0:fullFilename.rfind("\\")+1]
-        filename = fullFilename.split("\\")[-1]
+        nodepath = fullFilename[0:fullFilename.rfind("/")+1]
+        filename = fullFilename.split("/")[-1]
 
         out.append([nodepath, filename])
     
@@ -112,9 +112,9 @@ def getEnfFiles(path:str, type:enums.EclipseType):
     Returns:
         List[str] or str: List of .enf filenames or a single filename, depending on the type.
     """
-    path = path[:-1] if path[-1:] == "\\" else path
+    path = path[:-1] if path[-1:] == "/" else path
 
-    enfFiles = files.getFiles(path+"\\", type.value)
+    enfFiles = files.getFiles(path+"/", type.value)
 
     if type == enums.EclipseType.Session:
         if len(enfFiles) > 1:

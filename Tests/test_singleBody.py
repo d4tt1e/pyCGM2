@@ -8,7 +8,7 @@ from pyCGM2.Tools import btkTools
 from pyCGM2.Model.Models import singleBody
 class Test_singleBody:
     def test_0(self):
-        DATA_PATH = pyCGM2.TEST_DATA_PATH + "LowLevel\singleBody\\"
+        DATA_PATH = pyCGM2.TEST_DATA_PATH + "LowLevel\singleBody/"
 
         acqStatic = btkTools.smartReader(DATA_PATH + "static.c3d")
         acqDyn = btkTools.smartReader(DATA_PATH + "motion 01.c3d")

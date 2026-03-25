@@ -86,7 +86,7 @@ class AnalysesXmlProcedure(opensimProcedures.OpensimInterfaceXmlProcedure):
         if externalLoadDataFile is not None:
             if not os.path.isfile(self.m_RES_PATH+externalLoadDataFile):
                 raise Exception(f"[pyCGM2] - your mot file {externalLoadDataFile} is not in the folder {self.m_RES_PATH}")
-            self.m_externalLoadDataFile = self.m_RES_PATH + "\\"+ externalLoadDataFile
+            self.m_externalLoadDataFile = self.m_RES_PATH + "/"+ externalLoadDataFile
 
 
     def prepareTrial_fromBtkAcq(self, acq: btk.btkAcquisition, dynamicFile: str, mfpa: Any, 
@@ -216,12 +216,12 @@ class AnalysesXmlCgmProcedure(AnalysesXmlProcedure):
         self.m_modelVersion = modelVersion.replace(".", "") if modelVersion is not None else "UnversionedModel"
 
         if self.m_modelVersion == "CGM23":
-            analysisToolTemplateFile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface\\CGM23\\setup\\CGM23-muscleAnalysisSetup_template.xml"
-            externalLoadTemplateFile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface\\CGM23\\setup\\walk_grf.xml"
+            analysisToolTemplateFile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface/CGM23/setup/CGM23-muscleAnalysisSetup_template.xml"
+            externalLoadTemplateFile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface/CGM23/setup/walk_grf.xml"
 
         if self.m_modelVersion == "CGM22":
-            analysisToolTemplateFile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface\\CGM22\\setup\\CGM22-muscleAnalysisSetup_template.xml"
-            externalLoadTemplateFile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface\\CGM22\\setup\\walk_grf.xml"
+            analysisToolTemplateFile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface/CGM22/setup/CGM22-muscleAnalysisSetup_template.xml"
+            externalLoadTemplateFile = pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface/CGM22/setup/walk_grf.xml"
 
 
         self.m_idAnalyses = self.m_DATA_PATH + self.m_modelVersion + "-analysesTool-setup.xml"
@@ -284,10 +284,10 @@ class AnalysesXmlCgmDrivenModelProcedure(AnalysesXmlCgmProcedure):
     
         self.m_refPose=None
         if self.m_modelVersion == "CGM23":
-            self.m_refPose = opensimIO.OpensimDataFrame(pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface\\CGM23\\", "referencePose.mot")
+            self.m_refPose = opensimIO.OpensimDataFrame(pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface/CGM23/", "referencePose.mot")
         
         elif self.m_modelVersion == "CGM22":
-            self.m_refPose = opensimIO.OpensimDataFrame(pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface\\CGM22\\", "referencePose.mot")
+            self.m_refPose = opensimIO.OpensimDataFrame(pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface/CGM22/", "referencePose.mot")
 
         if self.m_refPose is not None:
             self.m_beginTime = 0
@@ -312,15 +312,15 @@ class AnalysesXmlCgmDrivenModelProcedure(AnalysesXmlCgmProcedure):
                 self.m_refPose.getDataFrame()[key] = qi[key]
                 # self.m_refPose.getDataFrame()["hip_flexion_r"] = 90.0#np.deg2rad(90.0)
                 # self.m_refPose.getDataFrame()["knee_flexion_r"] = -90.0#np.deg2rad(-90.0)
-        self.m_refPose.save( outDir = self.m_DATA_PATH+self.m_resultsDir+"\\" , filename=poseLabel+".mot")
+        self.m_refPose.save( outDir = self.m_DATA_PATH+self.m_resultsDir+"/" , filename=poseLabel+".mot")
         
         self.m_poseLabel+".mot"
 
     def forceMotFile(self,motfile):
         self.m_poseLabel = motfile[:-4]
 
-        files.copyPaste(self.m_DATA_PATH+ motfile,self.m_DATA_PATH+self.m_resultsDir+"\\"+motfile)
-        self.m_refPose = opensimIO.OpensimDataFrame(self.m_DATA_PATH+self.m_resultsDir+"\\", motfile)
+        files.copyPaste(self.m_DATA_PATH+ motfile,self.m_DATA_PATH+self.m_resultsDir+"/"+motfile)
+        self.m_refPose = opensimIO.OpensimDataFrame(self.m_DATA_PATH+self.m_resultsDir+"/", motfile)
 
         self.m_beginTime = 0
         self.m_endTime = self.m_refPose.getDataFrame()["time"].iloc[-1]
@@ -334,7 +334,7 @@ class AnalysesXmlCgmDrivenModelProcedure(AnalysesXmlCgmProcedure):
         self.xml.getSoup().find("AnalyzeTool").attrs["name"] = self.m_modelVersion +"-Pose["+self.m_poseLabel+"]"
 
         self.xml.set_one("model_file", self.m_osimName)
-        self.xml.set_one("coordinates_file", self.m_DATA_PATH+self.m_resultsDir+"\\"+self.m_poseLabel+".mot")
+        self.xml.set_one("coordinates_file", self.m_DATA_PATH+self.m_resultsDir+"/"+self.m_poseLabel+".mot")
         self.xml.set_one("results_directory",  self.m_resultsDir)
         self.xml.set_one("initial_time",str(self.m_beginTime))
         self.xml.set_one("final_time",str(self.m_endTime))
@@ -342,7 +342,7 @@ class AnalysesXmlCgmDrivenModelProcedure(AnalysesXmlCgmProcedure):
         if self._externalLoadApplied:
             self.xml.set_one("external_loads_file", files.getFilename(self.m_externalLoad))
            
-            self.xml_load.set_one("datafile", self.m_DATA_PATH+self.m_resultsDir + "\\"+ self.m_dynamicFile+"_grf.mot")
+            self.xml_load.set_one("datafile", self.m_DATA_PATH+self.m_resultsDir + "/"+ self.m_dynamicFile+"_grf.mot")
 
 
     def finalize(self):

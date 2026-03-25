@@ -25,7 +25,7 @@ normalActivityEmgs=['RECFEM','RECFEM', None,None,None,
 
 
 def dataTest1():
-    DATA_PATH = pyCGM2.TEST_DATA_PATH + "GaitData//CGM1-NormalGaitData-Events//Hannibal Lecter\\"
+    DATA_PATH = pyCGM2.TEST_DATA_PATH + "GaitData//CGM1-NormalGaitData-Events//Hannibal Lecter/"
     modelledFilenames = ["gait Trial 01.c3d", "gait Trial 02.c3d"]
     analysisInstance = analysis.makeAnalysis(DATA_PATH,
                         modelledFilenames,
@@ -34,7 +34,7 @@ def dataTest1():
 
 
 def dataTest2():
-    DATA_PATH = pyCGM2.TEST_DATA_PATH + "GaitData\\Patient\\session 1 - CGM1\\"
+    DATA_PATH = pyCGM2.TEST_DATA_PATH + "GaitData/Patient/session 1 - CGM1/"
     modelledFilenames = ["20180706_CS_PONC_S_NNNN dyn 02.c3d",
                         "20180706_CS_PONC_S_NNNN dyn 03.c3d",
                         "20180706_CS_PONC_S_NNNN dyn 05.c3d"]
@@ -52,7 +52,7 @@ def dataTest2():
 
 
 def dataTest3():
-    DATA_PATH1 = pyCGM2.TEST_DATA_PATH + "GaitData\\Patient\\session 1 - CGM1\\"
+    DATA_PATH1 = pyCGM2.TEST_DATA_PATH + "GaitData/Patient/session 1 - CGM1/"
     modelledFilenames1 = ["20180706_CS_PONC_S_NNNN dyn 02.c3d",
                         "20180706_CS_PONC_S_NNNN dyn 03.c3d",
                         "20180706_CS_PONC_S_NNNN dyn 05.c3d"]
@@ -65,7 +65,7 @@ def dataTest3():
                         subjectInfo=None, experimentalInfo=None,modelInfo=None,
                         )
 
-    DATA_PATH2 = pyCGM2.TEST_DATA_PATH + "GaitData\\Patient\\session 2 - CGM23\\"
+    DATA_PATH2 = pyCGM2.TEST_DATA_PATH + "GaitData/Patient/session 2 - CGM23/"
     modelledFilenames2 = ["20200729-SC-PONC-S-NNNN dyn 04.c3d",
                         "20200729-SC-PONC-S-NNNN dyn 06.c3d"]
 

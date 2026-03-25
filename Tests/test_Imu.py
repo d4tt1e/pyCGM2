@@ -79,9 +79,9 @@ def Vicon_practice_GlobalAngle(file_name):
 class Test_ImuReaders:
 
     def test_blueTridentAlignedCsv(self):
-        fullfilename = pyCGM2.TEST_DATA_PATH + "LowLevel\\IMU\\\BlueTridentCaptureU\\static_2sensors_csvFiles\\S1-1_TS-01436_2023-08-01-15-59-57_aligned.csv"
+        fullfilename = pyCGM2.TEST_DATA_PATH + "LowLevel/IMU/\BlueTridentCaptureU/static_2sensors_csvFiles/S1-1_TS-01436_2023-08-01-15-59-57_aligned.csv"
        
-        imuTranslators  = files.openFile(pyCGM2.PYCGM2_SETTINGS_FOLDER +"IMU\\","viconBlueTrident.translators")
+        imuTranslators  = files.openFile(pyCGM2.PYCGM2_SETTINGS_FOLDER +"IMU/","viconBlueTrident.translators")
        
         irp = imuReaderProcedures.CsvProcedure(fullfilename, imuTranslators["Translators"] )
         irf = imuFilters.ImuReaderFilter(irp)
@@ -94,9 +94,9 @@ class Test_ImuReaders:
 
 
     def test_blueTridentc3d(self):
-        fullfilename = pyCGM2.TEST_DATA_PATH + "IMU\\angleMeasurement\\goniometer\\right36 -0to120 trial 01.c3d"
+        fullfilename = pyCGM2.TEST_DATA_PATH + "IMU/angleMeasurement/goniometer/right36 -0to120 trial 01.c3d"
 
-        # imuTranslators  = files.openFile(pyCGM2.PYCGM2_SETTINGS_FOLDER +"IMU\\","viconBlueTrident.translators")
+        # imuTranslators  = files.openFile(pyCGM2.PYCGM2_SETTINGS_FOLDER +"IMU/","viconBlueTrident.translators")
        
         irp = imuReaderProcedures.C3dBlueTridentProcedure(fullfilename,"1")
         irf = imuFilters.ImuReaderFilter(irp)
@@ -109,11 +109,11 @@ class Test_ImuReaders:
         imu1 = irf.run()
 
     def test_blueTridentNotAlignedCsv(self):
-        fullfilename1 = pyCGM2.TEST_DATA_PATH + "LowLevel\\IMU\\\BlueTridentCaptureU\\Rouling Maxence_TS-01436_2022-04-26-16-34-56_lowg.csv"
-        fullfilename2 = pyCGM2.TEST_DATA_PATH + "LowLevel\\IMU\\\BlueTridentCaptureU\\Rouling Maxence_TS-02122_2022-04-26-16-34-56_lowg.csv"
-        fullfilename3 = pyCGM2.TEST_DATA_PATH + "LowLevel\\IMU\\\BlueTridentCaptureU\\Rouling Maxence_TS-02374_2022-04-26-16-34-56_lowg.csv"
+        fullfilename1 = pyCGM2.TEST_DATA_PATH + "LowLevel/IMU/\BlueTridentCaptureU/Rouling Maxence_TS-01436_2022-04-26-16-34-56_lowg.csv"
+        fullfilename2 = pyCGM2.TEST_DATA_PATH + "LowLevel/IMU/\BlueTridentCaptureU/Rouling Maxence_TS-02122_2022-04-26-16-34-56_lowg.csv"
+        fullfilename3 = pyCGM2.TEST_DATA_PATH + "LowLevel/IMU/\BlueTridentCaptureU/Rouling Maxence_TS-02374_2022-04-26-16-34-56_lowg.csv"
 
-        imuTranslators  = files.openFile(pyCGM2.PYCGM2_SETTINGS_FOLDER +"IMU\\","viconBlueTrident.translators")
+        imuTranslators  = files.openFile(pyCGM2.PYCGM2_SETTINGS_FOLDER +"IMU/","viconBlueTrident.translators")
 
         dataframes = imuReaderProcedures.synchroniseNotAlignedCsv([fullfilename1,fullfilename2,fullfilename3],timeColumn ="time_s")
 
@@ -134,9 +134,9 @@ class Test_ImuReaders:
 class Test_ImuMotion:
     def test_relativeAngles(self):
     
-        fullfilename = pyCGM2.TEST_DATA_PATH + "IMU\\angleMeasurement\\goniometer\\right36 -0to120 trial 01.c3d"
+        fullfilename = pyCGM2.TEST_DATA_PATH + "IMU/angleMeasurement/goniometer/right36 -0to120 trial 01.c3d"
 
-        # imuTranslators  = files.openFile(pyCGM2.PYCGM2_SETTINGS_FOLDER +"IMU\\","viconBlueTrident.translators")
+        # imuTranslators  = files.openFile(pyCGM2.PYCGM2_SETTINGS_FOLDER +"IMU/","viconBlueTrident.translators")
        
         irp = imuReaderProcedures.C3dBlueTridentProcedure(fullfilename,"1")
         irf = imuFilters.ImuReaderFilter(irp)
@@ -167,11 +167,11 @@ class Test_Vicon:
   
         # Import data into Python as a PD Data Frame
 
-        fullfilename = "C:\\Users\\fleboeuf\\Documents\\Programmation\\vicon-plugin\\Capture.U Practice Scripts\\Practice_Python\\Practice_GlobalAngles.csv"
+        fullfilename = "C:/Users/fleboeuf/Documents/Programmation/vicon-plugin/Capture.U Practice Scripts/Practice_Python/Practice_GlobalAngles.csv"
         trial_new_deg, trial_helical = Vicon_practice_GlobalAngle(fullfilename)
 
 
-        imuTranslators  = files.openFile(pyCGM2.PYCGM2_SETTINGS_FOLDER +"IMU\\","viconBlueTrident.translators")
+        imuTranslators  = files.openFile(pyCGM2.PYCGM2_SETTINGS_FOLDER +"IMU/","viconBlueTrident.translators")
        
         irp = imuReaderProcedures.CsvProcedure(fullfilename, imuTranslators["Translators"] )
         irf = imuFilters.ImuReaderFilter(irp)
@@ -201,10 +201,10 @@ class Test_Vicon:
 
     def test_Vicon_downsample(self):
 
-        data_path = pyCGM2.TEST_DATA_PATH + "Opensense\\nexus\\"    
+        data_path = pyCGM2.TEST_DATA_PATH + "Opensense/nexus/"    
 
-        imu_data = files.openPickleFile(data_path+"OpenSenseOutputs_fromVicon\\","imu_data")# np.load(data_path+"OpenSenseOutputs_fromVicon\\imu_data.npy",allow_pickle=True)
-        imu_data_ds = files.openPickleFile(data_path+"OpenSenseOutputs_fromVicon\\","imu_data_ds")#np.load(data_path+"OpenSenseOutputs_fromVicon\\imu_data_ds.npy",allow_pickle=True)
+        imu_data = files.openPickleFile(data_path+"OpenSenseOutputs_fromVicon/","imu_data")# np.load(data_path+"OpenSenseOutputs_fromVicon/imu_data.npy",allow_pickle=True)
+        imu_data_ds = files.openPickleFile(data_path+"OpenSenseOutputs_fromVicon/","imu_data_ds")#np.load(data_path+"OpenSenseOutputs_fromVicon/imu_data_ds.npy",allow_pickle=True)
 
         dynamicFile = "Walk.c3d"
 

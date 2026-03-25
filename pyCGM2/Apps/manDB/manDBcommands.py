@@ -47,8 +47,8 @@ def main_newPatient(args=None):
         LOGGER.logger.warning("No patient enf file found in the data path")
         raise Exception("No patient enf file found in the data path")
     
-    patientDirName = patient_path.split("\\")[-2]
-    classificationName = files.get_parent_directory(patient_path).split("\\")[-2]
+    patientDirName = patient_path.split("/")[-2]
+    classificationName = files.get_parent_directory(patient_path).split("/")[-2]
 
     enfPatient = eclipse.PatientEnfReader(patient_path, enfPatientFile)
     
@@ -109,9 +109,9 @@ def main_registerSession(args=None):
         raise Exception("No patient enf file found in the data path")
     
 
-    classificationName = files.get_parent_directory(patient_path).split("\\")[-2]
-    patientDirName = patient_path.split("\\")[-2]
-    sessionDirName = data_path.split("\\")[-2]
+    classificationName = files.get_parent_directory(patient_path).split("/")[-2]
+    patientDirName = patient_path.split("/")[-2]
+    sessionDirName = data_path.split("/")[-2]
     sessionIndex = utils.getNumberFromStr(sessionDirName)
 
 

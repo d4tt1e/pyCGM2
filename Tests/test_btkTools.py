@@ -10,33 +10,33 @@ import btk
 
 class Test_Btk:
     def test_btkReader(self):
-        filename = pyCGM2.TEST_DATA_PATH + "LowLevel\\IO\\Hannibal_c3d\\static.c3d"
+        filename = pyCGM2.TEST_DATA_PATH + "LowLevel/IO/Hannibal_c3d/static.c3d"
         acq = btkTools.smartReader(filename, translators=None)
 
     def test_btkWriter(self):
-        filename = pyCGM2.TEST_DATA_PATH + "LowLevel\\IO\\Hannibal_c3d\\static.c3d"
+        filename = pyCGM2.TEST_DATA_PATH + "LowLevel/IO/Hannibal_c3d/static.c3d"
         acq = btkTools.smartReader(filename, translators=None)
 
         filenameOUT = pyCGM2.TEST_DATA_PATH_OUT + \
-            "LowLevel\\IO\\Hannibal_c3d\\static.c3d"
-        files.createDir(pyCGM2.TEST_DATA_PATH_OUT+"LowLevel\\IO\\Hannibal_c3d")
+            "LowLevel/IO/Hannibal_c3d/static.c3d"
+        files.createDir(pyCGM2.TEST_DATA_PATH_OUT+"LowLevel/IO/Hannibal_c3d")
         btkTools.smartWriter(acq, filenameOUT)
 
     def test_appendPoint(self):
-        filename = pyCGM2.TEST_DATA_PATH + "LowLevel\\IO\\Hannibal_c3d\\static.c3d"
+        filename = pyCGM2.TEST_DATA_PATH + "LowLevel/IO/Hannibal_c3d/static.c3d"
         acq = btkTools.smartReader(filename, translators=None)
         values = acq.GetPoint("LASI").GetValues()
         btkTools.smartAppendPoint(
             acq, "LASI2", values, PointType="Marker", desc="toto", residuals=None)
 
     def test_appendAnalog(self):
-        filename = pyCGM2.TEST_DATA_PATH + "LowLevel\\IO\\Hannibal_c3d\\static.c3d"
+        filename = pyCGM2.TEST_DATA_PATH + "LowLevel/IO/Hannibal_c3d/static.c3d"
         acq = btkTools.smartReader(filename, translators=None)
         values = acq.GetAnalog("Force.Fx1").GetValues()
         btkTools.smartAppendAnalog(acq, "Hän-emg", values, desc="Hän-emg")
 
     def test_functions(self):
-        filename = pyCGM2.TEST_DATA_PATH + "LowLevel\\IO\\Hannibal_c3d\\gait1.c3d"
+        filename = pyCGM2.TEST_DATA_PATH + "LowLevel/IO/Hannibal_c3d/gait1.c3d"
         acq = btkTools.smartReader(filename, translators=None)
 
         btkTools.GetMarkerNames(acq)
@@ -66,12 +66,12 @@ class Test_Btk:
         btkTools.smartSetMetadata(acq, "SUBJECTS", "USED", 0, "Hän")
 
     def test_btkReader_forcePlateType5(self):
-        filename = pyCGM2.TEST_DATA_PATH + "LowLevel\\IO\\forcePlateType5\\hugGait.c3d"
+        filename = pyCGM2.TEST_DATA_PATH + "LowLevel/IO/forcePlateType5/hugGait.c3d"
         acq = btkTools.smartReader(filename, translators=None)
 
     def test_btkReader_ParamAnalysis(self):
         filename = pyCGM2.TEST_DATA_PATH + \
-            "LowLevel\\IO\\\paramAnalysis\\data_paramFromNexusAPI.c3d"
+            "LowLevel/IO/\paramAnalysis/data_paramFromNexusAPI.c3d"
         acq = btkTools.smartReader(filename, translators=None)
         parameters = btkTools.getAllParamAnalysis(acq)
         parameter = btkTools.getParamAnalysis(
@@ -79,14 +79,14 @@ class Test_Btk:
 
     def test_btkWriter_paramAnalysisNew(self):
         filename = pyCGM2.TEST_DATA_PATH + \
-            "LowLevel\\IO\\\paramAnalysis\\data_paramFromNexusAPI.c3d"
+            "LowLevel/IO/\paramAnalysis/data_paramFromNexusAPI.c3d"
         acq = btkTools.smartReader(filename, translators=None)
         btkTools.smartAppendParamAnalysis(acq, "new", "General", 3.0)
         # btkTools.smartWriter(acq, "testNew.c3d")
 
     def test_btkWriter_paramAnalysisAmend(self):
         filename = pyCGM2.TEST_DATA_PATH + \
-            "LowLevel\\IO\\\paramAnalysis\\data_paramFromNexusAPI.c3d"
+            "LowLevel/IO/\paramAnalysis/data_paramFromNexusAPI.c3d"
         acq = btkTools.smartReader(filename, translators=None)
         btkTools.smartAppendParamAnalysis(
             acq, "Vitesse", "Left", 3.5, subject="New Patient")
@@ -95,7 +95,7 @@ class Test_Btk:
 
     def test_btkReader_userModelOutputs(self):
         filename = pyCGM2.TEST_DATA_PATH + \
-            "LowLevel\\IO\\nexusUserModelOutputs\\muscleLength_saveFromNexus.c3d"
+            "LowLevel/IO/nexusUserModelOutputs/muscleLength_saveFromNexus.c3d"
         acq = btkTools.smartReader(filename, translators=None)
 
         btkTools.smartWriter(acq, "veriFModelOuputs.c3d")
@@ -103,21 +103,21 @@ class Test_Btk:
 class Test_Btk_Ktk:
 
     def test_convertPointToTs(self):
-        filename = pyCGM2.TEST_DATA_PATH + "LowLevel\\IO\\Hannibal_c3d\\gait1.c3d"
+        filename = pyCGM2.TEST_DATA_PATH + "LowLevel/IO/Hannibal_c3d/gait1.c3d"
         acq = btkTools.smartReader(filename, translators=None)
 
         ts = btkTools.btkPointToKtkTimeseries(acq)
         ts
 
     def test_convertAngleToTs(self):
-        filename = pyCGM2.TEST_DATA_PATH + "LowLevel\\IO\\Hannibal_c3d\\gait1.c3d"
+        filename = pyCGM2.TEST_DATA_PATH + "LowLevel/IO/Hannibal_c3d/gait1.c3d"
         acq = btkTools.smartReader(filename, translators=None)
 
         ts = btkTools.btkPointToKtkTimeseries(acq, type = btk.btkPoint.Angle)
         ts
 
     def test_convertAnalogToTs(self):
-        filename = pyCGM2.TEST_DATA_PATH + "LowLevel\\IO\\Hannibal_c3d\\gait1.c3d"
+        filename = pyCGM2.TEST_DATA_PATH + "LowLevel/IO/Hannibal_c3d/gait1.c3d"
         acq = btkTools.smartReader(filename, translators=None)
 
         ts = btkTools.btkAnalogToKtkTimeseries(acq)

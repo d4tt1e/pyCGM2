@@ -18,7 +18,7 @@ from pyCGM2.Utils import testingUtils
 
 class Test_CGM1_wandPlanarAngles:
     def test_FullBody_noOptions(self):
-        DATA_PATH = pyCGM2.TEST_DATA_PATH + "GaitModels\CGM1\\fullBody-native-Options\\"
+        DATA_PATH = pyCGM2.TEST_DATA_PATH + "GaitModels\CGM1/fullBody-native-Options/"
         staticFilename = "static.c3d"
 
         acqStatic = btkTools.smartReader(DATA_PATH +  staticFilename)
@@ -64,7 +64,7 @@ class Test_CGM1_wandPlanarAngles:
 
 
     def test_LowerBody_pelvisGap(self):
-        DATA_PATH = pyCGM2.TEST_DATA_PATH + "gapScenario\\pyCGM2 lower limb CGM23-Gaps\\"
+        DATA_PATH = pyCGM2.TEST_DATA_PATH + "gapScenario/pyCGM2 lower limb CGM23-Gaps/"
 
         staticFilename = "pyCGM2 lower limb CGM23 Static.c3d"
 

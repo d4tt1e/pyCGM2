@@ -5,7 +5,7 @@ from pyCGM2.Lib import analysis
 
 def example1():
 
-    DATA_PATH = pyCGM2.TEST_DATA_PATH + "GaitData\\Patient\\Session 1 - CGM1\\"
+    DATA_PATH = pyCGM2.TEST_DATA_PATH + "GaitData/Patient/Session 1 - CGM1/"
 
     trialNames = ["03367_05136_20200604-GBNNN-VDEF-01.c3d"]
 
@@ -21,7 +21,7 @@ def example1():
 
 def example2():
 
-    DATA_PATH = pyCGM2.TEST_DATA_PATH + "GaitData\\Patient\\Session 1 - CGM1\\"
+    DATA_PATH = pyCGM2.TEST_DATA_PATH + "GaitData/Patient/Session 1 - CGM1/"
 
     trialNames = ["03367_05136_20200604-GBNNN-VDEF-01.c3d", "03367_05136_20200604-GBNNN-VDEF-02.c3d"]
 

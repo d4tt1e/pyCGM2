@@ -21,13 +21,13 @@ class Test_customMp:
 
     def test_mp(self):
 
-        path = "C:\\Users\\fleboeuf\\Documents\\Programmation\\pyCGM2\\pyCGM2\\pyCGM2\\Settings\\"
+        path = "C:/Users/fleboeuf/Documents/Programmation/pyCGM2/pyCGM2/pyCGM2/Settings/"
         mpSettings = files.openFile(path, "mp.settings")
 
 class Test_CGM:
 
     def test_cgm1(self):
-        DATA_PATH = pyCGM2.TEST_DATA_PATH + "GaitModels\\CGM1\\fullBody-native-noOptions-customMP\\"
+        DATA_PATH = pyCGM2.TEST_DATA_PATH + "GaitModels/CGM1/fullBody-native-noOptions-customMP/"
         staticFilename = "static.c3d"
 
         markerDiameter=14

@@ -30,19 +30,19 @@ class Test_IO:
 
     def test_opensimDataframe_motFile(self):
 
-        DATA_PATH = pyCGM2.TEST_DATA_PATH + "OpenSim/IO\\"
+        DATA_PATH = pyCGM2.TEST_DATA_PATH + "OpenSim/IO/"
 
         motDf = opensimIO.OpensimDataFrame(DATA_PATH, "gait1.mot")
         motDf.getDataFrame()["pelvis_tilt"] = 0.0
         motDf.save(filename="_mot_out.mot")
 
     def test_opensimDataframe_issueStoFile(self):
-        DATA_PATH = pyCGM2.TEST_DATA_PATH + "OpenSim/IO\\"
+        DATA_PATH = pyCGM2.TEST_DATA_PATH + "OpenSim/IO/"
 
         motDf = opensimIO.OpensimDataFrame(DATA_PATH, "issue_ik_model_marker_locations.sto")
 
     def test_zeroing_motFile(self):
-        DATA_PATH = pyCGM2.TEST_DATA_PATH + "OpenSim/IO\\"
+        DATA_PATH = pyCGM2.TEST_DATA_PATH + "OpenSim/IO/"
 
         motDf = opensimIO.OpensimDataFrame(DATA_PATH, "gait1.mot")
         for col in motDf.getDataFrame().columns:
@@ -54,7 +54,7 @@ class Test_IO:
 
     def test_opensimDataframe_stoFile(self):
 
-        DATA_PATH = pyCGM2.TEST_DATA_PATH + "OpenSim/IO\\"
+        DATA_PATH = pyCGM2.TEST_DATA_PATH + "OpenSim/IO/"
         
         stoDf = opensimIO.OpensimDataFrame(
             DATA_PATH, "cgm2-Osim-scaled_MuscleAnalysis_ActiveFiberForce.sto")
@@ -64,7 +64,7 @@ class Test_IO:
 
     def test_createFootGrf_file(self):
 
-        DATA_PATH = pyCGM2.TEST_DATA_PATH + "OpenSim/CGM23\\gait\\"
+        DATA_PATH = pyCGM2.TEST_DATA_PATH + "OpenSim/CGM23/gait/"
         gaitFilename = "gait1.c3d"
 
         acqGait = btkTools.smartReader(str(DATA_PATH + gaitFilename))
@@ -73,7 +73,7 @@ class Test_IO:
             acqGait, DATA_PATH+ "_"+gaitFilename[:-4]+"_grf.mot","X",False)
 
     def test_nexusC3d_withOutputs(self):
-        DATA_PATH = pyCGM2.TEST_DATA_PATH + "OpenSim\\processingC3dOutputs\\"
+        DATA_PATH = pyCGM2.TEST_DATA_PATH + "OpenSim/processingC3dOutputs/"
 
 
         acq1 = btkTools.smartReader(DATA_PATH+"gait1.c3d")
@@ -84,7 +84,7 @@ class Test_IO:
 
     def test_export_cgmToMot(self):
 
-        data_path = pyCGM2.TEST_DATA_PATH + "OpenSim\CGM23\\CGM23-progressionX-test\\"
+        data_path = pyCGM2.TEST_DATA_PATH + "OpenSim\CGM23/CGM23-progressionX-test/"
         staticFilename = "static.c3d" 
         gaitFilename = "gait1.c3d"
 
@@ -98,7 +98,7 @@ class Test_IO:
 
     def test_writer_imuStoFile(self):
 
-        data_path = pyCGM2.TEST_DATA_PATH + "Opensense\\nexus\\"
+        data_path = pyCGM2.TEST_DATA_PATH + "Opensense/nexus/"
 
         staticFilename = "Calibration.c3d"
 
@@ -135,7 +135,7 @@ class Test_preparation:
 
     def test_prepareData_gait(self):
 
-        DATA_PATH = pyCGM2.TEST_DATA_PATH + "OpenSim/prepareData/gait\\"
+        DATA_PATH = pyCGM2.TEST_DATA_PATH + "OpenSim/prepareData/gait/"
 
         opensimtk.prepareC3dFiles(DATA_PATH,
             staticFilename="static.c3d", 
@@ -143,7 +143,7 @@ class Test_preparation:
 
 class Test_osim:
     def test_osimInterface(self): 
-        osimInterface = opensimInterface.osimInterface(pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface\\CGM23\\", "pycgm2-gait2392_simbody.osim")
+        osimInterface = opensimInterface.osimInterface(pyCGM2.OPENSIM_PREBUILD_MODEL_PATH + "interface/CGM23/", "pycgm2-gait2392_simbody.osim")
         muscles = osimInterface.getMuscles()
         print (muscles)
 
