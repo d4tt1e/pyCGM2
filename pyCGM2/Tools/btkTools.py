@@ -1454,20 +1454,22 @@ def cleanAcq(acq:btk.btkAcquisition):
         np.array([180, 180, 180])]
         
                             
+    labels_to_remove = []
     for it in btk.Iterate(acq.GetPoints()):
-        if it.GetType() in [btk.btkPoint.Marker,  
-                            btk.btkPoint.Angle, 
-                            btk.btkPoint.Force, 
-                            btk.btkPoint.Moment, 
+        if it.GetType() in [btk.btkPoint.Marker,
+                            btk.btkPoint.Angle,
+                            btk.btkPoint.Force,
+                            btk.btkPoint.Moment,
                             btk.btkPoint.Power]:
             values = it.GetValues()
 
             if any(np.all(values == combo) for combo in combinaisons):
- 
-                #if np.all(values == np.zeros(3)) or np.all(values == np.array([0, 0, 180])) or np.all(values == np.array([0, 180, 0])) or np.all(values == np.array([180, 0, 0]))  or np.all(values == np.array([180, 180, 0])) or np.all(values == np.array([0, 180, 180])) or np.all(values == np.array([180, 0, 180])) or np.all(values == np.array([180, 180, 180])):
                 LOGGER.logger.debug(
                     "point %s remove from acquisition" % (it.GetLabel()))
-                acq.RemovePoint(it.GetLabel())
+                labels_to_remove.append(it.GetLabel())
+
+    for label in labels_to_remove:
+        acq.RemovePoint(label)
 
 
 def smartCreateEvent(acq:btk.btkAcquisition, label:str, context:str, frame:int, type:str="Automatic", subject:str="", desc:str="",id:int=0):
